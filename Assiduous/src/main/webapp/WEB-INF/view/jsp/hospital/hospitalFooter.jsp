@@ -1,0 +1,2 @@
+<!-- <footer class="main-footer">© Royal Hospitals 2019 <button class="no-style ml-2 settings-btn" data-toggle="modal" data-target="#settings"><span class="icon icofont-ui-settings text-primary"></span></button></footer>
+ -->
