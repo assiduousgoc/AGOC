@@ -4,6 +4,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+
 public class RestClient {
 
 	public static final String BASE_PATH = "http://103.133.214.226:8000/";

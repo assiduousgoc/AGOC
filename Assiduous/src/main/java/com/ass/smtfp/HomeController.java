@@ -13,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ass.client.GMSUserClient;
-import com.ass.smtfp.model.UserData;
-import com.ass.smtfp.model.UserLoginDto;
+import com.ass.client.*;
+import com.ass.smtfp.model.*;
+
+
+
 
 @Controller
 public class HomeController {

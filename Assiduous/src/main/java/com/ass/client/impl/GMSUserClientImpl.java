@@ -17,13 +17,12 @@ public class GMSUserClientImpl implements GMSUserClient {
 
 	public static final String LOGIN = "/users/login";
 
-	@Override
 	public UserData login(UserLoginDto dto) throws RuntimeException {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
+		HttpHeaders headers = new HttpHeaders();//put, post 
+		headers.setContentType(MediaType.APPLICATION_JSON);// get not allowed
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		try {
-			String body = RestClient.OBJECT_MAPPER.writeValueAsString(dto);
+			String body = RestClient.OBJECT_MAPPER.writeValueAsString(dto);// post and put 
 			HttpEntity<String> http_entity = new HttpEntity<String>(body, headers);
 			ResponseEntity<UserData> response = RestClient.REST_CLIENT.exchange(
 					RestClient.BASE_PATH + RestClient.GMS + LOGIN, HttpMethod.POST, http_entity, UserData.class);
