@@ -16,4 +16,8 @@ public class RestClient {
 
 	public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+	public static final String AUTH_TOKEN = "AUTH-TOKEN";
+
+	public static final String SLASH = "/";
+
 }
