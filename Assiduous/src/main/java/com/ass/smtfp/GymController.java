@@ -18,6 +18,7 @@ public class GymController
 	public String gymdashboard(Model model)
 	{
 		System.out.println("gymdashboard Page : ");
+		
 		model.addAttribute("gymdashboard", "");
 		return "gymdashboard";
 	}
