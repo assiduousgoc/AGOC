@@ -27,14 +27,14 @@
               <h6 style="font-weight: bold;">Course Create Form</h6>
             </div>
             <div class="ms-panel-body" style="position: relative;padding: 1.5rem;">
-              <form class="needs-validation clearfix" novalidate>
+              <form class="needs-validation clearfix" novalidate action="saveCourse.htm" method="post" enctype="multipart/form-data">
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom22">Course Name</label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="time_from" id="from" />                                        
+                       <input type='text' class="form-control" name="coursename" id="from" />                                        
                       <div class="invalid-feedback">
-                        Please select a Course.
+                        Please Enter Course.
                       </div>
                     </div>
                   </div>
@@ -44,7 +44,7 @@
                     <div class="input-group">
                        <input type='text' class="form-control" name="courseDuration" id="from" />
                       <div class="invalid-feedback">
-                        Duration
+                       Course Duration
                       </div>
                     </div>
                   </div>
@@ -60,7 +60,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom12">Courses *</label>
                     <div class="input-group">
-                     <input type="file" id="courseImage">
+                     <input type="file" id="courseImage" name="courseName">
                     </div>
                   </div>
                  
@@ -68,7 +68,7 @@
                     <label for="validationCustom12">Description </label>
                       <div class="input-group">
                      <div class="input-group">
-                      <textarea class="summernote edi-css form-control" name="content"></textarea>
+                     <input type='text' class="summernote edi-css form-control" name="description"/>
                        </div>
                      </div>
                   </div>

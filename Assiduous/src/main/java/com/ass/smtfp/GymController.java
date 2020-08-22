@@ -1,5 +1,12 @@
 package com.ass.smtfp;
 
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 /*
  * Copyright 2020 Assiduous, All Rights Reserved.
  */
@@ -7,18 +14,30 @@ package com.ass.smtfp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ass.client.GMSCourseClient;
+import com.ass.smtfp.model.CourseDto;
+import com.ass.smtfp.model.UserData;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 @Controller
 public class GymController
 {
 	
 	
+	@Autowired
+	private GMSCourseClient gym_course_client;
+	
 	@RequestMapping("/gymdashboard.htm")
 	public String gymdashboard(Model model)
 	{
 		System.out.println("gymdashboard Page : ");
-		
 		model.addAttribute("gymdashboard", "");
 		return "gymdashboard";
 	}
@@ -37,10 +56,16 @@ public class GymController
 		return "createSchedule";
 	}
 	@RequestMapping("/courseList.htm")
-	public String coursesList(Model model)
+	public String coursesList(Model model,HttpServletRequest req)
 	{
 		System.out.println("coursesList Page : ");
-		model.addAttribute("coursesList", "");
+		UserData user = (UserData)req.getSession().getAttribute("user");
+		System.out.println("Token : "+user.getToken());
+		
+		List<CourseDto> courseList= gym_course_client.get(user.getToken());
+		
+		
+		model.addAttribute("coursesList", courseList);
 		return "coursesList";
 	}
 	@RequestMapping("/addCourse.htm")
@@ -49,6 +74,34 @@ public class GymController
 		System.out.println("createCourses Page : ");
 		model.addAttribute("createCourses", "");
 		return "addCourse";
+	}
+	@RequestMapping("/saveCourse.htm")
+	public String saveCourse(Model model,@RequestParam(value = "coursename") String coursename,@RequestParam(value = "courseDuration") String courseDuration,@RequestParam(value = "coursePrice") String coursePrice,@RequestParam(value = "courseName") String courseName,@RequestParam(value = "description") String description)
+	{
+		System.out.println("createCourses Page : "+coursename);
+		model.addAttribute("createCourses", "");
+		return "redirect:/courseList.htm";
+	}
+	@RequestMapping("/saveRoom.htm")
+	public String saveRoom(Model model,@RequestParam(value = "roomname") String saveRoom)
+	{
+		System.out.println("saveRoom Page : "+saveRoom);
+		model.addAttribute("createCourses", "");
+		return "redirect:/roomList.htm";
+	}
+	@RequestMapping("/saveTrainer.htm")
+	public String saveTrainer(Model model,@RequestParam(value = "trainername") String trainername)
+	{
+		System.out.println("saveRoom Page : "+trainername);
+		model.addAttribute("createCourses", "");
+		return "redirect:/trainerList.htm";
+	}
+	@RequestMapping("/saveCustomer23.htm")
+	public String saveCustomer(Model model,@RequestParam(value = "customerName") String customerName)
+	{
+		System.out.println("customerName Page : "+customerName);
+		model.addAttribute("createCourses", "");
+		return "redirect:/gymcustomerList.htm";
 	}
 	@RequestMapping("/roomList.htm")
 	public String roomList(Model model)
@@ -126,6 +179,16 @@ public class GymController
 		System.out.println("generateCoupon Page : ");
 		model.addAttribute("generateCoupon", "");
 		return "generateCoupon";
+	}
+	@RequestMapping(value = { "/saveCoupon.htm" }, method = RequestMethod.POST)
+
+	public ModelAndView saveCoupon(Model model,@RequestParam(value = "couponName") String couponName,@RequestParam(value = "sdate") String sdate,@RequestParam(value = "edate") String edate,@RequestParam(value = "description") String description,@RequestPart("file") MultipartFile file, HttpServletRequest request)
+			throws JsonParseException, JsonMappingException, RuntimeException, IOException {
+	
+		System.out.println("Save Coupon  Page : "+couponName);
+		model.addAttribute("generateCoupon", "");
+		return new ModelAndView("redirect:couponList.htm");
+		//return "redirect:/couponList.htm";
 	}
 	@RequestMapping("/gymSetting.htm")
 	public String gymSetting(Model model)

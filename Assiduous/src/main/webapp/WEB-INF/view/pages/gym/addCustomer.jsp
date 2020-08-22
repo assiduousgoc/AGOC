@@ -27,7 +27,7 @@
               <h6 style="font-weight: bold;">Customer Entry Form</h6>
             </div>
             <div class="ms-panel-body" style="position: relative;padding: 1.5rem;">
-              <form class="needs-validation clearfix" novalidate>
+              <form class="needs-validation clearfix" novalidate action="saveCustomer23.htm" method="post" enctype="multipart/form-data">
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom22">Customer Name</label>
@@ -108,7 +108,7 @@
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom12">Country *</label>
                       <div class="input-group">
-                      <select id="select23" class="form-control js-states select2">
+                      <select id="select23" name="select23" class="form-control js-states select2">
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
                                                                 <option value>Select a country</option>
                                                                 <option value="AK">Alaska</option>
@@ -209,7 +209,7 @@
                 <div class="row">
                  <div class="col-md-offset-3 col-md-12" style="text-align: center;">
                                                         <input type="submit" class="btn btn-primary" value="Save" style="border-radius: 0px;"> &nbsp;
-                                                       <a href="gymcustomerList.htm"> <input type="button" style="border-radius: 0px;" class="btn btn-danger" value="Back"></a> &nbsp;
+                                                        <a href="gymcustomerList.htm"> <input type="button" style="border-radius: 0px;" class="btn btn-danger" value="Back"></a> &nbsp;
                                                         <input type="reset" class="btn btn-default " style="border-radius: 0px;" value="Reset">
                                                     </div>
                                                 </div>                                   

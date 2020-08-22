@@ -27,12 +27,12 @@
               <h6 style="font-weight: bold;">Course Create Form</h6>
             </div>
             <div class="ms-panel-body" style="position: relative;padding: 1.5rem;">
-              <form class="needs-validation clearfix" novalidate>
+              <form class="needs-validation clearfix" novalidate action="saveRoom.htm" method="post">
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom22">Room Name</label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="time_from" id="from" />                                        
+                       <input type='text' class="form-control" name="roomname" id="from" />                                        
                       <div class="invalid-feedback">
                         Please select a Room.
                       </div>

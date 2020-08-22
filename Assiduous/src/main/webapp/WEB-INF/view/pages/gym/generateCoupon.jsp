@@ -1,7 +1,5 @@
- <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
  <div class="page-wrapper">
@@ -27,47 +25,34 @@
               <h6 style="font-weight: bold;">Coupon Entry Form</h6>
             </div>
             <div class="ms-panel-body" style="position: relative;padding: 1.5rem;">
-              <form class="needs-validation clearfix" novalidate>
+              <%-- <form class="needs-validation clearfix" novalidate action="saveCoupon.htm" method="post" enctype="multipart/form-data"> --%>
+               <form:form class="needs-validation clearfix"  method="post"	action="${pageContext.request.contextPath}/saveCoupon.htm"  enctype="multipart/form-data">
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom22">Coupon Name</label>
                     <div class="input-group">
-                        <input type='text' class="form-control" name="customerName" id="customerName"  placeholder="Enter Customer Name"  />
+                        <input type='text' class="form-control" name="couponName" id="couponName"  placeholder="Enter Coupon Name"  />
                                                                
                       <div class="invalid-feedback">
                         Please enter Coupon Name.
                       </div>
                     </div>
                   </div>
-                 <!--  <div class="col-md-6 mb-3">
-                    <label for="validationCustom23">Currency</label>
-                    <div class="input-group">
-                      <select class="form-control" id="validationCustom23" required>
-                        <option value="">USD</option>
-                        <option value="">Bitcoins</option>
-                        <option value="">EURO</option>
-
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a Currency
-                      </div>
-                    </div>
-                  </div> -->
-                  <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3">
                     <label for="validationCustom24">Start Date</label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="email" id="email" placeholder="Enter Email Id" />
+                       <input type='text' class="form-control" name="sdate" id="sdate" placeholder="Enter Start Date" />
                       <div class="invalid-feedback">
-                        Email
+                        Start Date
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom25">End Date</label>
                     <div class="input-group">
-                      <input type='text' class="form-control" name="contactNo" id="contactNo" placeholder="Enter Contact No." />
+                      <input type='text' class="form-control" name="edate" id="edate" placeholder="Enter End Date" />
                       <div class="invalid-feedback">
-                        Contact Number
+                       End Date 
                       </div>
                     </div>
                   </div>
@@ -75,14 +60,17 @@
                     <label for="validationCustom12">Description </label>
                       <div class="input-group">
                      <div class="input-group">
-                       <textarea class="summernote edi-css form-control" name="content" placeholder="Description"></textarea></div>
+                       <input type="text" class="summernote edi-css form-control" name="description" id="description" placeholder="Description"/></div>
                      </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom12">Upload Coupon Image </label>
                       <div class="input-group">
                      <div class="input-group">
-                      <input type="file" id="customerImage" name="customerImage" placeholder="Select Customer Image">
+                     <input	type="file" name="file" onchange="uploadImage();" id="file"
+									accept="image/jpeg, image/png" placeholder="Select Coupon Image"> <input type="hidden"
+									id="couponImage" name="couponImage" value="">
+                      <!-- <input type="file" id="couponImage" name="couponImage" placeholder="Select Coupon Image"> -->
                        </div>
                      </div>
                   </div>
@@ -95,29 +83,9 @@
                                                        <a href="couponList.htm"> <input type="button" style="border-radius: 0px;" class="btn btn-danger" value="Back"></a> &nbsp;
                                                         <input type="reset" class="btn btn-default " style="border-radius: 0px;" value="Reset">
                                                     </div>
-                                                </div>                                   
-                
-                <!-- <div class="new" style="display: inline-flex;">
-                 <div class="col-md-1 mb-3">
-                   <div class="input-group">
-                       <a href="courseSchedule.htm"><button class="btn btn-secondary d-block" type="button" style="background-color: #960613;">Back</button></a> 
-                    </div>
-                  </div>
-                  <div class="col-md-1 mb-3">
-                   <div class="input-group">
-                       <a href="menuList.htm"><button class="btn btn-secondary d-block" type="submit" style="background-color: #090696;">Save</button>
-                  </a> 
-                    </div>
-                  </div>
-                <div class="col-md-1 mb-3">
-                   <div class="input-group">
-                       <a href="menuList.htm"><button class="btn btn-primary d-block" type="reset" style="">Reset</button></a> 
-                    </div>
-                  </div>
-                  
-                  
-                </div> -->
-			</form>
+                                                </div>   
+                                                <input type="hidden" id=imagepath name="imagepath">                                
+                					</form:form>
 
             </div>
           </div>
