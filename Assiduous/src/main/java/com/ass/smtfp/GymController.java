@@ -27,217 +27,167 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 @Controller
-public class GymController
-{
-	
-	
+public class GymController {
+
 	@Autowired
 	private GMSCourseClient gym_course_client;
-	
+
 	@RequestMapping("/gymdashboard.htm")
-	public String gymdashboard(Model model)
-	{
+	public String gymdashboard(Model model) {
 		System.out.println("gymdashboard Page : ");
 		model.addAttribute("gymdashboard", "");
 		return "gymdashboard";
 	}
+
 	@RequestMapping("/courseSchedule.htm")
-	public String menuList(Model model)
-	{
+	public String menuList(Model model) {
 		System.out.println("courseSchedule Page : ");
 		model.addAttribute("courseSchedule", "");
 		return "courseSchedule";
 	}
+
 	@RequestMapping("/createSchedule.htm")
-	public String createSchedule(Model model)
-	{
+	public String createSchedule(Model model) {
 		System.out.println("createSchedule Page : ");
 		model.addAttribute("createSchedule", "");
 		return "createSchedule";
 	}
-	@RequestMapping("/courseList.htm")
-	public String coursesList(Model model,HttpServletRequest req)
-	{
-		System.out.println("coursesList Page : ");
-		UserData user = (UserData)req.getSession().getAttribute("user");
-		System.out.println("Token : "+user.getToken());
-		
-		List<CourseDto> courseList= gym_course_client.get(user.getToken());
-		
-		
-		model.addAttribute("coursesList", courseList);
-		return "coursesList";
-	}
+
+	
+
 	@RequestMapping("/addCourse.htm")
-	public String addCourse(Model model)
-	{
+	public String addCourse(Model model) {
 		System.out.println("createCourses Page : ");
 		model.addAttribute("createCourses", "");
 		return "addCourse";
 	}
-	@RequestMapping("/saveCourse.htm")
-	public String saveCourse(Model model,@RequestParam(value = "coursename") String coursename,@RequestParam(value = "courseDuration") String courseDuration,@RequestParam(value = "coursePrice") String coursePrice,@RequestParam(value = "courseName") String courseName,@RequestParam(value = "description") String description)
-	{
-		System.out.println("createCourses Page : "+coursename);
-		model.addAttribute("createCourses", "");
-		return "redirect:/courseList.htm";
-	}
-	@RequestMapping("/saveRoom.htm")
-	public String saveRoom(Model model,@RequestParam(value = "roomname") String saveRoom)
-	{
-		System.out.println("saveRoom Page : "+saveRoom);
-		model.addAttribute("createCourses", "");
-		return "redirect:/roomList.htm";
-	}
+
+	
+
+	
+
 	@RequestMapping("/saveTrainer.htm")
-	public String saveTrainer(Model model,@RequestParam(value = "trainername") String trainername)
-	{
-		System.out.println("saveRoom Page : "+trainername);
+	public String saveTrainer(Model model, @RequestParam(value = "trainername") String trainername) {
+		System.out.println("saveRoom Page : " + trainername);
 		model.addAttribute("createCourses", "");
 		return "redirect:/trainerList.htm";
 	}
+
 	@RequestMapping("/saveCustomer23.htm")
-	public String saveCustomer(Model model,@RequestParam(value = "customerName") String customerName)
-	{
-		System.out.println("customerName Page : "+customerName);
+	public String saveCustomer(Model model, @RequestParam(value = "customerName") String customerName) {
+		System.out.println("customerName Page : " + customerName);
 		model.addAttribute("createCourses", "");
 		return "redirect:/gymcustomerList.htm";
 	}
-	@RequestMapping("/roomList.htm")
-	public String roomList(Model model)
-	{
-		System.out.println("roomList Page : ");
-		model.addAttribute("roomList", "");
-		return "roomList";
-	}
-	@RequestMapping("/addRoom.htm")
-	public String addRoom(Model model)
-	{
-		System.out.println("addRoom Page : ");
-		model.addAttribute("addRoom", "");
-		return "addRoom";
-	}
+
+
+	
+
 	@RequestMapping("/trainerList.htm")
-	public String trainerList(Model model)
-	{
+	public String trainerList(Model model) {
 		System.out.println("trainerList Page : ");
 		model.addAttribute("trainerList", "");
 		return "trainerList";
 	}
+
 	@RequestMapping("/addTrainer.htm")
-	public String addTrainer(Model model)
-	{
+	public String addTrainer(Model model) {
 		System.out.println("addTrainer Page : ");
 		model.addAttribute("addTrainer", "");
 		return "addTrainer";
 	}
+
 	@RequestMapping("/gymcustomerList.htm")
-	public String customerList(Model model)
-	{
+	public String customerList(Model model) {
 		System.out.println("gymcustomerList Page : ");
 		model.addAttribute("gymcustomerList", "");
 		return "gymcustomerList";
 	}
+
 	@RequestMapping("/addGymCustomer.htm")
-	public String addGymCustomer(Model model)
-	{
+	public String addGymCustomer(Model model) {
 		System.out.println("addGymCustomer Page : ");
 		model.addAttribute("addGymCustomer", "");
 		return "addGymCustomer";
 	}
+
 	@RequestMapping("/attendance.htm")
-	public String attendance(Model model)
-	{
+	public String attendance(Model model) {
 		System.out.println("attendance Page : ");
 		model.addAttribute("attendance", "");
 		return "attendance";
 	}
+
 	@RequestMapping("/customersProfile.htm")
-	public String customersProfile(Model model)
-	{
+	public String customersProfile(Model model) {
 		System.out.println("customersProfile Page : ");
 		model.addAttribute("customersProfile", "");
 		return "customersProfile";
 	}
+
 	@RequestMapping("/paymentList.htm")
-	public String paymentList(Model model)
-	{
+	public String paymentList(Model model) {
 		System.out.println("paymentList Page : ");
 		model.addAttribute("paymentList", "");
 		return "paymentList";
 	}
+
 	@RequestMapping("/couponList.htm")
-	public String couponList(Model model)
-	{
+	public String couponList(Model model) {
 		System.out.println("couponList Page : ");
 		model.addAttribute("couponList", "");
 		return "couponList";
 	}
+
 	@RequestMapping("/generateCoupon.htm")
-	public String generateCoupon(Model model)
-	{
+	public String generateCoupon(Model model) {
 		System.out.println("generateCoupon Page : ");
 		model.addAttribute("generateCoupon", "");
 		return "generateCoupon";
 	}
+
 	@RequestMapping(value = { "/saveCoupon.htm" }, method = RequestMethod.POST)
 
-	public ModelAndView saveCoupon(Model model,@RequestParam(value = "couponName") String couponName,@RequestParam(value = "sdate") String sdate,@RequestParam(value = "edate") String edate,@RequestParam(value = "description") String description,@RequestPart("file") MultipartFile file, HttpServletRequest request)
-			throws JsonParseException, JsonMappingException, RuntimeException, IOException {
-	
-		System.out.println("Save Coupon  Page : "+couponName);
+	public ModelAndView saveCoupon(Model model, @RequestParam(value = "couponName") String couponName,
+			@RequestParam(value = "sdate") String sdate, @RequestParam(value = "edate") String edate,
+			@RequestParam(value = "description") String description, @RequestPart("file") MultipartFile file,
+			HttpServletRequest request) throws JsonParseException, JsonMappingException, RuntimeException, IOException {
+
+		System.out.println("Save Coupon  Page : " + couponName);
 		model.addAttribute("generateCoupon", "");
 		return new ModelAndView("redirect:couponList.htm");
-		//return "redirect:/couponList.htm";
+		// return "redirect:/couponList.htm";
 	}
+
 	@RequestMapping("/gymSetting.htm")
-	public String gymSetting(Model model)
-	{
+	public String gymSetting(Model model) {
 		System.out.println("gymSetting Page : ");
 		model.addAttribute("gymSetting", "");
 		return "gymSetting";
 	}
 	/*
-	@RequestMapping("/invoiceList.htm")
-	public String invoiceList(Model model)
-	{
-		System.out.println("invoiceList Page : ");
-		model.addAttribute("invoiceList", "");
-		return "invoiceList";
-	}
-	@RequestMapping("/sales.htm")
-	public String sales(Model model)
-	{
-		System.out.println("sales Page : ");
-		model.addAttribute("sales", "");
-		return "sales";
-	}
-	@RequestMapping("/addProduct.htm")
-	public String addProduct(Model model)
-	{
-		System.out.println("addProduct Page : ");
-		model.addAttribute("addProduct", "");
-		return "addProduct";
-	}
-	@RequestMapping("/productGrid.htm")
-	public String productGrid(Model model)
-	{
-		System.out.println("productGrid Page : ");
-		model.addAttribute("productGrid", "");
-		return "productGrid";
-	}
-	@RequestMapping("/order.htm")
-	public String order(Model model)
-	{
-		System.out.println("order Page : ");
-		model.addAttribute("order", "");
-		return "order";
-	}
-	@RequestMapping("/logout.htm")
-	public String logout(Model model)
-	{
-		System.out.println("order Page : ");
-		model.addAttribute("order", "");
-		return "redirect:client-login.htm";
-	}*/
+	 * @RequestMapping("/invoiceList.htm") public String invoiceList(Model model) {
+	 * System.out.println("invoiceList Page : "); model.addAttribute("invoiceList",
+	 * ""); return "invoiceList"; }
+	 * 
+	 * @RequestMapping("/sales.htm") public String sales(Model model) {
+	 * System.out.println("sales Page : "); model.addAttribute("sales", ""); return
+	 * "sales"; }
+	 * 
+	 * @RequestMapping("/addProduct.htm") public String addProduct(Model model) {
+	 * System.out.println("addProduct Page : "); model.addAttribute("addProduct",
+	 * ""); return "addProduct"; }
+	 * 
+	 * @RequestMapping("/productGrid.htm") public String productGrid(Model model) {
+	 * System.out.println("productGrid Page : "); model.addAttribute("productGrid",
+	 * ""); return "productGrid"; }
+	 * 
+	 * @RequestMapping("/order.htm") public String order(Model model) {
+	 * System.out.println("order Page : "); model.addAttribute("order", ""); return
+	 * "order"; }
+	 * 
+	 * @RequestMapping("/logout.htm") public String logout(Model model) {
+	 * System.out.println("order Page : "); model.addAttribute("order", ""); return
+	 * "redirect:client-login.htm"; }
+	 */
 }

@@ -183,6 +183,7 @@ public class GMSCourseClientImpl implements GMSCourseClient {
 	public CourseDto active(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
 			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
@@ -200,6 +201,7 @@ public class GMSCourseClientImpl implements GMSCourseClient {
 	public CourseDto deactive(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
 			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
@@ -217,6 +219,7 @@ public class GMSCourseClientImpl implements GMSCourseClient {
 	public String delete(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
 			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
@@ -234,6 +237,7 @@ public class GMSCourseClientImpl implements GMSCourseClient {
 	public String delete(String token, String code) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
 			HttpEntity<String> http_entity = new HttpEntity<String>(headers);

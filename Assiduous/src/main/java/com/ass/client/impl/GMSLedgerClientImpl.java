@@ -53,6 +53,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public LedgerDto get(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -71,6 +72,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public List<LedgerDto> getAcName(String token, String ac_name) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -89,6 +91,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public List<LedgerDto> getAcNo(String token, String ac_no) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -107,6 +110,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public List<LedgerDto> getByBranch(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -125,6 +129,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public List<LedgerDto> getByRange(String token, Long from_date, Long to_date) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -145,6 +150,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public List<LedgerDto> getByTrainee(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -162,6 +168,7 @@ public class GMSLedgerClientImpl implements GMSLedgerClient {
 	@Override
 	public String delete(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {

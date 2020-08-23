@@ -166,6 +166,7 @@ public class GMSPaymentClientImpl implements GMSPaymentClient {
 	@Override
 	public String delete(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {

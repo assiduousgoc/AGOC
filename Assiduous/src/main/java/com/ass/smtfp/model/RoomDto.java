@@ -31,7 +31,6 @@ public class RoomDto implements Serializable {
 	private String name;
 
 	@JsonProperty("branch")
-	@NotNull
 	private CommonDto branchDto;
 
 	public Integer getId() {

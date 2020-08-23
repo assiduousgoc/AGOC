@@ -42,6 +42,9 @@ public class CourseDto implements Serializable {
 	@NotEmpty
 	private String duration;
 
+	@JsonProperty("description")
+	private String description;
+
 	@JsonProperty("branch")
 	@NotNull
 	@NotEmpty
@@ -88,6 +91,14 @@ public class CourseDto implements Serializable {
 
 	public void setDuration(String duration) {
 		this.duration = duration;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public CommonDto getBranchDto() {

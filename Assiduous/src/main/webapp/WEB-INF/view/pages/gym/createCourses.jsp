@@ -32,7 +32,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom22">Course Name</label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="coursename" id="from" />                                        
+                       <input type='text' class="form-control" name="coursename" id="coursename"/>                                        
                       <div class="invalid-feedback">
                         Please Enter Course.
                       </div>
@@ -42,7 +42,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom24">Course Duration </label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="courseDuration" id="from" />
+                       <input type='text' class="form-control" name="courseDuration" id="courseDuration" />
                       <div class="invalid-feedback">
                        Course Duration
                       </div>
@@ -51,7 +51,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom25">Course Price</label>
                     <div class="input-group">
-                      <input type='text' class="form-control" name="coursePrice" id="to" />
+                      <input type='number' class="form-control" name="coursePrice" id="coursePrice" />
                       <div class="invalid-feedback">
                         course Price
                       </div>
@@ -60,7 +60,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom12">Courses *</label>
                     <div class="input-group">
-                     <input type="file" id="courseImage" name="courseName">
+                     <input type="file" id="courseImage" name="courseImage">
                     </div>
                   </div>
                  
@@ -68,7 +68,7 @@
                     <label for="validationCustom12">Description </label>
                       <div class="input-group">
                      <div class="input-group">
-                     <input type='text' class="summernote edi-css form-control" name="description"/>
+                     <input type='text' class="summernote edi-css form-control" name="description" id="description"/>
                        </div>
                      </div>
                   </div>
@@ -82,7 +82,7 @@
                   </div>
                   <div class="col-md-1 mb-3">
                    <div class="input-group">
-                       <a href="menuList.htm"><button class="btn btn-secondary d-block" type="submit" style="min-width: 118px;background-color: #090696;">Save</button>
+                       <a><button class="btn btn-secondary d-block" type="submit" style="min-width: 118px;background-color: #090696;">Save</button>
                   </a> 
                     </div>
                   </div>

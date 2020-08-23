@@ -275,6 +275,7 @@ public class GMSUserClientImpl implements GMSUserClient {
 	@Override
 	public String delete(String token, Integer user_id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -292,6 +293,7 @@ public class GMSUserClientImpl implements GMSUserClient {
 	@Override
 	public String delete(String token, String email) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -309,6 +311,7 @@ public class GMSUserClientImpl implements GMSUserClient {
 	@Override
 	public String delete(String token, Long mob) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {

@@ -167,6 +167,7 @@ public class GMSCourseScheduleClientImpl implements GMSCourseScheduleClient {
 	@Override
 	public CourseScheduleDto active(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -184,6 +185,7 @@ public class GMSCourseScheduleClientImpl implements GMSCourseScheduleClient {
 	@Override
 	public CourseScheduleDto deactive(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -201,6 +203,7 @@ public class GMSCourseScheduleClientImpl implements GMSCourseScheduleClient {
 	@Override
 	public String delete(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {
@@ -218,6 +221,7 @@ public class GMSCourseScheduleClientImpl implements GMSCourseScheduleClient {
 	@Override
 	public String delete(String token, String code) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
 		headers.add(RestClient.AUTH_TOKEN, token);
 		try {

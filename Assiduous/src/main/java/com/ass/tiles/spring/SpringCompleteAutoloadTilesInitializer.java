@@ -11,11 +11,9 @@ import org.apache.tiles.request.ApplicationContext;
 /**
  * @author Maheshwar Prasad
  */
-public class SpringCompleteAutoloadTilesInitializer extends CompleteAutoloadTilesInitializer
-{
+public class SpringCompleteAutoloadTilesInitializer extends CompleteAutoloadTilesInitializer {
 	@Override
-	protected AbstractTilesContainerFactory createContainerFactory(ApplicationContext context)
-	{
+	protected AbstractTilesContainerFactory createContainerFactory(ApplicationContext context) {
 		return new SpringCompleteAutoloadTilesContainerFactory();
 	}
 }

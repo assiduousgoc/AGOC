@@ -16,7 +16,6 @@
 			</div>
 
 		</div>
-
 		<div class="row">
 			<div class="col-xl-12 col-md-12">
 				<div class="ms-panel ms-panel-fh"
@@ -28,18 +27,21 @@
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
 						<form class="needs-validation clearfix" novalidate
-							action="saveRoom.htm" method="post">
+							action="updateRoom.htm" method="post">
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom22">Room Name</label>
 									<div class="input-group">
-										<input type="text" class="form-control" name="name" id="name" />
-										<div class="invalid-feedback">Please select a Room.</div>
+										<input type="hidden" name="id" id="id" value="${room.id}"/>
+										<input type="hidden" name="code" id="code" value="${room.code}"/>
+										<input type="text" name="name" id="name" class="form-control" value="${room.name}"/>
+										<div class="invalid-feedback">Room Name</div>
 									</div>
 								</div>
 							</div>
+							
 							<div class="new" style="display: inline-flex;">
-								<div class="col-md-1 mb-3">
+								<div class="col-md-1roomDetail mb-3">
 									<div class="input-group">
 										<a href="roomList.htm"><button
 												class="btn btn-secondary d-block" type="button"
@@ -54,13 +56,6 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-md-1 mb-3">
-									<div class="input-group">
-										<a href="#"><button class="btn btn-primary d-block"
-												type="reset" style="min-width: 118px;">Reset</button></a>
-									</div>
-								</div>
-
 
 							</div>
 						</form>

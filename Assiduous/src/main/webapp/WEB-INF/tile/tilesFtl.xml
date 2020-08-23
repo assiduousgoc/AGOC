@@ -126,6 +126,10 @@
        <put-attribute name="title" value="Add Course" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/createCourses.jsp" />  
    </definition>
+   <definition name="courseDetail" extends="gym-definition">  
+       <put-attribute name="title" value="Course Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/courseDetail.jsp" />  
+   </definition>
     <definition name="roomList" extends="gym-definition">  
        <put-attribute name="title" value="Room List" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/roomList.jsp" />  
@@ -133,6 +137,10 @@
     <definition name="addRoom" extends="gym-definition">  
        <put-attribute name="title" value="Add Room" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/addRoom.jsp" />  
+   </definition>
+   <definition name="roomDetail" extends="gym-definition">  
+       <put-attribute name="title" value="Room" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/roomDetail.jsp" />  
    </definition>
     <definition name="trainerList" extends="gym-definition">  
        <put-attribute name="title" value="Room List" />  
