@@ -25,7 +25,7 @@
                                     <tr>
                                         <th>Customer ID</th>
                                         <th>Customer Name</th>
-                                        <th>Location</th>
+                                        <th>Role</th>
                                         <th>Email ID</th>
                                         <th>Contact No.</th>
                                         <th>Status</th>
@@ -33,24 +33,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${usersList}" var="users">
                                 <tr>
-                                         <td style="text-align: center;">64541</td>
-                                         <td style="text-align: center;">Maheshwar Prasad</td>
-                                         <td style="text-align: center;"> New Delhi </td>
-                                          <td style="text-align: center;">maheshwarprasad89@gmail.com</td>
-                                         <td style="text-align: center;">+91-9910487556</td>
+                                         <td style="text-align: center;">${users.id}</td>
+                                         <td style="text-align: center;">${users.first_name} ${users.last_name}</td>
+                                         <td style="text-align: center;">${users.role}</td>
+                                          <td style="text-align: center;">${users.email}</td>
+                                         <td style="text-align: center;">${users.mob}</td>
                                          <td style="text-align: center;">Approve</td>
                                          <td class="text-center">
                                             <div class="dropdown dropdown-action">
-                                            <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #090696;border-color: #090696;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #090696;border-color: #090696;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-trash"></i></button>
-                                            <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #090696;border-color: #090696;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-eye"></i></button>
+                                            <a href="user-detail.htm?id=${users.id}"><button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #090696;border-color: #090696;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-edit"></i></button></a>
+                                            <a href="user-delete.htm?id=${users.id}"><button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #090696;border-color: #090696;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-trash"></i></button>
+                                            <a href="user-edit.htm?id=${users.id}"><button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #090696;border-color: #090696;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-eye"></i></button>
                                             
                                               
                                             </div>
                                         </td>
                                     </tr>
-                                   
+                                  </c:forEach> 
                                 </tbody>
                             </table>
 						</div>

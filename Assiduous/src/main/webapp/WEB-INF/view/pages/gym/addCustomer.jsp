@@ -195,7 +195,19 @@
                                                         </select>
                      </div>
                   </div>
-                  <div class="col-md-12 mb-3">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom12">Select Role</label>
+                      <div class="input-group">
+                     <div class="input-group">
+                      <select class="form-control" name="day" id="day">
+											<option value="0"> SUPER ADMIN</option>
+											<option value="1">ADMIN</option>
+											<option value="2">TRAINER</option>
+										</select>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-md-8 mb-3">
                     <label for="validationCustom12">Upload Customer Image </label>
                       <div class="input-group">
                      <div class="input-group">
@@ -203,7 +215,6 @@
                        </div>
                      </div>
                   </div>
-                 
                 </div>
                 
                 <div class="row">

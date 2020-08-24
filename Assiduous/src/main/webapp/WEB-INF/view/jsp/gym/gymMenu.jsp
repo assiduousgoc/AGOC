@@ -19,7 +19,7 @@ String role =user.getRole().toString();
                          <%
 						if (user != null && role.equals("SUPERADMIN")) {
 						%>
-                        &nbsp; AGMS ( SUPER ADMIN )
+                        &nbsp; AGMS ( S. ADMIN )
                         <%}else if (user != null && role.equals("ADMIN")) { %>
                          &nbsp; AGMS ( ADMIN )
                         <%}else{ %>
@@ -29,6 +29,24 @@ String role =user.getRole().toString();
                         <li class="active">
                             <a href="gymdashboard.htm"><i class="fa fa-dashboard"></i> Dashboard</a>
                         </li>
+                         <%
+						if (user != null && role.equals("SUPERADMIN")) {
+						%>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-plus-circle"></i> <span> Customers </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none; background-color: #ffffff;" >
+								<li style="background-color: #6f6d6d;"><a href="gymcustomerList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Customer List </a></li>
+								<li style="background-color: #6f6d6d;"><a href="customersProfile.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Customer Profile</a></li>
+								<li style="background-color: #6f6d6d;"><a href="addGymCustomer.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Add Customer </a></li>
+								<li style="background-color: #6f6d6d;"><a href="paymentList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Payments</a></li>
+<!-- 								<li style="background-color: lavender;"><a href="holidays.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Holidays</a></li>
+								<li style="background-color: lavender;"><a href="attendance.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Attendance</a></li> -->
+							</ul>	
+						</li>
+						<li>
+                            <a href="gymSetting.htm" style="border-bottom: 3px solid #ffff;"><i class="fa fa-gears"></i> Setting</a>
+                        </li>
+						<%}else{ %>
                          <li>
                             <a href="attendance.htm"><i class="fa fa-users"></i> Attendance</a>
                         </li>
@@ -48,21 +66,7 @@ String role =user.getRole().toString();
 								<li style="background-color: lavender;"><a href="attendance.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Attendance</a></li> -->
 							</ul>
 						</li>
-						 <%
-						if (user != null && role.equals("SUPERADMIN")) {
-						%>
-						<li class="submenu">
-							<a href="#"><i class="fa fa-plus-circle"></i> <span> Customers </span> <span class="menu-arrow"></span></a>
-							<ul style="display: none; background-color: #ffffff;" >
-								<li style="background-color: #6f6d6d;"><a href="gymcustomerList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Customer List </a></li>
-								<li style="background-color: #6f6d6d;"><a href="customersProfile.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Customer Profile</a></li>
-								<li style="background-color: #6f6d6d;"><a href="addGymCustomer.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Add Customer </a></li>
-								<li style="background-color: #6f6d6d;"><a href="paymentList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Payments</a></li>
-<!-- 								<li style="background-color: lavender;"><a href="holidays.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Holidays</a></li>
-								<li style="background-color: lavender;"><a href="attendance.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Attendance</a></li> -->
-							</ul>	
-						</li>
-						<%} %>
+						
                         <li>
                             <a href="couponList.htm"><i class="fa fa-cog"></i> Coupons</a>
                         </li>
@@ -76,7 +80,7 @@ String role =user.getRole().toString();
 							</ul>
 						</li>
                          <li>
-                            <a href="order.htm"><i class="fa fa-cog"></i> Class Calender</a>
+                            <a href="#"><i class="fa fa-cog"></i> Class Calender</a>
                         </li>
                       
                         <li class="submenu">
@@ -84,17 +88,21 @@ String role =user.getRole().toString();
 							<ul style="display: none; background-color: #ffffff;" >
 								<li style="background-color: #6f6d6d;"><a href="#" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Invoice List </a></li>
 								<li style="background-color: #6f6d6d;"><a href="#" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Invoice Detail</a></li>
-<!-- 							
+<!-- 								<li style="background-color: lavender;"><a href="holidays.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Holidays</a></li>
+								<li style="background-color: lavender;"><a href="attendance.html" style="color: #090696;border-bottom: white solid 2px;font-weight: bold;">Attendance</a></li> -->
 							</ul>
 						</li>
                         <li>
-                            <a href="customerList.htm"><i class="fa fa-suitcase"></i> Club Information</a>
+                            <a href="#"><i class="fa fa-suitcase"></i> Club Information</a>
                         </li>
-                        
+                        <%} %>
+                        <%--  <%
+						if (user != null && role.equals("SUPERADMIN")) {
+						%>
 						 <li>
                             <a href="gymSetting.htm" style="border-bottom: 3px solid #ffff;"><i class="fa fa-gears"></i> Setting</a>
                         </li>
-                      
+                      <%} %> --%>
                     </ul>
                 </div>
             </div>

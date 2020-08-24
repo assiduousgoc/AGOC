@@ -36,19 +36,7 @@ public class GymController {
 		return "gymdashboard";
 	}
 
-	@RequestMapping("/gymcustomerList.htm")
-	public String customerList(Model model) {
-		System.out.println("gymcustomerList Page : ");
-		model.addAttribute("gymcustomerList", "");
-		return "gymcustomerList";
-	}
-
-	@RequestMapping("/addGymCustomer.htm")
-	public String addGymCustomer(Model model) {
-		System.out.println("addGymCustomer Page : ");
-		model.addAttribute("addGymCustomer", "");
-		return "addGymCustomer";
-	}
+	
 
 	@RequestMapping("/attendance.htm")
 	public String attendance(Model model) {
@@ -57,12 +45,7 @@ public class GymController {
 		return "attendance";
 	}
 
-	@RequestMapping("/customersProfile.htm")
-	public String customersProfile(Model model) {
-		System.out.println("customersProfile Page : ");
-		model.addAttribute("customersProfile", "");
-		return "customersProfile";
-	}
+	
 
 	@RequestMapping("/paymentList.htm")
 	public String paymentList(Model model) {
