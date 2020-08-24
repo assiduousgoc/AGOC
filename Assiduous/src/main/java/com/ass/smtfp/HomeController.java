@@ -38,6 +38,7 @@ public class HomeController {
 			UserData user = gym_user_client.login(new UserLoginDto(quat_fullname, password));
 			if (user != null) {
 				req.getSession().setAttribute("user", user);
+				System.out.println(" User Role : "+user.getRole());
 				return "gymdashboard";
 			}
 			return "redirect:client-login.htm";
