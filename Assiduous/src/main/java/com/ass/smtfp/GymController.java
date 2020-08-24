@@ -61,11 +61,6 @@ public class GymController {
 		model.addAttribute("createCourses", "");
 		return "addCourse";
 	}
-
-	
-
-	
-
 	@RequestMapping("/saveTrainer.htm")
 	public String saveTrainer(Model model, @RequestParam(value = "trainername") String trainername) {
 		System.out.println("saveRoom Page : " + trainername);
