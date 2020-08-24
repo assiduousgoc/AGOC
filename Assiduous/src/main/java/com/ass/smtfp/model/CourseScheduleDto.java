@@ -38,6 +38,12 @@ public class CourseScheduleDto implements Serializable {
 	@NotEmpty
 	private String to;
 
+	@JsonProperty("days")
+	private String days;
+
+	@JsonProperty("description")
+	private String description;
+
 	@JsonProperty("course")
 	@NotNull
 	@NotEmpty
@@ -86,6 +92,22 @@ public class CourseScheduleDto implements Serializable {
 
 	public void setTo(String to) {
 		this.to = to;
+	}
+
+	public String getDays() {
+		return days;
+	}
+
+	public void setDays(String days) {
+		this.days = days;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public CommonDto getCourseDto() {

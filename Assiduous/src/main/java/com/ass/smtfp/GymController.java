@@ -36,20 +36,6 @@ public class GymController {
 		return "gymdashboard";
 	}
 
-	@RequestMapping("/courseSchedule.htm")
-	public String menuList(Model model) {
-		System.out.println("courseSchedule Page : ");
-		model.addAttribute("courseSchedule", "");
-		return "courseSchedule";
-	}
-
-	@RequestMapping("/createSchedule.htm")
-	public String createSchedule(Model model) {
-		System.out.println("createSchedule Page : ");
-		model.addAttribute("createSchedule", "");
-		return "createSchedule";
-	}
-
 	@RequestMapping("/gymcustomerList.htm")
 	public String customerList(Model model) {
 		System.out.println("gymcustomerList Page : ");

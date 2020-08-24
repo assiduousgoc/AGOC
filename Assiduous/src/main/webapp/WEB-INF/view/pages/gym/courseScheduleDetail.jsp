@@ -29,11 +29,13 @@
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form class="needs-validation clearfix" novalidate method="post" action="saveCourseSchedule.htm">
+						<form class="needs-validation clearfix" novalidate method="post"
+							action="update-course-schedule.htm">
 							<div class="form-row">
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom22">Day</label>
 									<div class="input-group">
+										<input type="hidden" id="id" name="id" value="${course_sc.id}">
 										<select class="form-control" name="day" id="day">
 											<option value="0">All Day</option>
 											<option value="1">Monday</option>
@@ -44,15 +46,15 @@
 											<option value="6">Saturday</option>
 											<option value="7">Sunday</option>
 										</select>
-										<div class="invalid-feedback">Please select days.
-										</div>
+										<div class="invalid-feedback">Please select days.</div>
 									</div>
 								</div>
-								
+
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Code</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="code" id="code" />
+										<input type='text' class="form-control" name="code" id="code"
+											value="${course_sc.code}" />
 										<div class="invalid-feedback">Code</div>
 									</div>
 								</div>
@@ -60,14 +62,16 @@
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">From</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="from" id="from" />
+										<input type='text' class="form-control" name="from" id="from"
+											value="${course_sc.from}" />
 										<div class="invalid-feedback">From</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom25">To</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="to" id="to" />
+										<input type='text' class="form-control" name="to" id="to"
+											value="${course_sc.to}" />
 										<div class="invalid-feedback">To</div>
 									</div>
 								</div>
@@ -77,8 +81,15 @@
 										<select class="form-control" name="course" id="courses">
 											<option value="0">Select Course</option>
 											<c:forEach items="${courses}" var="course">
-												<option value="${course.id}">${course.name}-
-													${course.code}</option>
+												<c:if test="${course.id eq course_sc.courseDto.id}">
+													<option value="${course.id}" selected="selected">${course.name}-
+														${course.code}</option>
+												</c:if>
+												<<c:if test="${course.id ne course_sc.courseDto.id}">
+													<option value="${course.id}">${course.name}-
+														${course.code}</option>
+												</c:if>
+
 											</c:forEach>
 										</select>
 									</div>
@@ -89,8 +100,14 @@
 										<select class="form-control" name="room" id="room">
 											<option value="0">Select Room</option>
 											<c:forEach items="${rooms}" var="room">
-												<option value="${room.id}">${room.name}-
-													${room.code}</option>
+												<c:if test="${room.id eq course_sc.roomDto.id}">
+													<option value="${room.id}" selected="selected">${room.name}-
+														${room.code}</option>
+												</c:if>
+												<c:if test="${room.id ne course_sc.roomDto.id}">
+													<option value="${room.id}">${room.name}-
+														${room.code}</option>
+												</c:if>
 											</c:forEach>
 										</select>
 									</div>
@@ -101,8 +118,14 @@
 										<select class="form-control" name="trainer" id="trainer">
 											<option value="0">Select Trainer</option>
 											<c:forEach items="${trainers}" var="trainer">
-												<option value="${trainer.id}">${trainer.first_name}
-													- ${trainer.last_name}</option>
+												<c:if test="${trainer.id eq course_sc.trainerDto.id}">
+													<option value="${trainer.id}" selected="selected">${trainer.first_name}
+														- ${trainer.last_name}</option>
+												</c:if>
+												<c:if test="${trainer.id ne course_sc.trainerDto.id}">
+													<option value="${trainer.id}">${trainer.first_name}
+														- ${trainer.last_name}</option>
+												</c:if>
 											</c:forEach>
 										</select>
 									</div>
@@ -112,7 +135,7 @@
 									<div class="input-group">
 										<div class="input-group">
 											<textarea class="summernote edi-css form-control"
-												name="description" id="description"></textarea>
+												name="description" id="description">${course_sc.description}</textarea>
 										</div>
 									</div>
 								</div>
