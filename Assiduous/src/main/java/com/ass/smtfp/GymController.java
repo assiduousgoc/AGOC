@@ -1,7 +1,6 @@
 package com.ass.smtfp;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,8 +20,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ass.client.GMSCourseClient;
-import com.ass.smtfp.model.CourseDto;
-import com.ass.smtfp.model.UserData;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
@@ -51,45 +48,6 @@ public class GymController {
 		System.out.println("createSchedule Page : ");
 		model.addAttribute("createSchedule", "");
 		return "createSchedule";
-	}
-
-	
-
-	@RequestMapping("/addCourse.htm")
-	public String addCourse(Model model) {
-		System.out.println("createCourses Page : ");
-		model.addAttribute("createCourses", "");
-		return "addCourse";
-	}
-	@RequestMapping("/saveTrainer.htm")
-	public String saveTrainer(Model model, @RequestParam(value = "trainername") String trainername) {
-		System.out.println("saveRoom Page : " + trainername);
-		model.addAttribute("createCourses", "");
-		return "redirect:/trainerList.htm";
-	}
-
-	@RequestMapping("/saveCustomer23.htm")
-	public String saveCustomer(Model model, @RequestParam(value = "customerName") String customerName) {
-		System.out.println("customerName Page : " + customerName);
-		model.addAttribute("createCourses", "");
-		return "redirect:/gymcustomerList.htm";
-	}
-
-
-	
-
-	@RequestMapping("/trainerList.htm")
-	public String trainerList(Model model) {
-		System.out.println("trainerList Page : ");
-		model.addAttribute("trainerList", "");
-		return "trainerList";
-	}
-
-	@RequestMapping("/addTrainer.htm")
-	public String addTrainer(Model model) {
-		System.out.println("addTrainer Page : ");
-		model.addAttribute("addTrainer", "");
-		return "addTrainer";
 	}
 
 	@RequestMapping("/gymcustomerList.htm")

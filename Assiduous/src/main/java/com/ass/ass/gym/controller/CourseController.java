@@ -31,6 +31,13 @@ public class CourseController {
 		model.addAttribute("coursesList", courseList);
 		return "coursesList";
 	}
+	
+	@RequestMapping("/addCourse.htm")
+	public String addCourse(Model model) {
+		System.out.println("createCourses Page : ");
+		model.addAttribute("createCourses", "");
+		return "addCourse";
+	}
 
 	@RequestMapping(value = "/saveCourse.htm", method = RequestMethod.POST)
 	public String saveCourse(Model model, HttpServletRequest req, @RequestParam("coursename") String coursename,

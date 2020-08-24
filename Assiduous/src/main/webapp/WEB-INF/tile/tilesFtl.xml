@@ -150,6 +150,10 @@
        <put-attribute name="title" value="Add Room" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/addTrainer.jsp" />  
    </definition>
+   <definition name="trainerDetail" extends="gym-definition">  
+       <put-attribute name="title" value="Trainer" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/trainerDetail.jsp" />  
+   </definition>
      <definition name="gymcustomerList" extends="gym-definition">  
        <put-attribute name="title" value="Room List" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/customerList.jsp" />  

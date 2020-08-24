@@ -29,13 +29,15 @@
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
 						<form class="needs-validation clearfix" novalidate
-							action="saveTrainer.htm" method="post">
+							action="update-trainner.htm" method="post">
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom22">First Name</label>
 									<div class="input-group">
+										<input type="hidden" name="id" id="id" value="${user.id}">
+										<input type="hidden" name="address_id" id="address_id" value="${user.addressDto.id}">
 										<input type='text' class="form-control" name="first_name"
-											id="first_name" />
+											id="first_name" value="${user.firstName}" />
 										<div class="invalid-feedback">First Name</div>
 									</div>
 								</div>
@@ -43,7 +45,7 @@
 									<label for="validationCustom22">Last Name</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="last_name"
-											id="last_name" />
+											id="last_name" value="${user.lastName}" />
 										<div class="invalid-feedback">Last Name</div>
 									</div>
 								</div>
@@ -53,7 +55,7 @@
 									<label for="validationCustom22">Email</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="email"
-											id="email" />
+											id="email" value="${user.email}" />
 										<div class="invalid-feedback">Email</div>
 									</div>
 								</div>
@@ -61,18 +63,18 @@
 									<label for="validationCustom22">Password</label>
 									<div class="input-group">
 										<input type="password" class="form-control" name="password"
-											id="password" />
-										<div class="invalid-feedback">Last Name</div>
+											id="password" value="${user.password}" />
+										<div class="invalid-feedback">Password</div>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom22">Mob.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="mob"
-											id="mob" />
+										<input type='text' class="form-control" name="mob" id="mob"
+											value="${user.mob}" />
 										<div class="invalid-feedback">Mob.</div>
 									</div>
 								</div>
@@ -80,18 +82,18 @@
 									<label for="validationCustom22">Address 1</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="address_line1"
-											id="address_line1" />
+											id="address_line1" value="${user.addressDto.line1}" />
 										<div class="invalid-feedback">Address 1</div>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom22">Address 2</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="address_line2"
-											id="address_line2" />
+											id="address_line2" value="${user.addressDto.line2}" />
 										<div class="invalid-feedback">Address 2</div>
 									</div>
 								</div>
@@ -99,28 +101,36 @@
 									<label for="validationCustom22">Pincode</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="pincode"
-											id="pincode" />
+											id="pincode" value="${user.addressDto.pincode}" />
 										<div class="invalid-feedback">Pincode</div>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom22">City</label>
 									<div class="input-group">
 										<select class="form-control" name="city" id="city">
 											<c:forEach items="${cities}" var="city">
-												<option value="${city.id}">${city.name} - ${city.code}</option>
+												<c:if test="${city.id eq user.addressDto.cityDto.id}">
+													<option value="${city.id}" selected="selected">${city.name}
+														- ${city.code}</option>
+												</c:if>
+												
+												<<c:if test="${city.id ne user.addressDto.cityDto.id}">
+													<option value="${city.id}">${city.name}
+														- ${city.code}</option>
+												</c:if>
 											</c:forEach>
 										</select>
-										
+
 									</div>
 								</div>
-								
+
 							</div>
-							
-							
+
+
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
@@ -137,13 +147,6 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-md-1 mb-3">
-									<div class="input-group">
-										<a href="#"><button class="btn btn-primary d-block"
-												type="reset" style="min-width: 118px;">Reset</button></a>
-									</div>
-								</div>
-
 
 							</div>
 						</form>
