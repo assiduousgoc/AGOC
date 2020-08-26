@@ -8,11 +8,13 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import com.ass.client.GMSLocationClient;
 import com.ass.client.config.RestClient;
 import com.ass.smtfp.model.LocationDto;
 
+@Component
 public class GMSLocationClientImpl implements GMSLocationClient {
 
 	public static final String RESOURCE = "/locations/";

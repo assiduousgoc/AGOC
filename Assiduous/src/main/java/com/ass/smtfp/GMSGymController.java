@@ -24,7 +24,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 @Controller
-public class GymController {
+public class GMSGymController {
 
 	@Autowired
 	private GMSCourseClient gym_course_client;

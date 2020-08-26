@@ -126,6 +126,68 @@
        <put-attribute name="title" value="Course List" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/coursesList.jsp" />  
    </definition>
+   <definition name="countries" extends="gym-definition">  
+       <put-attribute name="title" value="Countries" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/countries.jsp" />  
+   </definition>
+   <definition name="country-form" extends="gym-definition">  
+       <put-attribute name="title" value="Country Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/country-form.jsp" />  
+   </definition>
+   <definition name="country-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Country Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/country-detail.jsp" />  
+   </definition>
+   <definition name="states" extends="gym-definition">  
+       <put-attribute name="title" value="States" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/states.jsp" />  
+   </definition>
+   <definition name="state-form" extends="gym-definition">  
+       <put-attribute name="title" value="State Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/state-form.jsp" />  
+   </definition>
+   <definition name="state-detail" extends="gym-definition">  
+       <put-attribute name="title" value="State Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/state-detail.jsp" />
+   </definition>
+   <definition name="cities" extends="gym-definition">  
+       <put-attribute name="title" value="Cities" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/cities.jsp" />  
+   </definition>
+   <definition name="city-form" extends="gym-definition">  
+       <put-attribute name="title" value="City Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/city-form.jsp" />  
+   </definition>
+   <definition name="city-detail" extends="gym-definition">  
+       <put-attribute name="title" value="City Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/city-detail.jsp" />
+   </definition>
+   <definition name="locations" extends="gym-definition">  
+       <put-attribute name="title" value="Locations" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/locations.jsp" />  
+   </definition>
+   <definition name="location-form" extends="gym-definition">  
+       <put-attribute name="title" value="Location Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/location-form.jsp" />  
+   </definition>
+   <definition name="location-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Location Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/location-detail.jsp" />
+   </definition>
+   <definition name="gyms" extends="gym-definition">  
+       <put-attribute name="title" value="Gyms" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/gyms.jsp" />  
+   </definition>
+   <definition name="gym-form" extends="gym-definition">  
+       <put-attribute name="title" value="Gym Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/gym-form.jsp" />  
+   </definition>
+   <definition name="gym-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Gym Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/gym-detail.jsp" />
+   </definition>
+   
+   
    <definition name="addCourse" extends="gym-definition">  
        <put-attribute name="title" value="Add Course" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/createCourses.jsp" />  
@@ -201,7 +263,7 @@
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/menuList.jsp" />  
    </definition> 
    <definition name="customerList" extends="restaurent-definition">  
-       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="title" value="Dashboard" />
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/customerList.jsp" />  
    </definition>  
    <definition name="invoiceList" extends="restaurent-definition">  
