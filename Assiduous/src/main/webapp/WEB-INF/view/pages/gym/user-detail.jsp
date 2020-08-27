@@ -8,7 +8,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.ass.smtfp.enums.UserRole"%>
-
+<%@ page import="com.ass.smtfp.model.UserData"%>
+<%
+	UserData user = (UserData) request.getSession().getAttribute("user");
+%>
 <div class="page-wrapper">
 	<div class="content">
 		<div class="row">
@@ -73,24 +76,54 @@
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom24">Role </label>
 									<div class="input-group">
+										<%
+											if (user.getRole().equals(UserRole.SUPERADMIN)) {
+										%>
 										<c:if test="${user.role eq UserRole.SUPERADMIN}">
-											<form:radiobutton path="role" value="ADMIN" cssClass="form-control" label="ADMIN"/>
+											<form:radiobutton path="role" value="ADMIN"
+												cssClass="form-control" label="ADMIN" />
 											<form:radiobutton path="role" value="SUPERADMIN"
-												cssStyle="checked:true" cssClass="form-control" label="SUPER ADMIN"/>
-											<form:radiobutton path="role" value="TRAINER" cssClass="form-control" label="TRAINER"/>
+												cssStyle="checked:true" cssClass="form-control"
+												label="SUPER ADMIN" />
+											<form:radiobutton path="role" value="TRAINER"
+												cssClass="form-control" label="TRAINER" />
 										</c:if>
 										<c:if test="${user.role eq UserRole.ADMIN}">
 											<form:radiobutton path="role" value="ADMIN"
-												cssStyle="checked:true" cssClass="form-control" label="ADMIN"/>
-											<form:radiobutton path="role" value="SUPERADMIN" cssClass="form-control" label="SUPER ADMIN"/>
-											<form:radiobutton path="role" value="TRAINER" label="TRAINER"/>
+												cssStyle="checked:true" cssClass="form-control"
+												label="ADMIN" />
+											<form:radiobutton path="role" value="SUPERADMIN"
+												cssClass="form-control" label="SUPER ADMIN" />
+											<form:radiobutton path="role" value="TRAINER" label="TRAINER" />
 										</c:if>
 										<c:if test="${user.role eq UserRole.TRAINER}">
-											<form:radiobutton path="role" value="ADMIN" cssClass="form-control" label="ADMIN"/>
-											<form:radiobutton path="role" value="SUPERADMIN" cssClass="form-control" label="SUPER ADMIN"/>
+											<form:radiobutton path="role" value="ADMIN"
+												cssClass="form-control" label="ADMIN" />
+											<form:radiobutton path="role" value="SUPERADMIN"
+												cssClass="form-control" label="SUPER ADMIN" />
 											<form:radiobutton path="role" value="TRAINER"
-												cssStyle="checked:true" cssClass="form-control" label="TRAINER"/>
+												cssStyle="checked:true" cssClass="form-control"
+												label="TRAINER" />
 										</c:if>
+										<%
+											} else if (user.getRole().equals(UserRole.ADMIN)) {
+										%>
+										<c:if test="${user.role eq UserRole.ADMIN}">
+											<form:radiobutton path="role" value="ADMIN"
+												cssStyle="checked:true" cssClass="form-control"
+												label="ADMIN" />
+											<form:radiobutton path="role" value="TRAINER" label="TRAINER" />
+										</c:if>
+										<c:if test="${user.role eq UserRole.TRAINER}">
+											<form:radiobutton path="role" value="ADMIN"
+												cssClass="form-control" label="ADMIN" />
+											<form:radiobutton path="role" value="TRAINER"
+												cssStyle="checked:true" cssClass="form-control"
+												label="TRAINER" />
+										</c:if>
+										<%
+											}
+										%>
 										<div class="invalid-feedback">Role</div>
 									</div>
 								</div>

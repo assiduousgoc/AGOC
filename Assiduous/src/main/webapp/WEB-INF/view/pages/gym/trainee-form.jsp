@@ -7,11 +7,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="com.ass.smtfp.model.UserData"%>
-<%@ page import="com.ass.smtfp.enums.UserRole"%>
-<%
-	UserData user = (UserData) request.getSession().getAttribute("user");
-%>
 
 <div class="page-wrapper">
 	<div class="content">
@@ -19,7 +14,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #4a274f;">User</button>
+						style="border-radius: 0px !important; background-color: #4a274f;">Branch</button>
 
 				</div>
 			</div>
@@ -33,12 +28,13 @@
 					style="border-bottom: 3px solid #f99d09; border-top: 3px solid #f99d09;">
 					<div class="ms-panel-header"
 						style="position: relative; padding: 0.7rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #090696;">
-						<h6 style="font-weight: bold;">User Form</h6>
+						<h6 style="font-weight: bold;">Branch Form</h6>
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form:form action="add-user.htm" method="post" commandName="user"
-							modelAttribute="user" cssClass="needs-validation clearfix">
+						<form:form action="add-trainee.htm" method="post"
+							commandName="trainee" modelAttribute="trainee"
+							cssClass="needs-validation clearfix">
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom24">First Name </label>
@@ -62,40 +58,10 @@
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">
-									<label for="validationCustom24">Password </label>
-									<div class="input-group">
-										<form:password path="password" cssClass="form-control" />
-										<div class="invalid-feedback">Password</div>
-									</div>
-								</div>
-								<div class="col-md-6 mb-3">
 									<label for="validationCustom24">Mob. </label>
 									<div class="input-group">
 										<form:input path="mob" cssClass="form-control" />
 										<div class="invalid-feedback">Mob.</div>
-									</div>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label for="validationCustom24">Role </label>
-									<div class="input-group">
-										<%
-											if (user.getRole().equals(UserRole.SUPERADMIN)) {
-										%>
-										<form:radiobutton path="role" value="ADMIN"
-											cssClass="form-control" label="ADMIN" />
-										<form:radiobutton path="role" value="SUPERADMIN"
-											cssClass="form-control" label="SUPERADMIN" />
-										<div class="invalid-feedback">Role</div>
-										<%
-											} else if (user.getRole().equals(UserRole.ADMIN)) {
-										%>
-										<form:radiobutton path="role" value="ADMIN"
-											cssClass="form-control" label="ADMIN" />
-										<form:radiobutton path="role" value="TRAINER"
-											cssClass="form-control" label="TRAINER" />
-										<%
-											}
-										%>
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">
@@ -120,10 +86,30 @@
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">
+									<label for="validationCustom24">DOJ </label>
+									<div class="input-group">
+										<form:input path="doj" cssClass="form-control" />
+										<div class="invalid-feedback">dd/MM/yyyy</div>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
+									<label for="validationCustom24">Due Date </label>
+									<div class="input-group">
+										<form:input path="dueDate" cssClass="form-control" />
+										<div class="invalid-feedback">dd/MM/yyyy</div>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
+									<label for="validationCustom24">Discount </label>
+									<div class="input-group">
+										<form:input path="discount" cssClass="form-control" />
+										<div class="invalid-feedback">Discount</div>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
 									<label for="validationCustom25">City</label>
 									<div class="input-group">
-										<form:select path="addressDto.cityDto.id"
-											cssClass="form-control">
+										<form:select path="addressDto.cityDto.id" cssClass="form-control">
 											<c:forEach items="${cities}" var="city">
 												<form:option value="${city.id}">${city.name}</form:option>
 											</c:forEach>
@@ -131,7 +117,29 @@
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">
-									<label for="validationCustom25">Gym</label>
+									<label for="validationCustom25">Subs. Type</label>
+									<div class="input-group">
+										<form:select path="subscriptionType" cssClass="form-control">
+											<form:option value="M">Monthly</form:option>
+											<form:option value="QTR">Quarterly</form:option>
+											<form:option value="HY">Half Yearly</form:option>
+											<form:option value="YR">Yearly</form:option>
+										</form:select>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
+									<label for="validationCustom25">Gender</label>
+									<div class="input-group">
+										<form:select path="gender" cssClass="form-control">
+											<form:option value="M">Male</form:option>
+											<form:option value="F">Female</form:option>
+											<form:option value="T">Transgender</form:option>
+											<form:option value="O">Other</form:option>
+										</form:select>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
+									<label for="validationCustom25">Branch</label>
 									<div class="input-group">
 										<form:select path="branchDto.id" cssClass="form-control">
 											<c:forEach items="${branches}" var="branche">
@@ -140,11 +148,21 @@
 										</form:select>
 									</div>
 								</div>
-
+								<div class="col-md-6 mb-3">
+									<label for="validationCustom25">Courses</label>
+									<div class="input-group">
+										<form:select path="cs" cssClass="form-control" multiple="true">
+											<c:forEach items="${courses}" var="course">
+												<form:option value="${course.id}">${course.name}</form:option>
+											</c:forEach>
+										</form:select>
+									</div>
+								</div>
+								
 								<div class="new" style="display: inline-flex;">
 									<div class="col-md-1 mb-3">
 										<div class="input-group">
-											<a href="users.htm"><button
+											<a href="trainees.htm"><button
 													class="btn btn-secondary d-block" type="button"
 													style="min-width: 118px; background-color: #960613;">Back</button></a>
 										</div>

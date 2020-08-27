@@ -2,7 +2,9 @@ package com.ass.smtfp.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -49,6 +51,9 @@ public class TraineeDto implements Serializable {
 
 	@JsonProperty("courses")
 	private Set<CommonDto> coursesDto;
+
+	@JsonProperty("cs")
+	private Set<Integer> cs = new HashSet<>();
 
 	@JsonProperty("branch")
 	@NotNull
@@ -132,6 +137,16 @@ public class TraineeDto implements Serializable {
 
 	public void setCoursesDto(Set<CommonDto> coursesDto) {
 		this.coursesDto = coursesDto;
+	}
+
+	public Set<Integer> getCs() {
+		return coursesDto != null ? coursesDto.stream().map(c -> c.getId()).collect(Collectors.toSet())
+				: new HashSet<>();
+	}
+
+	public void setCs(Set<Integer> cs) {
+		this.coursesDto = cs.size() > 0 ? cs.stream().map(c -> new CommonDto(c, null, null)).collect(Collectors.toSet())
+				: null;
 	}
 
 	public CommonDto getBranchDto() {

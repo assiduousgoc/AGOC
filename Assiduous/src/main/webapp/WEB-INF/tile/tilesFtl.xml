@@ -210,6 +210,30 @@
        <put-attribute name="title" value="User Detail" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/user-detail.jsp" />
    </definition>
+    <definition name="payments" extends="gym-definition">  
+       <put-attribute name="title" value="Payments" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/payments.jsp" />  
+   </definition>
+   <definition name="payment-form" extends="gym-definition">  
+       <put-attribute name="title" value="Payment Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/payment-form.jsp" />  
+   </definition>
+   <definition name="payment-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Payment Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/payment-detail.jsp" />
+   </definition>
+   <definition name="trainees" extends="gym-definition">  
+       <put-attribute name="title" value="Trainees" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/trainees.jsp" />  
+   </definition>
+   <definition name="trainee-form" extends="gym-definition">  
+       <put-attribute name="title" value="Trainee Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/trainee-form.jsp" />  
+   </definition>
+   <definition name="trainee-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Trainee Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/trainee-detail.jsp" />
+   </definition>
    
    
    <definition name="addCourse" extends="gym-definition">  
