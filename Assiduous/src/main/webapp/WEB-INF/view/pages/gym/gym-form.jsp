@@ -14,7 +14,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #4a274f;">Location</button>
+						style="border-radius: 0px !important; background-color: #4a274f;">Gym</button>
 
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 					style="border-bottom: 3px solid #f99d09; border-top: 3px solid #f99d09;">
 					<div class="ms-panel-header"
 						style="position: relative; padding: 0.7rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #090696;">
-						<h6 style="font-weight: bold;">Location Form</h6>
+						<h6 style="font-weight: bold;">Gym Form</h6>
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
@@ -108,7 +108,7 @@
 								<div class="new" style="display: inline-flex;">
 									<div class="col-md-1 mb-3">
 										<div class="input-group">
-											<a href="location.htm"><button
+											<a href="gyms.htm"><button
 													class="btn btn-secondary d-block" type="button"
 													style="min-width: 118px; background-color: #960613;">Back</button></a>
 										</div>

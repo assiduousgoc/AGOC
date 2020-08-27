@@ -186,6 +186,30 @@
        <put-attribute name="title" value="Gym Detail" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/gym-detail.jsp" />
    </definition>
+    <definition name="branches" extends="gym-definition">  
+       <put-attribute name="title" value="Branches" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/branches.jsp" />  
+   </definition>
+   <definition name="branch-form" extends="gym-definition">  
+       <put-attribute name="title" value="Branch Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/branch-form.jsp" />  
+   </definition>
+   <definition name="branch-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Branch Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/branch-detail.jsp" />
+   </definition>
+   <definition name="users" extends="gym-definition">  
+       <put-attribute name="title" value="Users" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/users.jsp" />  
+   </definition>
+   <definition name="user-form" extends="gym-definition">  
+       <put-attribute name="title" value="User Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/user-form.jsp" />  
+   </definition>
+   <definition name="user-detail" extends="gym-definition">  
+       <put-attribute name="title" value="User Detail" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/user-detail.jsp" />
+   </definition>
    
    
    <definition name="addCourse" extends="gym-definition">  

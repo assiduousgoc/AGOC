@@ -14,7 +14,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #4a274f;">Gym</button>
+						style="border-radius: 0px !important; background-color: #4a274f;">Branch</button>
 
 				</div>
 			</div>
@@ -28,16 +28,16 @@
 					style="border-bottom: 3px solid #f99d09; border-top: 3px solid #f99d09;">
 					<div class="ms-panel-header"
 						style="position: relative; padding: 0.7rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #090696;">
-						<h6 style="font-weight: bold;">Gym Detail</h6>
+						<h6 style="font-weight: bold;">Branch Detail</h6>
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form:form action="update-gym.htm" method="post"
-							commandName="gym" modelAttribute="gym"
+						<form:form action="update-branch.htm" method="post"
+							commandName="branch" modelAttribute="branch"
 							cssClass="needs-validation clearfix">
 							<div class="form-row">
 								<div class="col-md-6 mb-3">
-									<label for="validationCustom22">Gym Code</label>
+									<label for="validationCustom22">Branch Code</label>
 									<div class="input-group">
 										<form:hidden path="id" />
 										<form:hidden path="addressDto.id" />
@@ -47,19 +47,13 @@
 								</div>
 
 								<div class="col-md-6 mb-3">
-									<label for="validationCustom24">Gym Name </label>
+									<label for="validationCustom24">Branch Name </label>
 									<div class="input-group">
 										<form:input path="name" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
-									<label for="validationCustom24">License </label>
-									<div class="input-group">
-										<form:input path="licence" cssClass="form-control" />
-										<div class="invalid-feedback">License</div>
-									</div>
-								</div>
+								
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom24">Email </label>
 									<div class="input-group">
@@ -111,6 +105,21 @@
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">
+									<label for="validationCustom25">Gym</label>
+									<div class="input-group">
+										<form:select path="gymDto.id" cssClass="form-control">
+											<c:forEach items="${gyms}" var="gym">
+												<c:if test="${gym.id eq branch.gymDto.id}">
+													<option value="${gym.id}" selected="selected">${gym.name}</option>
+												</c:if>
+												<c:if test="${gym.id ne branch.gymDto.id}">
+													<form:option value="${gym.id}">${gym.name}</form:option>
+												</c:if>
+											</c:forEach>
+										</form:select>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
 									<label for="validationCustom25">Location</label>
 									<div class="input-group">
 										<form:select path="locDto.id" cssClass="form-control">
@@ -118,7 +127,7 @@
 												<c:if test="${loc.id eq gym.locDto.id}">
 													<option value="${loc.id}" selected="selected">${loc.name}</option>
 												</c:if>
-												<c:if test="${loc.id ne gym.locDto.id}">
+												<c:if test="${loc.id ne city.locDto.id}">
 													<form:option value="${loc.id}">${loc.name}</form:option>
 												</c:if>
 											</c:forEach>
@@ -130,7 +139,7 @@
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="gyms.htm"><button
+										<a href="branches.htm"><button
 												class="btn btn-secondary d-block" type="button"
 												style="min-width: 118px; background-color: #960613;">Back</button></a>
 									</div>
