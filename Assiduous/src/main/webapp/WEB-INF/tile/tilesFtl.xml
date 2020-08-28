@@ -242,6 +242,10 @@
        <put-attribute name="title" value="Dues Form" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/duesList.jsp" />  
    </definition>
+    <definition name="invoice" extends="gym-definition">  
+       <put-attribute name="title" value="Dues Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/invoice_view.jsp" />  
+   </definition>
    
    <definition name="addCourse" extends="gym-definition">  
        <put-attribute name="title" value="Add Course" />  

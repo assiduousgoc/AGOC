@@ -32,6 +32,7 @@
 									<th>A/C No.</th>
 									<th>A/C Name</th>
 									<th>Amount</th>
+									<th>Txn Type</th>
 									<th>Txn Date</th>
 									<th>Branch Name</th>
 									<th class="text-center">Action</th>
@@ -41,10 +42,11 @@
 								<c:forEach items="${ledgers}" var="ledger">
 									<tr>
 										<td style="text-align: center;">${ledger.trainee.name}</td>
-										<a href="invoice.htm?invoice=${ledger.invoice_no}"><td style="text-align: center;">${ledger.invoice_no}</td></a>
+										<td style="text-align: center;"><a href="invoice.htm?invoice=${ledger.invoice_no}&trainee_id=${ledger.id}">${ledger.invoice_no}</td></a>
 										<td style="text-align: center;">${ledger.account_no}</td>
 										<td style="text-align: center;">${ledger.account_name}</td>
 										<td style="text-align: center;">${ledger.amount}</td>
+										<td style="text-align: center;">${ledger.txn_type}</td>
 										<td style="text-align: center;"><c:set var="txn_date"
 												value="${ledger.txn_date}" /> <fmt:formatDate type="date"
 												value="${txn_date}" /></td>
@@ -52,10 +54,10 @@
 										<td style="text-align: center;">${ledger.branch.name}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="payment-details.htm?id=${ledger.id}"
+												<%-- <a href="payment-details.htm?id=${ledger.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
-													<i class="fa fa-edit"></i>
+													<i class="fa fa-edit"></i> --%>
 												</a> <a href="delete-payment.htm?id=${ledger.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">

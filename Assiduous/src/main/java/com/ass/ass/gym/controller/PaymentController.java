@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ass.client.GMSLedgerClient;
 import com.ass.client.GMSPaymentClient;
 import com.ass.client.GMSTraineeClient;
+import com.ass.smtfp.model.LedgerDto;
 import com.ass.smtfp.model.PayDto;
 import com.ass.smtfp.model.UserData;
 
@@ -93,11 +94,13 @@ public class PaymentController {
 		return "ledgers";
 	}
 	@RequestMapping(value = "/invoice.htm")
-	public String ledgersInvoice(Model model, HttpServletRequest req,@RequestParam("invoice") String invoice) {
+	public String ledgersInvoice(Model model, HttpServletRequest req,@RequestParam("invoice") String invoice,@RequestParam("trainee_id") Integer trainee_id) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
-		System.out.println("in Voice"+user.getToken()+":Invoice --->"+invoice);
+		System.out.println("in Voice"+user.getToken()+":trainee_id --->"+trainee_id);
 		try {
-			model.addAttribute("invoice",l_client.get(user.getToken()));
+			LedgerDto  ldetails= l_client.get(user.getToken(), trainee_id) ;
+			System.out.println(ldetails.getInvoiceNo()+": "+ldetails.getTraineeDto().getName());
+			model.addAttribute("ledger",l_client.get(user.getToken(), trainee_id));
 			return "invoice";
 		} catch (Exception e) {
 		}
