@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ass.client.GMSLedgerClient;
 import com.ass.client.GMSPaymentClient;
 import com.ass.client.GMSTraineeClient;
 import com.ass.smtfp.model.PayDto;
@@ -24,6 +25,12 @@ public class PaymentController {
 
 	@Autowired
 	private GMSPaymentClient p_client;
+	
+	@Autowired
+	private GMSLedgerClient l_client;
+	
+
+
 
 	@RequestMapping(value = "/payments.htm", method = RequestMethod.GET)
 	public String pays(Model model, HttpServletRequest req,
@@ -73,5 +80,43 @@ public class PaymentController {
 		} catch (Exception e) {
 		}
 		return "redirect:/payments.htm";
+	}
+	@RequestMapping(value = "/ledgers.htm")
+	public String ledgers(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		System.out.println(""+user.getToken()+" ledger Size : "+l_client.get(user.getToken()).size());
+		try {
+			model.addAttribute("ledgers",l_client.get(user.getToken()));
+			return "ledgers";
+		} catch (Exception e) {
+		}
+		return "ledgers";
+	}
+	@RequestMapping(value = "/invoice.htm")
+	public String ledgersInvoice(Model model, HttpServletRequest req,@RequestParam("invoice") String invoice) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		System.out.println("in Voice"+user.getToken()+":Invoice --->"+invoice);
+		try {
+			model.addAttribute("invoice",l_client.get(user.getToken()));
+			return "invoice";
+		} catch (Exception e) {
+		}
+		return "invoice";
+	}
+	@RequestMapping(value = "/dues.htm")
+	public String dues(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		return "redirect:/duesList.htm";
+	}
+	@RequestMapping(value = "/duesList.htm")
+	public String duesList(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		System.out.println(""+user.getToken());
+		try {
+			model.addAttribute("dues",t_client.getDues(user.getToken()));
+			return "duesList";
+		} catch (Exception e) {
+		}
+		return "duesList";
 	}
 }

@@ -75,7 +75,7 @@
 										<div class="invalid-feedback">Mob.</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Role </label>
 									<div class="input-group">
 										<%

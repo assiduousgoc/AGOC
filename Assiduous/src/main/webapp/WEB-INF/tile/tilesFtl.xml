@@ -234,7 +234,14 @@
        <put-attribute name="title" value="Trainee Detail" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/trainee-detail.jsp" />
    </definition>
-   
+   <definition name="ledgers" extends="gym-definition">  
+       <put-attribute name="title" value="Dues Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/ledgers.jsp" />  
+   </definition>
+     <definition name="duesList" extends="gym-definition">  
+       <put-attribute name="title" value="Dues Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/duesList.jsp" />  
+   </definition>
    
    <definition name="addCourse" extends="gym-definition">  
        <put-attribute name="title" value="Add Course" />  
