@@ -33,7 +33,6 @@ public class InvoiceController {
 				
 		model.addAttribute("ledger",ledger);
 		model.addAttribute("user",user);
-		System.out.println("trainee Id :"+id+""+ledger.getInvoiceNo()+""+user.getBranch().getCode());
 		return "invoice";
 	}
 }
