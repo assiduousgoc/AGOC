@@ -238,13 +238,17 @@
        <put-attribute name="title" value="Dues Form" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/ledgers.jsp" />  
    </definition>
-     <definition name="duesList" extends="gym-definition">  
+     <definition name="dues" extends="gym-definition">  
        <put-attribute name="title" value="Dues Form" />  
-       <put-attribute name="body" value="/WEB-INF/view/pages/gym/duesList.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/dues.jsp" />  
    </definition>
-    <definition name="invoice" extends="gym-definition">  
+    <definition name="due" extends="gym-definition">  
        <put-attribute name="title" value="Dues Form" />  
-       <put-attribute name="body" value="/WEB-INF/view/pages/gym/invoice_view.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/due.jsp" />  
+   </definition>
+   <definition name="invoice" extends="gym-definition">  
+       <put-attribute name="title" value="Dues Form" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/invoice.jsp" />  
    </definition>
    
    <definition name="addCourse" extends="gym-definition">  

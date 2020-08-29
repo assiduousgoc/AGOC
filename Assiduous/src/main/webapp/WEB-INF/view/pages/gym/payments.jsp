@@ -31,7 +31,6 @@
 									<th>Total Due</th>
 									<th>Total Received</th>
 									<th>Next Due</th>
-									<th>Due Date</th>
 									<th>Discount</th>
 									<th class="text-center">Action</th>
 								</tr>
@@ -39,13 +38,10 @@
 							<tbody>
 								<c:forEach items="${payments}" var="payment">
 									<tr>
-										<td style="text-align: center;">${payment.trainee.name}</td>
+										<td style="text-align: center;">${payment.trainee.code} ${payment.trainee.name}</td>
 										<td style="text-align: center;">${payment.total_due}</td>
 										<td style="text-align: center;">${payment.total_received}</td>
 										<td style="text-align: center;">${payment.next_due}</td>
-										<td style="text-align: center;"><c:set var="due_date"
-												value="${payment.due_date}" /> <fmt:formatDate type="date"
-												value="${due_date}" /></td>
 										<td style="text-align: center;">${payment.discount}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">

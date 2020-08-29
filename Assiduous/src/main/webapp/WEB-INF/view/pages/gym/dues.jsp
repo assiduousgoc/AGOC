@@ -9,9 +9,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
-					<a href="#"><button type="button"
-							class="btn btn-primary"
-							style="border-radius: 0px !important; background-color: #4a274f;">Due List</button></a>
+					<a href="#"><button type="button" class="btn btn-primary"
+							style="border-radius: 0px !important; background-color: #4a274f;">Due
+							List</button></a>
 				</div>
 			</div>
 
@@ -31,30 +31,35 @@
 									<th>Email</th>
 									<th>Mob No.</th>
 									<th>Payment</th>
-									<th>Due Date</th>
 									<th>Discount</th>
+									<th>Due Date</th>
 									<th>Total Pay</th>
-									<th class="text-center">Payment</th>
+									<th>Subs. Type</th>
+									<th class="text-center">Receive</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${dues}" var="dues">
+								<c:forEach items="${dues}" var="due">
 									<tr>
-										<td style="text-align: center;">${dues.trainee.name}</td>
-										<td style="text-align: center;">${dues.email}</td>
-										<td style="text-align: center;">${dues.mob}</td>
-										<td style="text-align: center;">${dues.payment}</td>
-										<td style="text-align: center;"><%-- <c:set var="due_date"
-												value="${dues.due_date}" /> <fmt:formatDate type="date"
-												value="${due_date}" /> --%>${due_date}</td>
-										<td style="text-align: center;">${dues.discount}</td>
-										<td style="text-align: center;">${dues.total_pay}</td>
+										<td style="text-align: center;">${due.trainee.code}
+											${due.trainee.name}</td>
+										<td style="text-align: center;">${due.email}</td>
+										<td style="text-align: center;">${due.mob}</td>
+										<td style="text-align: center;">${due.payment}</td>
+										<td style="text-align: center;">${due.discount}</td>
+										<td style="text-align: center;"><c:set var="dDate"
+												value="${due.due_date}" /> <fmt:parseDate type="date"
+												value="${dDate}" var="pdDate" pattern="MM/dd/yyyy"/>
+												<fmt:formatDate value="${pdDate}" type="date"/>
+												</td>
+										<td style="text-align: center;">${due.total_pay}</td>
+										<td style="text-align: center;">${due.subscription_type}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="payment.htm?id=${dues.id}"
-													class="ms-btn-icon-outline btn-pill">
-													<i class="fa fa-sign-in"></i>
-												</a> 
+												<a href="dues.htm"
+													class="ms-btn-icon-outline btn-pill"> <i
+													class="fa fa-sign-in"></i>
+												</a>
 											</div>
 										</td>
 									</tr>

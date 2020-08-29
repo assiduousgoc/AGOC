@@ -41,7 +41,7 @@
 									<div class="input-group">
 										<form:select path="trainee_id" cssClass="form-control" >
 											<c:forEach items="${trainees}" var="trainee">
-												<form:option value="${trainee.id}">${trainee.firstName} ${trainee.lastName}</form:option>
+												<form:option value="${trainee.id}">${trainee.first_name} ${trainee.last_name}</form:option>
 											</c:forEach>
 										</form:select>
 									</div>

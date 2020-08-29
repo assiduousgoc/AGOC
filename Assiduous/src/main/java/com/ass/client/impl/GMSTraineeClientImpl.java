@@ -227,7 +227,7 @@ public class GMSTraineeClientImpl implements GMSTraineeClient {
 		try {
 			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
 			ResponseEntity<String> response = RestClient.REST_CLIENT.exchange(
-					RestClient.BASE_PATH + RestClient.GMS + GET + RestClient.SLASH + DUES, HttpMethod.GET, http_entity,
+					RestClient.BASE_PATH + RestClient.GMS + RestClient.SLASH + DUES, HttpMethod.GET, http_entity,
 					String.class);
 			return RestClient.OBJECT_MAPPER.readValue(response.getBody(), ArrayList.class);
 		} catch (Exception e) {
@@ -244,8 +244,8 @@ public class GMSTraineeClientImpl implements GMSTraineeClient {
 		try {
 			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
 			ResponseEntity<DueDto> response = RestClient.REST_CLIENT.exchange(
-					RestClient.BASE_PATH + RestClient.GMS + GET + RestClient.SLASH + DUE + RestClient.SLASH + id,
-					HttpMethod.GET, http_entity, DueDto.class);
+					RestClient.BASE_PATH + RestClient.SLASH + DUE + RestClient.SLASH + id, HttpMethod.GET, http_entity,
+					DueDto.class);
 			return response.getBody();
 		} catch (Exception e) {
 			e.printStackTrace();

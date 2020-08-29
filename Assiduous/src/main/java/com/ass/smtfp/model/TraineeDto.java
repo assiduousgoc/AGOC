@@ -9,10 +9,12 @@ import java.util.stream.Collectors;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.ass.client.config.DateDSerializer;
 import com.ass.smtfp.enums.Gender;
 import com.ass.smtfp.enums.SubscriptionType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -61,6 +63,7 @@ public class TraineeDto implements Serializable {
 
 	@JsonProperty("doj")
 	@NotNull
+	@JsonDeserialize(using = DateDSerializer.class)
 	private Date doj;
 
 	@JsonProperty("subscription_type")
@@ -68,6 +71,7 @@ public class TraineeDto implements Serializable {
 	private SubscriptionType subscriptionType;
 
 	@JsonProperty("due_date")
+	@JsonDeserialize(using = DateDSerializer.class)
 	private Date dueDate;
 
 	@JsonProperty("gender")

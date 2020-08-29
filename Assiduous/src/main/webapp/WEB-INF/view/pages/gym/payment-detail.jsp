@@ -65,8 +65,8 @@
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom24">Due Date</label>
 									<div class="input-group">
-										<c:set var="due_date" value="${payment.due_date}" />
-										<fmt:formatDate type="date" value="${due_date}" />
+										<c:set var="ddate" value="${payment.dueDate}" />
+										<fmt:formatDate type="date" value="${ddate}" />
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">
