@@ -56,7 +56,7 @@
 										<td style="text-align: center;">${due.subscription_type}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="dues.htm"
+												<a href="duePayment.htm?traineeId=${due.trainee.id}&amount=${due.total_pay}"
 													class="ms-btn-icon-outline btn-pill"> <i
 													class="fa fa-sign-in"></i>
 												</a>

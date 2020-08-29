@@ -28,9 +28,9 @@
 										<div class="col-md-6 m-b-20">
 											<img src="${pageContext.request.contextPath}/static/images/CompanyLogo.jpg" class="m-b-20" alt="" style="width: 69px;border-radius: 50%;height: 69px;border: 5px solid #f79753;">
 				 							<ul class="list-unstyled">
-												<li>Focus Technologies</li>
-												<li>3864 Quiet Valley Lane,</li>
-												<li>Sherman Oaks, CA, 91403</li>
+												<li>${user.branch.name}</li>
+												<li>${user.city} ${user.pincode},</li>
+												<li>${user.email}</li>
 												<li>GST No:</li>
 											</ul>
 										</div>
