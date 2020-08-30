@@ -11,7 +11,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #4a274f;">Trainer</button>
+						style="border-radius: 0px !important; background-color: #4a274f;">Trainer </button>
 
 				</div>
 			</div>
