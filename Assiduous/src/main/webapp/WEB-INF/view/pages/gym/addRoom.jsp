@@ -23,7 +23,7 @@
 					style="border-bottom: 3px solid #f99d09; border-top: 3px solid #f99d09;">
 					<div class="ms-panel-header"
 						style="position: relative; padding: 0.7rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #090696;">
-						<h6 style="font-weight: bold;">Course Create Form</h6>
+						<h6 style="font-weight: bold;">Room Create Form</h6>
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">

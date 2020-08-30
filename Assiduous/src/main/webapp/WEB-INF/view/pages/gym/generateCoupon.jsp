@@ -41,7 +41,7 @@
                 <div class="col-md-4 mb-3">
                     <label for="validationCustom24">Start Date</label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="sdate" id="sdate" placeholder="Enter Start Date" />
+                       <input type='text' class="form-control datetimepicker" name="sdate" id="sdate" placeholder="Enter Start Date" />
                       <div class="invalid-feedback">
                         Start Date
                       </div>
@@ -50,7 +50,7 @@
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom25">End Date</label>
                     <div class="input-group">
-                      <input type='text' class="form-control" name="edate" id="edate" placeholder="Enter End Date" />
+                      <input type='text' class="form-control datetimepicker" name="edate" id="edate" placeholder="Enter End Date" />
                       <div class="invalid-feedback">
                        End Date 
                       </div>

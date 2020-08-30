@@ -3,14 +3,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%
+String invoice=request.getParameter("invoice");
+%>
 <div class="page-wrapper">
 	<div class="content">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
-					<a href="#"><button type="button" class="btn btn-primary"
+				<%if (invoice.contains("Y")){%>
+				<a href="#"><button type="button" class="btn btn-primary"
+							style="border-radius: 0px !important; background-color: #4a274f;">Invoice</button></a> 
+				  <%}else{ %>
+				    <a href="#"><button type="button" class="btn btn-primary"
 							style="border-radius: 0px !important; background-color: #4a274f;">Ledgers</button></a>
+				
+					<%} %>
+				
 				</div>
 			</div>
 
@@ -41,8 +50,11 @@
 									<tr>
 										<td style="text-align: center;">${ledger.trainee.code}
 											${ledger.trainee.name}</td>
-										<td style="text-align: center;"><a
-											href="invoice.htm?id=${ledger.id}">${ledger.invoice_no}</a></td>
+										<td style="text-align: center;">
+										<a href="invoice.htm?id=${ledger.id}&invoice=${invoice}">${ledger.invoice_no}</a>
+										
+										</td>
+										
 										<td style="text-align: center;">${ledger.account_no}</td>
 										<td style="text-align: center;">${ledger.account_name}</td>
 										<td style="text-align: center;">${ledger.amount}</td>

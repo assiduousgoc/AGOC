@@ -14,7 +14,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #4a274f;">Branch</button>
+						style="border-radius: 0px !important; background-color: #4a274f;">Trainee</button>
 
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 					style="border-bottom: 3px solid #f99d09; border-top: 3px solid #f99d09;">
 					<div class="ms-panel-header"
 						style="position: relative; padding: 0.7rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #090696;">
-						<h6 style="font-weight: bold;">Branch Detail</h6>
+						<h6 style="font-weight: bold;">Trainee Detail</h6>
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
@@ -36,7 +36,7 @@
 							commandName="trainee" modelAttribute="trainee"
 							cssClass="needs-validation clearfix">
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">First Name </label>
 									<div class="input-group">
 										<form:hidden path="id" />
@@ -45,49 +45,49 @@
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Last Name </label>
 									<div class="input-group">
 										<form:input path="lastName" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Email </label>
 									<div class="input-group">
 										<form:input path="email" cssClass="form-control" />
 										<div class="invalid-feedback">Email</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Mob. </label>
 									<div class="input-group">
 										<form:input path="mob" cssClass="form-control" />
 										<div class="invalid-feedback">Mob.</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Address 1 </label>
 									<div class="input-group">
 										<form:input path="addressDto.line1" cssClass="form-control" />
 										<div class="invalid-feedback">Address 1</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Address 2 </label>
 									<div class="input-group">
 										<form:input path="addressDto.line2" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Pincode </label>
 									<div class="input-group">
 										<form:input path="addressDto.pincode" cssClass="form-control" />
 										<div class="invalid-feedback">Pincode</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">DOJ </label>
 									<div class="input-group">
 										<form:input path="doj" value="${formatted_doj}"
@@ -95,7 +95,7 @@
 										<div class="invalid-feedback">dd/MM/yyyy</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Due Date </label>
 									<div class="input-group">
 										<form:input path="dueDate" value="${formatted_due}"
@@ -103,14 +103,14 @@
 										<div class="invalid-feedback">dd/MM/yyyy</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Discount </label>
 									<div class="input-group">
 										<form:input path="discount" cssClass="form-control" />
 										<div class="invalid-feedback">Discount</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom25">City</label>
 									<div class="input-group">
 										<form:select path="addressDto.cityDto.id"
@@ -127,7 +127,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom25">Subs. Type</label>
 									<div class="input-group">
 										<form:select path="subscriptionType" cssClass="form-control">
@@ -158,7 +158,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom25">Gender</label>
 									<div class="input-group">
 										<form:select path="gender" cssClass="form-control">
@@ -189,7 +189,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom25">Branch</label>
 									<div class="input-group">
 										<form:select path="branchDto.id" cssClass="form-control">

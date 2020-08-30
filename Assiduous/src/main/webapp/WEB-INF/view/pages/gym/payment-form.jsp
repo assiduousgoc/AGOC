@@ -36,7 +36,7 @@
 							commandName="payment" modelAttribute="payment"
 							cssClass="needs-validation clearfix">
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Select Trainee</label>
 									<div class="input-group">
 										<form:select path="trainee_id" cssClass="form-control" >
@@ -46,21 +46,21 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Amount </label>
 									<div class="input-group">
 										<form:input path="amount" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Amount</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Account No. </label>
 									<div class="input-group">
 										<form:input path="accountNo" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Account No.</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Account Name</label>
 									<div class="input-group">
 										<form:input path="accountName" cssClass="form-control" />
@@ -71,7 +71,7 @@
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="payment.htm"><button
+										<a href="payments.htm"><button
 												class="btn btn-secondary d-block" type="button"
 												style="min-width: 118px; background-color: #960613;">Back</button></a>
 									</div>

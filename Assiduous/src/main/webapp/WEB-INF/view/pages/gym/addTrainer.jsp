@@ -11,7 +11,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #4a274f;">Trainer </button>
+						style="border-radius: 0px !important; background-color: #4a274f;">Trainer</button>
 
 				</div>
 			</div>
@@ -31,7 +31,7 @@
 						<form class="needs-validation clearfix" novalidate
 							action="saveTrainer.htm" method="post">
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">First Name</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="first_name"
@@ -39,7 +39,7 @@
 										<div class="invalid-feedback">First Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Last Name</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="last_name"
@@ -47,9 +47,8 @@
 										<div class="invalid-feedback">Last Name</div>
 									</div>
 								</div>
-							</div>
-							<div class="form-row">
-								<div clasemails="col-md-6 mb-3">
+							
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Email</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="email"
@@ -57,7 +56,7 @@
 										<div class="invalid-feedback">Email</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Password</label>
 									<div class="input-group">
 										<input type="password" class="form-control" name="password"
@@ -68,7 +67,7 @@
 							</div>
 							
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Mob.</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="mob"
@@ -76,7 +75,7 @@
 										<div class="invalid-feedback">Mob.</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Address 1</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="address_line1"
@@ -84,10 +83,8 @@
 										<div class="invalid-feedback">Address 1</div>
 									</div>
 								</div>
-							</div>
 							
-							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Address 2</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="address_line2"
@@ -95,7 +92,7 @@
 										<div class="invalid-feedback">Address 2</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Pincode</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="pincode"
@@ -106,7 +103,7 @@
 							</div>
 							
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">City</label>
 									<div class="input-group">
 										<select class="form-control" name="city" id="city">

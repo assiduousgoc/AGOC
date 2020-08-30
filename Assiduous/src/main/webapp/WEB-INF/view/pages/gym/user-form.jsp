@@ -40,42 +40,42 @@
 						<form:form action="add-user.htm" method="post" commandName="user"
 							modelAttribute="user" cssClass="needs-validation clearfix">
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">First Name </label>
 									<div class="input-group">
 										<form:input path="firstName" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Last Name </label>
 									<div class="input-group">
 										<form:input path="lastName" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Email </label>
 									<div class="input-group">
 										<form:input path="email" cssClass="form-control" />
 										<div class="invalid-feedback">Email</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Password </label>
 									<div class="input-group">
 										<form:password path="password" cssClass="form-control" />
 										<div class="invalid-feedback">Password</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Mob. </label>
 									<div class="input-group">
 										<form:input path="mob" cssClass="form-control" />
 										<div class="invalid-feedback">Mob.</div>
 									</div>
 								</div>
-								<div class="col-md-4 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Role </label>
 									<div class="input-group">
 										<%
@@ -98,28 +98,28 @@
 										%>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Address 1 </label>
 									<div class="input-group">
 										<form:input path="addressDto.line1" cssClass="form-control" />
 										<div class="invalid-feedback">Address 1</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Address 2 </label>
 									<div class="input-group">
 										<form:input path="addressDto.line2" cssClass="form-control" />
 										<div class="invalid-feedback">Enter Name</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Pincode </label>
 									<div class="input-group">
 										<form:input path="addressDto.pincode" cssClass="form-control" />
 										<div class="invalid-feedback">Pincode</div>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom25">City</label>
 									<div class="input-group">
 										<form:select path="addressDto.cityDto.id"
@@ -130,7 +130,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-md-3 mb-3">
 									<label for="validationCustom25">Gym</label>
 									<div class="input-group">
 										<form:select path="branchDto.id" cssClass="form-control">
