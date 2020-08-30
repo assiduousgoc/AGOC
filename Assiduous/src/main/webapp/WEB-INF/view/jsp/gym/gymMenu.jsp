@@ -71,7 +71,7 @@ String role =user.getRole().name();
 							<ul style="display: none; background-color: #ffffff;" >
 								<li style="background-color: #6f6d6d;"><a href="payments.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Payment</a></li>
 								<li style="background-color: #6f6d6d;"><a href="dues.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Dues</a></li>
-								<li style="background-color: #6f6d6d;"><a href="ledgers.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Ledger</a></li>
+								<li style="background-color: #6f6d6d;"><a href="ledgers.htm?invoice=N" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Ledger</a></li>
 								<li style="background-color: #6f6d6d;"><a href="trainees.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Trainee</a></li>
 								
 							</ul>
@@ -100,7 +100,7 @@ String role =user.getRole().name();
                         <li class="submenu">
 							<a href="#"><i class="fa fa-plus-circle"></i> <span> Invoice </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none; background-color: #ffffff;" >
-								<li style="background-color: #6f6d6d;"><a href="#" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Invoice List </a></li>
+								<li style="background-color: #6f6d6d;"><a href="ledgers.htm?invoice=Y" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Invoice List </a></li>
 								<li style="background-color: #6f6d6d;"><a href="#" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Invoice Detail</a></li>
 							</ul>
 						</li>
