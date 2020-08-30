@@ -26,7 +26,7 @@ public class CityController {
 	private GMSStateClient s_client;
 
 	@RequestMapping(value = "/cities.htm", method = RequestMethod.GET)
-	public String gym(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("cities", c_client.get(user.getToken()));
 		return "cities";

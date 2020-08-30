@@ -22,7 +22,7 @@ public class CountryController {
 	private GMSCountryClient c_client;
 
 	@RequestMapping(value = "/countries.htm", method = RequestMethod.GET)
-	public String gym(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("countries", c_client.get(user.getToken()));
 		return "countries";

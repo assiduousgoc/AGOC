@@ -19,18 +19,18 @@ import com.ass.smtfp.model.UserData;
 
 @Controller
 public class GymController {
-	
+
 	@Autowired
 	private GMSLocationClient l_client;
-	
+
 	@Autowired
 	private GMSCityClient c_client;
-	
+
 	@Autowired
 	private GMSGymClient g_client;
 
 	@RequestMapping(value = "/gyms.htm", method = RequestMethod.GET)
-	public String gym(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("gyms", g_client.get(user.getToken()));
 		return "gyms";

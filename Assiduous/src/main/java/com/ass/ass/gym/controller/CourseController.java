@@ -25,22 +25,22 @@ public class CourseController {
 	private GMSCourseClient gym_course_client;
 
 	@RequestMapping("/courseList.htm")
-	public String coursesList(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		List<CourseDto> courseList = gym_course_client.get(user.getToken());
 		model.addAttribute("coursesList", courseList);
 		return "coursesList";
 	}
-	
+
 	@RequestMapping("/addCourse.htm")
-	public String addCourse(Model model) {
+	public String add(Model model) {
 		System.out.println("createCourses Page : ");
 		model.addAttribute("createCourses", "");
 		return "addCourse";
 	}
 
 	@RequestMapping(value = "/saveCourse.htm", method = RequestMethod.POST)
-	public String saveCourse(Model model, HttpServletRequest req, @RequestParam("coursename") String coursename,
+	public String save(Model model, HttpServletRequest req, @RequestParam("coursename") String coursename,
 			@RequestParam("courseDuration") String courseDuration, @RequestParam("coursePrice") Double coursePrice,
 			@RequestParam(value = "description", required = false, defaultValue = "null") String description,
 			@RequestPart(value = "courseImage", required = false) MultipartFile image) {
@@ -63,7 +63,7 @@ public class CourseController {
 	}
 
 	@RequestMapping(value = "/course-detail.htm", method = RequestMethod.GET)
-	public ModelAndView courseDetail(Model model, HttpServletRequest req, @RequestParam("id") Integer id) {
+	public ModelAndView detail(Model model, HttpServletRequest req, @RequestParam("id") Integer id) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		try {
 			CourseDto res = gym_course_client.get(user.getToken(), id);
@@ -76,7 +76,7 @@ public class CourseController {
 	}
 
 	@RequestMapping(value = "/update.htm", method = RequestMethod.POST)
-	public String updateCourse(Model model, HttpServletRequest req, @RequestParam("id") Integer id,
+	public String update(Model model, HttpServletRequest req, @RequestParam("id") Integer id,
 			@RequestParam("courseCode") String code, @RequestParam("coursename") String coursename,
 			@RequestParam("courseDuration") String courseDuration, @RequestParam("coursePrice") Double coursePrice,
 			@RequestParam(value = "description", required = false, defaultValue = "null") String description) {

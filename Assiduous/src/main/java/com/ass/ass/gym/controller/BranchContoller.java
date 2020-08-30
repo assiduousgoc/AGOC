@@ -34,7 +34,7 @@ public class BranchContoller {
 	private GMSBranchClient b_client;
 
 	@RequestMapping(value = "/branches.htm", method = RequestMethod.GET)
-	public String branch(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("branches", b_client.get(user.getToken()));
 		return "branches";

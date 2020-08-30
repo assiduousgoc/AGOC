@@ -37,7 +37,7 @@ public class CourseScheduleController {
 	private GMSUserClient ser_client;
 
 	@RequestMapping("/courseSchedule.htm")
-	public String coursesList(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		List<CourseScheduleDto> courseList = gym_course_sc_client.get(user.getToken());
 		model.addAttribute("cs", courseList);
@@ -45,7 +45,7 @@ public class CourseScheduleController {
 	}
 
 	@RequestMapping("/createSchedule.htm")
-	public String addCourse(Model model, HttpServletRequest req) {
+	public String add(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("courses", course_client.get(user.getToken()));
 		model.addAttribute("rooms", room_client.get(user.getToken()));
@@ -54,7 +54,7 @@ public class CourseScheduleController {
 	}
 
 	@RequestMapping(value = "/saveCourseSchedule.htm", method = RequestMethod.POST)
-	public String saveCourse(Model model, HttpServletRequest req, @RequestParam("code") String code,
+	public String save(Model model, HttpServletRequest req, @RequestParam("code") String code,
 			@RequestParam(value = "day", required = false, defaultValue = "0") String day,
 			@RequestParam("from") String from, @RequestParam("to") String to, @RequestParam("course") Integer course,
 			@RequestParam("room") Integer room, @RequestParam("trainer") Integer trainer,
@@ -80,7 +80,7 @@ public class CourseScheduleController {
 	}
 
 	@RequestMapping(value = "/course-schedule-detail.htm", method = RequestMethod.GET)
-	public ModelAndView courseDetail(Model model, HttpServletRequest req, @RequestParam("id") Integer id) {
+	public ModelAndView details(Model model, HttpServletRequest req, @RequestParam("id") Integer id) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		try {
 			model.addAttribute("courses", course_client.get(user.getToken()));

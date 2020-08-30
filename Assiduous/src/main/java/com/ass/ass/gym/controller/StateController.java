@@ -26,7 +26,7 @@ public class StateController {
 	private GMSCountryClient c_client;
 
 	@RequestMapping(value = "/states.htm", method = RequestMethod.GET)
-	public String gym(Model model, HttpServletRequest req) {
+	public String get(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("states", s_client.get(user.getToken()));
 		return "states";
