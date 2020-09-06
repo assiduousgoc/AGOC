@@ -13,7 +13,7 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange; text-align: end;">
 						<a href="ledgers.htm?invoice=${invoice}"> <button class="btn btn-primary" style="border-radius: 0px !important; background-color: cornflowerblue;">Back</button></a>
-						<button class="btn btn-primary" style="border-radius: 0px !important; background-color: #4a274f;">CSV</button>
+						<!-- <button class="btn btn-primary" style="border-radius: 0px !important; background-color: #4a274f;">CSV</button> -->
 						<button class="btn btn-primary" onclick="getPDF('${ledger.invoiceNo}')" id="downloadbtn" style="border-radius: 0px !important; background-color: #4a274f; display: inline-block;">PDF</button>
 						<button class="btn btn-primary" style="border-radius: 0px !important; background-color: #4a274f;" onclick="PrintMe('printDiv')"><i class="fa fa-print fa-lg" ></i> Print</button>
 			</div>
