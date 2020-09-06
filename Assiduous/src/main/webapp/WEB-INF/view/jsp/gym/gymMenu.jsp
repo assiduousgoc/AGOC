@@ -62,7 +62,7 @@ String role =user.getRole().name();
 								<li style="background-color: #6f6d6d;"><a href="roomList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Rooms </a></li>
 								<li style="background-color: #6f6d6d;"><a href="trainerList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Trainers</a></li>
 								<li style="background-color: #6f6d6d;"><a href="courseSchedule.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Course Schedule</a></li>
-								<li style="background-color: #6f6d6d;"><a href="branches.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Branch</a></li>
+
 								<li style="background-color: #6f6d6d;"><a href="users.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>User</a></li>
 							</ul>
 						</li>
