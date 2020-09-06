@@ -51,11 +51,11 @@
 												style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 												<i class="fa fa-edit"></i>
 											</a>
-											<a href="delete-trainer.htm?id=${trainner.id}"
+											<%-- <a href="delete-trainer.htm?id=${trainner.id}"
 												class="ms-btn-icon-outline btn-pill btn-primary"
 												style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 												<i class="fa fa-trash"></i>
-											</a>
+											</a> --%>
 											<button type="button"
 												class="ms-btn-icon-outline btn-pill btn-primary"
 												style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">

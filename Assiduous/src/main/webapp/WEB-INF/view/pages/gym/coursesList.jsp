@@ -55,11 +55,11 @@
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
 												</a>
-												<a href="delete-course.htm?id=${course.id}"
+												<%-- <a href="delete-course.htm?id=${course.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
-												</a>
+												</a> --%>
 												<a href="active.htm?id=${course.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">

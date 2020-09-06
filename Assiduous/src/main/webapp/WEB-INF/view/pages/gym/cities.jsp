@@ -48,11 +48,11 @@
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
 												</a>
-												<a href="delete-city.htm?id=${city.id}"
+												<%-- <a href="delete-city.htm?id=${city.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
-												</a>
+												</a> --%>
 											</div>
 										</td>
 									</tr>

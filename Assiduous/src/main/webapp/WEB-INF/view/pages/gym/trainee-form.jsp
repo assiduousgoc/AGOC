@@ -34,7 +34,7 @@
 						style="position: relative; padding: 1.5rem;">
 						<form:form action="add-trainee.htm" method="post"
 							commandName="trainee" modelAttribute="trainee"
-							cssClass="needs-validation clearfix">
+							cssClass="needs-validation clearfix" enctype="multipart/form-data">
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">First Name </label>
@@ -92,21 +92,21 @@
 										<div class="invalid-feedback">dd/MM/yyyy</div>
 									</div>
 								</div>
-								<div class="col-md-3 mb-3">
+								<div class="col-md-2 mb-3">
 									<label for="validationCustom24">Due Date </label>
 									<div class="input-group">
 										<form:input path="dueDate" cssClass="form-control" />
 										<div class="invalid-feedback">dd/MM/yyyy</div>
 									</div>
 								</div>
-								<div class="col-md-3 mb-3">
+								<div class="col-md-2 mb-3">
 									<label for="validationCustom24">Discount </label>
 									<div class="input-group">
 										<form:input path="discount" cssClass="form-control" />
 										<div class="invalid-feedback">Discount</div>
 									</div>
 								</div>
-								<div class="col-md-3 mb-3">
+								<div class="col-md-2 mb-3">
 									<label for="validationCustom25">City</label>
 									<div class="input-group">
 										<form:select path="addressDto.cityDto.id" cssClass="form-control">
@@ -116,7 +116,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-3 mb-3">
+								<div class="col-md-2 mb-3">
 									<label for="validationCustom25">Subs. Type</label>
 									<div class="input-group">
 										<form:select path="subscriptionType" cssClass="form-control">
@@ -127,7 +127,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-3 mb-3">
+								<div class="col-md-2 mb-3">
 									<label for="validationCustom25">Gender</label>
 									<div class="input-group">
 										<form:select path="gender" cssClass="form-control">
@@ -138,7 +138,7 @@
 										</form:select>
 									</div>
 								</div>
-								<div class="col-md-3 mb-3">
+								<div class="col-md-2 mb-3">
 									<label for="validationCustom25">Branch</label>
 									<div class="input-group">
 										<form:select path="branchDto.id" cssClass="form-control">
@@ -146,6 +146,12 @@
 												<form:option value="${branche.id}">${branche.name}</form:option>
 											</c:forEach>
 										</form:select>
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
+									<label for="validationCustom25">Trainee Image</label>
+									<div class="input-group">
+										<input type="file" id="traineeImage" name="traineeImage">
 									</div>
 								</div>
 								<div class="col-md-6 mb-3">

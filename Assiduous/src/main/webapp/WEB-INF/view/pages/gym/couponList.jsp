@@ -93,7 +93,7 @@
                                         <td class="text-center">
                                             <div class="dropdown dropdown-action">
                                             <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #4a274f;border-color: #4a274f;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #4a274f;border-color: #4a274f;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-trash"></i></button>
+                                            <!-- <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #4a274f;border-color: #4a274f;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-trash"></i></button> -->
                                             <button type="button" class="ms-btn-icon-outline btn-pill btn-primary" style="color: #4a274f;border-color: #4a274f;border-radius: 25px; background-color: transparent;border: 1px solid;"><i class="fa fa-eye"></i></button>
                                            </div>
                                         </td>

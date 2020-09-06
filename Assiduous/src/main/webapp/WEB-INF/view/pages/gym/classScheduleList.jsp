@@ -79,11 +79,11 @@
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
 												</a>
-												<a href="delete-course-schedule.htm?id=${course_sc.id}"
+												<%-- <a href="delete-course-schedule.htm?id=${course_sc.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
-												</a>
+												</a> --%>
 												<a href="active-course-schedule.htm?id=${course_sc.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">

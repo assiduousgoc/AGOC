@@ -59,11 +59,11 @@
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
 												</a>
-												<a href="delete-branch.htm?id=${branch.id}"
+												<%-- <a href="delete-branch.htm?id=${branch.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
-												</a>
+												</a> --%>
 												<a href="active-branch.htm?id=${branch.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
