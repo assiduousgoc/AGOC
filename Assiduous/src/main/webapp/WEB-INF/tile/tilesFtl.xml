@@ -315,6 +315,49 @@
        <put-attribute name="title" value="Setting" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/gymSetting.jsp" />  
    </definition>
+   <definition name="bank" extends="gym-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/bankList.jsp" />  
+   </definition>
+    <definition name="addBank" extends="gym-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/addbank.jsp" />  
+   </definition>
+   <definition name="courseMappingList" extends="gym-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/courseMappingList.jsp" />  
+   </definition>
+    <definition name="addCourseMapping" extends="gym-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/addCourseMapping.jsp" />  
+   </definition>
+   <!-- CR Account -->
+    <definition name="crAccount" extends="gym-definition">  
+       <put-attribute name="title" value="CR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/CRList.jsp" />  
+   </definition>
+    <definition name="addCrAccount" extends="gym-definition">  
+       <put-attribute name="title" value="CR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/addCrAccount.jsp" />  
+   </definition>
+    <!-- DR Account -->
+    <definition name="drAccount" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/DRList.jsp" />  
+   </definition>
+    <definition name="addDrAccount" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/addDrAccount.jsp" />  
+   </definition>
+   <!-- GST -->
+    <definition name="gstList" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/GSTList.jsp" />  
+   </definition>
+    <definition name="addGST" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/addGST.jsp" />  
+   </definition>
    <!--  Restaurent  -->
 	<definition name="restaurentdashboard" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  

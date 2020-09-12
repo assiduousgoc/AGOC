@@ -69,6 +69,13 @@ String role =user.getRole().name();
 						<li class="submenu">
 							<a href="#"><i class="fa fa-plus-circle"></i> <span> Account </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none; background-color: #ffffff;" >
+								
+								<li style="background-color: #6f6d6d;"><a href="bank.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Bank</a></li>
+								<li style="background-color: #6f6d6d;"><a href="courseMapping.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Course Mapping</a></li>
+								<li style="background-color: #6f6d6d;"><a href="crAccount.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>CR. Account</a></li>
+								<li style="background-color: #6f6d6d;"><a href="drAccount.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>DR. Account</a></li>
+								<li style="background-color: #6f6d6d;"><a href="gstList.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>GST</a></li>
+								
 								<li style="background-color: #6f6d6d;"><a href="payments.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Payment</a></li>
 								<li style="background-color: #6f6d6d;"><a href="dues.htm" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Dues</a></li>
 								<li style="background-color: #6f6d6d;"><a href="ledgers.htm?invoice=N" style="color: #fbfbfb;border-bottom: white solid 1px;font-weight: bold;"><i class="fa fa-plus-circle"></i>Ledger</a></li>
