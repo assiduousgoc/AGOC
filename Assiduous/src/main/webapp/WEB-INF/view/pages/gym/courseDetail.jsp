@@ -41,14 +41,14 @@
 									</div>
 								</div>
 
-								<div class="col-md-6 mb-3">
+								<%-- <div class="col-md-6 mb-3">
 									<label for="validationCustom24">Course Duration </label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="courseDuration"
 											id="courseDuration" value="${course.duration}" />
 										<div class="invalid-feedback">Course Duration</div>
 									</div>
-								</div>
+								</div> 
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom25">Course Price</label>
 									<div class="input-group">
@@ -56,7 +56,7 @@
 											id="coursePrice" value="${course.price}" />
 										<div class="invalid-feedback">course Price</div>
 									</div>
-								</div>
+								</div>--%>
 								<div class="col-md-6 mb-3">
 									<label for="validationCustom12">Courses *</label>
 									<div class="input-group">

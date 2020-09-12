@@ -5,8 +5,6 @@ import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,12 +28,10 @@ public class CourseScheduleDto implements Serializable {
 
 	@JsonProperty("from")
 	@NotNull
-	@NotEmpty
 	private String from;
 
 	@JsonProperty("to")
 	@NotNull
-	@NotEmpty
 	private String to;
 
 	@JsonProperty("days")
@@ -46,17 +42,14 @@ public class CourseScheduleDto implements Serializable {
 
 	@JsonProperty("course")
 	@NotNull
-	@NotEmpty
 	private CommonDto courseDto;
 
 	@JsonProperty("trainer")
 	@NotNull
-	@NotEmpty
 	private CommonDto trainerDto;
 
 	@JsonProperty("room")
 	@NotNull
-	@NotEmpty
 	private CommonDto roomDto;
 
 	@JsonProperty("active")

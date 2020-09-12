@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ass.client.GMSCourseClient;
+import com.ass.smtfp.dao.ContactDAO;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
@@ -28,7 +29,9 @@ public class GMSGymController {
 
 	@Autowired
 	private GMSCourseClient gym_course_client;
-
+	@Autowired
+	ContactDAO contactDao;
+	
 	@RequestMapping("/gymdashboard.htm")
 	public String gymdashboard(Model model) {
 		System.out.println("gymdashboard Page : ");

@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ass.client.GMSCityClient;
 import com.ass.client.GMSGymClient;
 import com.ass.client.GMSLocationClient;
+import com.ass.smtfp.dao.ContactDAO;
 import com.ass.smtfp.model.GymDto;
 import com.ass.smtfp.model.UserData;
 
@@ -28,6 +29,9 @@ public class GymController {
 
 	@Autowired
 	private GMSGymClient g_client;
+	
+	@Autowired
+	ContactDAO contactDao;
 
 	@RequestMapping(value = "/gyms.htm", method = RequestMethod.GET)
 	public String get(Model model, HttpServletRequest req) {

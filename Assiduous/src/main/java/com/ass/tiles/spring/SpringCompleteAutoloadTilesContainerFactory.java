@@ -11,7 +11,7 @@ import org.apache.tiles.request.ApplicationContext;
 import org.springframework.web.servlet.view.tiles3.SpringLocaleResolver;
 
 /**
- * @author Bright Interactive
+ * @author Maheshwar Prasad
  */
 public class SpringCompleteAutoloadTilesContainerFactory extends CompleteAutoloadTilesContainerFactory {
 	@Override

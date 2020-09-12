@@ -29,7 +29,7 @@
             <div class="ms-panel-body" style="position: relative;padding: 1.5rem;">
               <form class="needs-validation clearfix" novalidate action="saveCourse.htm" method="post" enctype="multipart/form-data">
                 <div class="form-row">
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-4 mb-3">
                     <label for="validationCustom22">Course Name</label>
                     <div class="input-group">
                        <input type='text' class="form-control" name="coursename" id="coursename"/>                                        
@@ -39,32 +39,35 @@
                     </div>
                   </div>
                 
-                  <div class="col-md-6 mb-3">
-                    <label for="validationCustom24">Course Duration </label>
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom24">Course Code </label>
                     <div class="input-group">
-                       <input type='text' class="form-control" name="courseDuration" id="courseDuration" />
+                       <input type='text' class="form-control" name="code" id="code" />
                       <div class="invalid-feedback">
-                       Course Duration
+                       Course Code
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6 mb-3">
+                  <!-- <div class="col-md-6 mb-3">
                     <label for="validationCustom25">Course Price</label>
-                    <div class="input-group">
-                      <input type='number' class="form-control" name="coursePrice" id="coursePrice" />
+                     <div class="input-group">
+                     <input type='number' class="form-control" name="coursePrice" id="coursePrice" />
                       <div class="invalid-feedback">
                         course Price
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="validationCustom12">Courses *</label>
-                    <div class="input-group">
-                     <input type="file" id="courseImage" name="courseImage">
-                    </div>
-                  </div>
-                 
-                  <div class="col-md-12 mb-3">
+                  </div> -->
+                  <div class="col-md-4 mb-3">
+									<div class="form-group">
+										<label>Course Status</label>
+										<select class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+											<option>Select</option>
+											<option>Active</option>
+											<option>InActive</option>
+										</select>
+									</div>
+                                </div>
+                    <div class="col-md-8 mb-3">
                     <label for="validationCustom12">Description </label>
                       <div class="input-group">
                      <div class="input-group">
@@ -72,6 +75,14 @@
                        </div>
                      </div>
                   </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom12">Courses *</label>
+                    <div class="input-group">
+                     <input type="file" id="courseImage" name="courseImage">
+                    </div>
+                  </div>
+                 
+                  
                  
                 </div>
                  <div class="new" style="display: inline-flex;">

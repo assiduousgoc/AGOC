@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ass.client.*;
+import com.ass.smtfp.dao.ContactDAO;
 import com.ass.smtfp.model.*;
 
 
@@ -24,7 +25,11 @@ public class HomeController {
 
 	@Autowired
 	private GMSUserClient gym_user_client;
+	
+	@Autowired
+	ContactDAO contactDao;
 
+	
 	@RequestMapping("/dashboard.htm")
 	public String home(@RequestParam(value = "services") String services,
 			@RequestParam(value = "quat_fullname") String quat_fullname,
@@ -60,6 +65,7 @@ public class HomeController {
 	@RequestMapping("/home.htm")
 	public String home() {
 		System.out.println("INSIDE HOME");
+		//contactDao.getUser("9910487886", "").getName()
 		return "home";
 	}
 

@@ -33,22 +33,8 @@ public class CourseDto implements Serializable {
 	@NotEmpty
 	private String name;
 
-	@JsonProperty("price")
-	@NotNull
-	private Double price;
-
-	@JsonProperty("duration")
-	@NotNull
-	@NotEmpty
-	private String duration;
-
 	@JsonProperty("description")
 	private String description;
-
-	@JsonProperty("branch")
-	@NotNull
-	@NotEmpty
-	private CommonDto branchDto;
 
 	@JsonProperty("active")
 	private boolean active;
@@ -77,36 +63,12 @@ public class CourseDto implements Serializable {
 		this.code = code;
 	}
 
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public String getDuration() {
-		return duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
-
 	public String getDescription() {
 		return description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public CommonDto getBranchDto() {
-		return branchDto;
-	}
-
-	public void setBranchDto(CommonDto branchDto) {
-		this.branchDto = branchDto;
 	}
 
 	public boolean isActive() {

@@ -32,10 +32,10 @@
 							<thead
 								style="background-color: #4a274f; color: cornsilk; font-family: auto; text-align: center;">
 								<tr>
+									<th>Course Code</th>
 									<th>Course Name</th>
-									<th>Course Name</th>
-									<th>Course Duration</th>
-									<th>Course Price</th>
+									<!-- <th>Course Duration</th> -->
+									<th>Status</th>
 
 									<th class="text-center">Action</th>
 								</tr>
@@ -45,9 +45,9 @@
 									<tr>
 										<td style="text-align: center;">${course.code}</td>
 										<td style="text-align: center;">${course.name}</td>
-										<td style="text-align: center;"><h2
-												style="text-align: center;">${course.duration}</h2></td>
-										<td style="text-align: center;">${course.price} INR</td>
+										<%-- <td style="text-align: center;"><h2
+												style="text-align: center;">${course.duration}</h2></td> --%>
+										<td style="text-align: center;">${course.active}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
 												<a href="course-detail.htm?id=${course.id}"
