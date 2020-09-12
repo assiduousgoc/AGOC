@@ -4,24 +4,23 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
-import com.ass.client.config.DateDSerializer;
+import com.ass.client.config.DateSerializer;
 import com.ass.smtfp.enums.TransactionType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonPropertyOrder
 @JsonInclude(value = Include.NON_NULL)
-@XmlRootElement(name = "ledger")	
+@XmlRootElement(name = "ledger")
 public class LedgerDto implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8770714054778958098L;
+	private static final long serialVersionUID = 1726623968924010533L;
 
 	@JsonProperty("id")
 	private Integer id;
@@ -29,23 +28,26 @@ public class LedgerDto implements Serializable {
 	@JsonProperty("invoice_no")
 	private String invoiceNo;
 
-	@JsonProperty("trainee")
-	private CommonDto traineeDto;
+	@JsonProperty("cr_ac")
+	private CommonDto crAc;
 
-	@JsonProperty("account_no")
-	private String accountNo;
+	@JsonProperty("dr_ac")
+	private CommonDto drAc;
+
+	@JsonProperty("back")
+	private CommonDto bankDto;
 
 	@JsonProperty("txn_type")
 	private TransactionType type;
 
-	@JsonProperty("account_name")
-	private String accountName;
-
 	@JsonProperty("amount")
 	private Double amount;
 
+	@JsonProperty("narration")
+	private String narration;
+
 	@JsonProperty("txn_date")
-	@JsonDeserialize(using = DateDSerializer.class)
+	@JsonSerialize(using = DateSerializer.class)
 	private Date txnDate;
 
 	@JsonProperty("branch")
@@ -67,20 +69,28 @@ public class LedgerDto implements Serializable {
 		this.invoiceNo = invoiceNo;
 	}
 
-	public CommonDto getTraineeDto() {
-		return traineeDto;
+	public CommonDto getCrAc() {
+		return crAc;
 	}
 
-	public void setTraineeDto(CommonDto traineeDto) {
-		this.traineeDto = traineeDto;
+	public void setCrAc(CommonDto crAc) {
+		this.crAc = crAc;
 	}
 
-	public String getAccountNo() {
-		return accountNo;
+	public CommonDto getDrAc() {
+		return drAc;
 	}
 
-	public void setAccountNo(String accountNo) {
-		this.accountNo = accountNo;
+	public void setDrAc(CommonDto drAc) {
+		this.drAc = drAc;
+	}
+
+	public CommonDto getBankDto() {
+		return bankDto;
+	}
+
+	public void setBankDto(CommonDto bankDto) {
+		this.bankDto = bankDto;
 	}
 
 	public TransactionType getType() {
@@ -91,20 +101,20 @@ public class LedgerDto implements Serializable {
 		this.type = type;
 	}
 
-	public String getAccountName() {
-		return accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-	}
-
 	public Double getAmount() {
 		return amount;
 	}
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
+	}
+
+	public String getNarration() {
+		return narration;
+	}
+
+	public void setNarration(String narration) {
+		this.narration = narration;
 	}
 
 	public Date getTxnDate() {

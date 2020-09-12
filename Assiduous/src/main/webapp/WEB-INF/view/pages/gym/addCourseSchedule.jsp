@@ -107,6 +107,16 @@
 										</select>
 									</div>
 								</div>
+								<div class="col-md-4 mb-3">
+								<label for="validationCustom12">Status *</label>
+									<div class="input-group">
+										<select class="select select2-hidden-accessible" tabindex="-1" name="status" aria-hidden="true">
+											<option>Select</option>
+											<option value="1">Active</option>
+											<option value="0">InActive</option>
+										</select>
+									</div>
+                                </div>
 								<div class="col-md-12 mb-3">
 									<label for="validationCustom12">Description </label>
 									<div class="input-group">

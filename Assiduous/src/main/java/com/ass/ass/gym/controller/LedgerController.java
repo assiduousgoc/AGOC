@@ -25,6 +25,7 @@ public class LedgerController {
 	public String gym(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("ledgers", l_client.get(user.getToken()));
+		req.setAttribute("invoice", req.getParameter("invoice")); 
 		return "ledgers";
 	}
 

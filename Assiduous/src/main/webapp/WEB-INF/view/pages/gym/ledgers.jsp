@@ -55,7 +55,7 @@ String invoice=request.getParameter("invoice");
 										
 										</td>
 										
-										<td style="text-align: center;">${ledger.account_no}</td>
+										<td style="text-align: center;">${ledger.bankDto.name}</td>
 										<td style="text-align: center;">${ledger.account_name}</td>
 										<td style="text-align: center;">${ledger.amount}</td>
 										<td style="text-align: center;">${ledger.txn_type}</td>

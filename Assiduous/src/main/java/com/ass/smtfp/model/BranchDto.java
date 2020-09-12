@@ -2,16 +2,18 @@ package com.ass.smtfp.model;
 
 import java.io.Serializable;
 
+
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.ass.smtfp.model.AddressDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonPropertyOrder
 @JsonInclude(value = Include.NON_NULL)

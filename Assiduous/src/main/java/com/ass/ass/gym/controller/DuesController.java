@@ -35,8 +35,8 @@ public class DuesController {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		LedgerDto ledger= l_client.get(user.getToken(), traineeId);
 		PayDto payment = new PayDto();
-		payment.setAccountNo(ledger.getAccountNo());
-		payment.setAccountName(ledger.getAccountName());
+		//payment.setAccountNo(ledger.getAccountNo());
+		//payment.setAccountName(ledger.getAccountName());
 		payment.setAccountNo(amount);
 		payment.setTrainee_id(traineeId);
 		try {

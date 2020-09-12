@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.ass.smtfp.enums.UserRole;
+import com.ass.smtfp.model.AddressDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,18 +27,22 @@ public class UsersDto implements Serializable {
 
 	@JsonProperty("first_name")
 	@NotNull
+
 	private String firstName;
 
 	@JsonProperty("last_name")
 	@NotNull
+
 	private String lastName;
 
 	@JsonProperty("email")
 	@NotNull
+
 	private String email;
 
 	@JsonProperty("password")
 	@NotNull
+
 	private String password;
 
 	@JsonProperty("mob")

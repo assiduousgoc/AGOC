@@ -2,10 +2,9 @@ package com.ass.smtfp.model;
 
 import java.io.Serializable;
 
+
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.hibernate.validator.constraints.NotBlank;
 
 import com.ass.smtfp.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -71,8 +70,8 @@ public class UserData implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserData(Integer id, @NotNull @NotBlank String firstName, @NotNull @NotBlank String lastName,
-			@NotNull @NotBlank String email, @NotNull Long mob, @NotNull UserRole role, @NotNull String city,
+	public UserData(Integer id, @NotNull  String firstName, @NotNull String lastName,
+			@NotNull String email, @NotNull Long mob, @NotNull UserRole role, @NotNull String city,
 			@NotNull String pincode, @NotNull String token, CommonDto branch, CommonDto gym) {
 		super();
 		this.id = id;

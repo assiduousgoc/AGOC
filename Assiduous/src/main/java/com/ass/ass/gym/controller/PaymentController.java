@@ -31,9 +31,13 @@ public class PaymentController {
 	@RequestMapping(value = "/payments.htm", method = RequestMethod.GET)
 	public String pays(Model model, HttpServletRequest req,
 			@RequestParam(value = "trainee_id", required = false, defaultValue = "0") Integer id) {
+		try {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("payments",
 				id > 0 ? p_client.getByTrainee(user.getToken(), id) : p_client.get(user.getToken()));
+		}catch (Exception e) {
+		e.printStackTrace();
+		}
 		return "payments";
 	}
 

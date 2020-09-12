@@ -68,6 +68,7 @@ public class CourseScheduleController {
 		dto.setFrom(from);
 		dto.setRoomDto(new CommonDto(room, null, null));
 		dto.setTo(to);
+		dto.setActive(true);
 		dto.setTrainerDto(new CommonDto(trainer, null, null));
 		try {
 			CourseScheduleDto res = gym_course_sc_client.save(user.getToken(), dto);

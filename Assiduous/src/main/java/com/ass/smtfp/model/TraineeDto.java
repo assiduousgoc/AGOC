@@ -2,19 +2,22 @@ package com.ass.smtfp.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
-
+/*
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;*/
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.ass.client.config.DateDSerializer;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import com.ass.client.config.DateSerializer;
 import com.ass.smtfp.enums.Gender;
 import com.ass.smtfp.enums.SubscriptionType;
+import com.ass.smtfp.model.AddressDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -33,14 +36,18 @@ public class TraineeDto implements Serializable {
 
 	@JsonProperty("first_name")
 	@NotNull
+	
 	private String firstName;
 
 	@JsonProperty("last_name")
 	@NotNull
+
 	private String lastName;
 
 	@JsonProperty("email")
 	@NotNull
+
+	@Email
 	private String email;
 
 	@JsonProperty("mob")
@@ -49,21 +56,20 @@ public class TraineeDto implements Serializable {
 
 	@JsonProperty("address")
 	@NotNull
+	@NotEmpty
 	private AddressDto addressDto;
 
 	@JsonProperty("courses")
 	private Set<CommonDto> coursesDto;
 
-	@JsonProperty("cs")
-	private Set<Integer> cs = new HashSet<>();
-
 	@JsonProperty("branch")
 	@NotNull
+	@NotEmpty
 	private CommonDto branchDto;
 
 	@JsonProperty("doj")
 	@NotNull
-	@JsonDeserialize(using = DateDSerializer.class)
+	@JsonSerialize(using = DateSerializer.class)
 	private Date doj;
 
 	@JsonProperty("subscription_type")
@@ -71,7 +77,7 @@ public class TraineeDto implements Serializable {
 	private SubscriptionType subscriptionType;
 
 	@JsonProperty("due_date")
-	@JsonDeserialize(using = DateDSerializer.class)
+	@JsonSerialize(using = DateSerializer.class)
 	private Date dueDate;
 
 	@JsonProperty("gender")
@@ -141,16 +147,6 @@ public class TraineeDto implements Serializable {
 
 	public void setCoursesDto(Set<CommonDto> coursesDto) {
 		this.coursesDto = coursesDto;
-	}
-
-	public Set<Integer> getCs() {
-		return coursesDto != null ? coursesDto.stream().map(c -> c.getId()).collect(Collectors.toSet())
-				: new HashSet<>();
-	}
-
-	public void setCs(Set<Integer> cs) {
-		this.coursesDto = cs.size() > 0 ? cs.stream().map(c -> new CommonDto(c, null, null)).collect(Collectors.toSet())
-				: null;
 	}
 
 	public CommonDto getBranchDto() {

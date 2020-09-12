@@ -6,15 +6,14 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.ass.client.config.DateDSerializer;
 import com.ass.client.config.DateSerializer;
 import com.ass.smtfp.enums.SubscriptionType;
+/*import com.ass.validation.json.DateSerializer;*/
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonPropertyOrder
 @JsonInclude(value = Include.NON_NULL)
@@ -45,7 +44,7 @@ public class DueDto implements Serializable {
 	private Double discount;
 
 	@JsonProperty("due_date")
-	@JsonDeserialize(using = DateDSerializer.class)
+	@JsonSerialize(using = DateSerializer.class)
 	private Date dueDate;
 
 	@JsonProperty("total_pay")
