@@ -3,11 +3,13 @@ package com.ass.client.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.core.tools.picocli.CommandLine.Command;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import com.ass.client.GMSCourseMappingClient;
 import com.ass.client.GMSCrAccountClient;
@@ -16,6 +18,7 @@ import com.ass.smtfp.model.CourseDto;
 import com.ass.smtfp.model.CourseMappingDto;
 import com.ass.smtfp.model.CrAccountDto;
 
+@Component
 public class GMSCrAccountClientImpl implements GMSCrAccountClient {
 
 	public static final String RESOURCE = "/crs/";

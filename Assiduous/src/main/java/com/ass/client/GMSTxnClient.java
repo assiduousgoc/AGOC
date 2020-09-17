@@ -2,9 +2,6 @@ package com.ass.client;
 
 import java.util.List;
 
-import com.ass.smtfp.model.CrAccountDto;
-import com.ass.smtfp.model.GstDto;
-import com.ass.smtfp.model.LedgerDto;
 import com.ass.smtfp.model.TxnDto;
 
 public interface GMSTxnClient {

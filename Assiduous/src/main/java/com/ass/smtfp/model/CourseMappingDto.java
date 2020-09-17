@@ -25,10 +25,10 @@ public class CourseMappingDto implements Serializable {
 	@JsonProperty("course")
 	private CommonDto courseDtp;
 
-	@JsonProperty("course")
+	@JsonProperty("branch")
 	private CommonDto branchDto;
 
-	@JsonProperty("prive")
+	@JsonProperty("price")
 	private Double price;
 
 	@JsonProperty("duration")

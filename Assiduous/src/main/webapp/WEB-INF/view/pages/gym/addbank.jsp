@@ -42,13 +42,14 @@
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom12">Branch Name *</label>
 									<div class="input-group">
-										<select class="form-control" name="branchName" id="branchName">
+									<input type='text' class="form-control" name="branchName" id="branchName" />
+										<%-- <select class="form-control" name="branchName" id="branchName">
 											<option value="0">Select Branch</option>
 											<c:forEach items="${branches}" var="branch">
 												<option value="${branch.id}">${branch.name}-
 													${branch.code}</option>
 											</c:forEach>
-										</select>
+										</select> --%>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
@@ -89,18 +90,30 @@
 										<div class="invalid-feedback">tanNo</div>
 									</div>
 								</div>
-								
-								
 								<div class="col-md-4 mb-3">
-									<label for="validationCustom12">Address *</label>
+									<label for="validationCustom24">Address 1.</label>
 									<div class="input-group">
-										<select class="form-control" name="address" id="address">
-											<option value="0">Select Address</option>
-											<c:forEach items="${gym}" var="course">
-												<option value="${gym.address.id}">${gym.address.address_line1}-
-													${gym.address.city.name}-${gym.address.pincode}</option>
+										<input type='text' class="form-control" name="address" id="address" />
+										<div class="invalid-feedback">Address</div>
+									</div>
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="validationCustom24">City.</label>
+									<div class="input-group">
+										<select class="form-control" name="city" id="city">
+											<option value="0">Select City</option>
+											<c:forEach items="${city}" var="city">
+												<option value="${city.id}">${city.name}-
+													${city.code}</option>
 											</c:forEach>
 										</select>
+									</div>
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="validationCustom24">Pin Code.</label>
+									<div class="input-group">
+										<input type='text' class="form-control" name="pincode" id="pincode" />
+										<div class="invalid-feedback">PinCode</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
@@ -108,7 +121,7 @@
 									<div class="input-group">
 										<select class="form-control" name="Gym" id="Gym">
 											<option value="0">Select Gym</option>
-											<c:forEach items="${gym}" var="room">
+											<c:forEach items="${gym}" var="gym">
 												<option value="${gym.id}">${gym.name}-
 													${gym.code}</option>
 											</c:forEach>
@@ -116,6 +129,18 @@
 									</div>
 								</div>
 								
+								<%-- <div class="col-md-4 mb-3">
+									<label for="validationCustom12">Address *</label>
+									<div class="input-group">
+										<select class="form-control" name="address" id="address">
+											<option value="0">Select Address</option>
+											<c:forEach items="${gym}" var="gym">
+												<option value="${gym.address.id}">${gym.address.address_line1}-
+													${gym.address.city.name}-${gym.address.pincode}</option>
+											</c:forEach>
+										</select>
+									</div>
+								</div> --%>
 								<div class="col-md-4 mb-3">
 								<label for="validationCustom12">Status *</label>
 									<div class="input-group">
@@ -131,7 +156,7 @@
 									<div class="input-group">
 										<div class="input-group">
 											<textarea class="summernote edi-css form-control"
-												name="description" id="description" style="height: 39px;"></textarea>
+												name="description" id="description" style="max-height: 39px;"></textarea>
 										</div>
 									</div>
 								</div>

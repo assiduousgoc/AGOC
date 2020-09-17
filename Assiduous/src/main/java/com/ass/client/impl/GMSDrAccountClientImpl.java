@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import com.ass.client.GMSCourseMappingClient;
 import com.ass.client.GMSCrAccountClient;
@@ -18,6 +19,7 @@ import com.ass.smtfp.model.CourseMappingDto;
 import com.ass.smtfp.model.CrAccountDto;
 import com.ass.smtfp.model.DrAccountDto;
 
+@Component
 public class GMSDrAccountClientImpl implements GMSDrAccountClient {
 
 	public static final String RESOURCE = "/drs/";

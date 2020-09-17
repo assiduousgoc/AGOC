@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.ass.client.GMSBranchClient;
 import com.ass.client.GMSCourseClient;
 import com.ass.client.GMSCourseScheduleClient;
+import com.ass.client.GMSDrAccountClient;
 import com.ass.client.GMSGymClient;
 import com.ass.client.GMSLedgerClient;
 import com.ass.client.GMSRoomClient;
@@ -21,6 +22,7 @@ import com.ass.smtfp.enums.UserRole;
 import com.ass.smtfp.model.AddressDto;
 import com.ass.smtfp.model.BankDto;
 import com.ass.smtfp.model.CommonDto;
+import com.ass.smtfp.model.CrAccountDto;
 import com.ass.smtfp.model.DrAccountDto;
 import com.ass.smtfp.model.GymDto;
 import com.ass.smtfp.model.LedgerDto;
@@ -38,7 +40,7 @@ public class DrAccountController {
 	private GMSCourseClient course_client;
 
 	@Autowired
-	private GMSRoomClient room_client;
+	private GMSDrAccountClient dr_client;
 
 	@Autowired
 	private GMSUserClient ser_client;
@@ -52,6 +54,8 @@ public class DrAccountController {
 	@RequestMapping(value = "/drAccount.htm", method = RequestMethod.GET)
 	public String drAccountList(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
+		model.addAttribute("debits", dr_client.get(user.getToken()));
+		
 		model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
 		return "drAccount";
 	}
@@ -67,21 +71,24 @@ public class DrAccountController {
 			,@RequestParam("drEmail") String drEmail,@RequestParam("drMNo") Long drMNo,@RequestParam("description") String description,@RequestParam("status") boolean status) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		DrAccountDto drAccount = new DrAccountDto();
-		System.out.println("nbank Name:"+accName+" : crEmail-->"+drEmail+"description==>"+description+" Status:->"+status);
-	
 		try {
 			drAccount.setAcName(accName);
 			drAccount.setEmail(drEmail);
 			drAccount.setMob(drMNo);
 			drAccount.setDescription(description);
 			drAccount.setActive(status);
-			
-			return "drAccount";
+			try {
+				DrAccountDto drAccounts= dr_client.save(user.getToken(), drAccount);
+				model.addAttribute("createDr", drAccounts);
+				return "drAccount.htm";
+			}catch (Exception e) {
+				e.printStackTrace();
+				return "redirect:/addDrAccount.htm";
+			}
 		} catch (Exception e) {
 			model.addAttribute("Error", "Error");
+			return "redirect:/addDrAccount.htm";
 			
 		}
-		
-		return "drAccount";
 	}
 }

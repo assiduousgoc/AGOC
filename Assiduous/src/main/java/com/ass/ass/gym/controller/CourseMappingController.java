@@ -11,23 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ass.client.GMSBranchClient;
 import com.ass.client.GMSCourseClient;
+import com.ass.client.GMSCourseMappingClient;
 import com.ass.client.GMSCourseScheduleClient;
 import com.ass.client.GMSGymClient;
-import com.ass.client.GMSLedgerClient;
-import com.ass.client.GMSRoomClient;
-import com.ass.client.GMSTraineeClient;
 import com.ass.client.GMSUserClient;
 import com.ass.smtfp.enums.UserRole;
-import com.ass.smtfp.model.AddressDto;
-import com.ass.smtfp.model.BankDto;
 import com.ass.smtfp.model.BranchDto;
 import com.ass.smtfp.model.CommonDto;
 import com.ass.smtfp.model.CourseDto;
 import com.ass.smtfp.model.CourseMappingDto;
-import com.ass.smtfp.model.GymDto;
-import com.ass.smtfp.model.LedgerDto;
-import com.ass.smtfp.model.PayDto;
-import com.ass.smtfp.model.TraineeDto;
 import com.ass.smtfp.model.UserData;
 
 @Controller
@@ -40,7 +32,7 @@ public class CourseMappingController {
 	private GMSCourseClient course_client;
 
 	@Autowired
-	private GMSRoomClient room_client;
+	private GMSCourseMappingClient coursemapping_client;
 
 	@Autowired
 	private GMSUserClient ser_client;
@@ -55,6 +47,9 @@ public class CourseMappingController {
 	public String courseMappingList(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
+		model.addAttribute("courseMappings", coursemapping_client.get(user.getToken()));
+		
+		
 		return "courseMappingList";
 	}
 	@RequestMapping(value = "/addCourseMapping.htm", method = RequestMethod.GET)
@@ -77,7 +72,7 @@ public class CourseMappingController {
 			CourseDto courseDto= new CourseDto();
 			CommonDto commonDtoBranch= new CommonDto();
 			CommonDto commonDtocourse= new CommonDto();
-			branchDto = b_client.get(user.getToken(), courseId);
+			branchDto = b_client.get(user.getToken(), branchId);
 			commonDtoBranch.setCode(branchDto.getCode());
 			commonDtoBranch.setName(branchDto.getName());
 			courseDto = course_client.get(user.getToken(), courseId);
@@ -87,14 +82,17 @@ public class CourseMappingController {
 			courseMapping.setPrice(price);
 			courseMapping.setBranchDto(commonDtoBranch);
 			courseMapping.setCourseDtp(commonDtocourse);
-			
-			
-			return "redirect:/courseMapping.htm";
+			try {
+				CourseMappingDto createCourseMapping= coursemapping_client.save(user.getToken(), courseMapping);
+				model.addAttribute("createCourseMapping", createCourseMapping);
+				return "redirect:/courseMapping.htm";
+			}catch (Exception e) {
+				e.printStackTrace();
+				return "redirect:/addCourseMapping.htm";
+			}
 		} catch (Exception e) {
 			model.addAttribute("Error", "Error");
-			
+			return "redirect:/addCourseMapping.htm";
 		}
-		
-		return "redirect:/courseMapping.htm";
 	}
 }

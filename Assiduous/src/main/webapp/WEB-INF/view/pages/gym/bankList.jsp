@@ -41,35 +41,35 @@
 								</tr>
 							</thead>
 							<tbody>
-								<%-- <c:forEach items="${gyms}" var="gym">
+							 <c:forEach items="${banks}" var="banks">
 									<tr>
-										<td style="text-align: center;">${gym.code}</td>
-										<td style="text-align: center;">${gym.name}</td>
-										<td style="text-align: center;">${gym.licence}</td>
-										<td style="text-align: center;">${gym.email}</td>
-										<td style="text-align: center;">${gym.phone}</td>
-										<td style="text-align: center;">${gym.address.city.name}</td>
-										<td style="text-align: center;">${gym.loc.name}</td>
-										<td style="text-align: center;">${gym.address.pincode}</td>
-										<td style="text-align: center;"><c:if test="${gym.active}">Active</c:if><c:if test="${!gym.active}">Inactive</c:if></td>
+										<td style="text-align: center;">${banks.bankName}</td>
+										<td style="text-align: center;">${banks.branchName}</td>
+										<td style="text-align: center;">${banks.gymDto.name}</td>
+										<td style="text-align: center;">${banks.accountNo}</td>
+										<td style="text-align: center;">${banks.accountType}</td>
+										<td style="text-align: center;">${banks.panNo}</td>
+										<td style="text-align: center;">${banks.tanNo}</td>
+										<td style="text-align: center;">${banks.address.address_line1}</td>
+										<td style="text-align: center;"><c:if test="${banks.active}">Active</c:if><c:if test="${!banks.active}">Inactive</c:if></td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="gym-details.htm?id=${gym.id}"
+												<a href="gym-details.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
 												</a>
-												<a href="delete-gym.htm?id=${gym.id}"
+												<a href="delete-gym.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
 												</a>
-												<a href="active-gym.htm?id=${gym.id}"
+												<a href="active-gym.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-eye"></i>
 												</a>
-												<a href="deactive-gym.htm?id=${gym.id}"
+												<a href="deactive-gym.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-eye"></i>
@@ -77,7 +77,7 @@
 											</div>
 										</td>
 									</tr>
-								</c:forEach> --%>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

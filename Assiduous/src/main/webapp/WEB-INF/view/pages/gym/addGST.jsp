@@ -78,7 +78,7 @@
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="courseMapping.htm"><button
+										<a href="gstList.htm"><button
 												class="btn btn-secondary d-block" type="button"
 												style="min-width: 118px; background-color: #960613;">Back</button></a>
 									</div>

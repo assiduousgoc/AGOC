@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.ass.client.GMSBranchClient;
 import com.ass.client.GMSCourseClient;
 import com.ass.client.GMSCourseScheduleClient;
+import com.ass.client.GMSCrAccountClient;
 import com.ass.client.GMSGymClient;
 import com.ass.client.GMSLedgerClient;
 import com.ass.client.GMSRoomClient;
@@ -47,11 +48,15 @@ public class CrAccountController {
 	private GMSGymClient gym_client;
 	
 	@Autowired
+	private GMSCrAccountClient cr_client;
+	
+	@Autowired
 	private GMSBranchClient b_client;
 	
 	@RequestMapping(value = "/crAccount.htm", method = RequestMethod.GET)
 	public String crAccountList(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
+		model.addAttribute("credits", cr_client.get(user.getToken()));
 		//model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
 		return "crAccount";
 	}
@@ -67,22 +72,26 @@ public class CrAccountController {
 			,@RequestParam("crEmail") String crEmail,@RequestParam("crMNo") Long crMNo,@RequestParam("description") String description,@RequestParam("status") boolean status) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		CrAccountDto crAccount = new CrAccountDto();
-		System.out.println("nbank Name:"+accName+" : crEmail-->"+crEmail+"description==>"+description+" Status:->"+status);
-	
 		try {
 			crAccount.setAcName(accName);
 			crAccount.setEmail(crEmail);
 			crAccount.setMob(crMNo);
 			crAccount.setDescription(description);
 			crAccount.setActive(status);
-			
-			
-			return "crAccount.htm";
+			try {
+				CrAccountDto crAccounts= cr_client.save(user.getToken(), crAccount);
+				model.addAttribute("createCr", crAccounts);
+				return "crAccount.htm";
+			}catch (Exception e) {
+				e.printStackTrace();
+				return "redirect:/addCrAccount.htm";
+			}
 		} catch (Exception e) {
 			model.addAttribute("Error", "Error");
+			return "redirect:/addCrAccount.htm";
 			
 		}
 		
-		return "redirect:/crAccount.htm";
+		
 	}
 }

@@ -23,6 +23,8 @@ public class GMSTxnClientImpl implements GMSTxnClient {
 
 	public static final String UPDATE = RESOURCE + "update";
 	
+	public static final String PAY = RESOURCE + "pay";
+	
 	public static final String TRAINEE = "trainee";
 
 	public static final String DELETE = RESOURCE + "delete";
@@ -140,8 +142,8 @@ public class GMSTxnClientImpl implements GMSTxnClient {
 		try {
 			String body = RestClient.OBJECT_MAPPER.writeValueAsString(dto);
 			HttpEntity<String> http_entity = new HttpEntity<String>(body, headers);
-			ResponseEntity<TxnDto> response = RestClient.REST_CLIENT.exchange(
-					RestClient.BASE_PATH + RestClient.GMS + UPDATE, HttpMethod.PUT, http_entity, TxnDto.class);
+			ResponseEntity<LedgerDto> response = RestClient.REST_CLIENT.exchange(
+					RestClient.BASE_PATH + RestClient.GMS + PAY, HttpMethod.PUT, http_entity, LedgerDto.class);
 			return response.getBody();
 		} catch (Exception e) {
 			e.printStackTrace();
