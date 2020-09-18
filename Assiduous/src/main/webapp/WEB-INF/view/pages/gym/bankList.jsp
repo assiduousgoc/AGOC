@@ -54,22 +54,22 @@
 										<td style="text-align: center;"><c:if test="${banks.active}">Active</c:if><c:if test="${!banks.active}">Inactive</c:if></td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="gym-details.htm?id=${banks.id}"
+												<a href="bank-details.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
 												</a>
-												<a href="delete-gym.htm?id=${banks.id}"
+												<a href="delete-bank.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
 												</a>
-												<a href="active-gym.htm?id=${banks.id}"
+												<a href="active-bank.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-eye"></i>
 												</a>
-												<a href="deactive-gym.htm?id=${banks.id}"
+												<a href="deactive-bank.htm?id=${banks.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-eye"></i>
