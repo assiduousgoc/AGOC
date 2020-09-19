@@ -30,8 +30,8 @@ public class GymController {
 	@Autowired
 	private GMSGymClient g_client;
 	
-	@Autowired
-	ContactDAO contactDao;
+	/*@Autowired
+	ContactDAO contactDao;*/
 
 	@RequestMapping(value = "/gyms.htm", method = RequestMethod.GET)
 	public String get(Model model, HttpServletRequest req) {

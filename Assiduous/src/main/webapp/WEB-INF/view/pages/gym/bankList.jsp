@@ -43,13 +43,13 @@
 							<tbody>
 							 <c:forEach items="${banks}" var="banks">
 									<tr>
-										<td style="text-align: center;">${banks.bankName}</td>
-										<td style="text-align: center;">${banks.branchName}</td>
-										<td style="text-align: center;">${banks.gymDto.name}</td>
-										<td style="text-align: center;">${banks.accountNo}</td>
-										<td style="text-align: center;">${banks.accountType}</td>
-										<td style="text-align: center;">${banks.panNo}</td>
-										<td style="text-align: center;">${banks.tanNo}</td>
+										<td style="text-align: center;">${banks.bank_name}</td>
+										<td style="text-align: center;">${banks.branch_name}</td>
+										<td style="text-align: center;">${banks.gym.name}</td>
+										<td style="text-align: center;">${banks.ac_no}</td>
+										<td style="text-align: center;">${banks.ac_type}</td>
+										<td style="text-align: center;">${banks.pan_no}</td>
+										<td style="text-align: center;">${banks.tn_no}</td>
 										<td style="text-align: center;">${banks.address.address_line1}</td>
 										<td style="text-align: center;"><c:if test="${banks.active}">Active</c:if><c:if test="${!banks.active}">Inactive</c:if></td>
 										<td class="text-center">

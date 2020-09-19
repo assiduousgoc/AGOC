@@ -60,9 +60,9 @@ public class BankController {
 	@RequestMapping(value = "/bank.htm", method = RequestMethod.GET)
 	public String bankList(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
-		System.out.println("Bank Size :"+bank_client.get(user.getToken()).size());
 		model.addAttribute("banks", bank_client.get(user.getToken()));
 		model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
+		//System.out.println("==>"+user.getToken());
 		return "bank";
 	}
 	@RequestMapping(value = "/addBank.htm", method = RequestMethod.GET)
@@ -120,7 +120,7 @@ public class BankController {
 	}
 	
 
-	@RequestMapping(value = "/bank-detail.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "/bank-details.htm", method = RequestMethod.GET)
 	public ModelAndView detail(Model model, HttpServletRequest req, @RequestParam("id") Integer id) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		try {
@@ -133,7 +133,7 @@ public class BankController {
 		return new ModelAndView("redirect:/bank.htm");
 	}
 
-	@RequestMapping(value = "/update.htm", method = RequestMethod.POST)
+	@RequestMapping(value = "/update-bank.htm", method = RequestMethod.POST)
 	public String update(Model model, HttpServletRequest req, @RequestParam("id") Integer id,@RequestParam("name") String name
 			,@RequestParam("branchName") String branchName,@RequestParam("AccNo") String AccNo,@RequestParam("ifsc") String ifsc,
 			@RequestParam("accType") String accType,@RequestParam("panNo") String panNo,@RequestParam("tanNo") String tanNo,@RequestParam("address") String address

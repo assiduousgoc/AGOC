@@ -349,6 +349,11 @@
        <put-attribute name="title" value="DR Account" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/addDrAccount.jsp" />  
    </definition>
+   <definition name="bankDetail" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/bankDetail.jsp" />  
+   </definition>
+   
    <!-- GST -->
     <definition name="gstList" extends="gym-definition">  
        <put-attribute name="title" value="DR Account" />  
