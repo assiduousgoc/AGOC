@@ -1,6 +1,9 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -29,20 +32,23 @@
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form class="needs-validation clearfix" novalidate method="post" action="saveBank.htm">
-							<div class="form-row">
+						<form:form action="update-bank.htm" method="post"
+							commandName="bank" modelAttribute="bank"
+							cssClass="needs-validation clearfix">
+						<div class="form-row">
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom22">Bank Name</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="name" id="name" value="${name}" />
-										<div class="invalid-feedback">Please bank name.
+									<form:hidden path="id" />
+									<form:input path="bankName" cssClass="form-control" />
+									<div class="invalid-feedback">Please bank name.
 										</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom12">Branch Name *</label>
 									<div class="input-group">
-									<input type='text' class="form-control" name="branchName" id="branchName" value="${branchName}"  />
+									<form:input path="branchName"  cssClass="form-control" />
 										<%-- <select class="form-control" name="branchName" id="branchName">
 											<option value="0">Select Branch</option>
 											<c:forEach items="${branches}" var="branch">
@@ -55,62 +61,74 @@
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Account No.*</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="AccNo" id="AccNo" value="${accountNo}"/>
+									<form:input path="accountNo"  cssClass="form-control" />
 										<div class="invalid-feedback">AccNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">IFSC Code.*</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="ifsc" id="ifsc" value="${ifscCode}" />
-										<div class="invalid-feedback">AccNo</div>
+									<form:input path="ifscCode"  cssClass="form-control" />
+										<div class="invalid-feedback">IFSC Code</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 								<label for="validationCustom12">A/C Type *</label>
 									<div class="input-group">
-										<select class="select select2-hidden-accessible" tabindex="-1" name="accType" aria-hidden="true" id="accType" >
-											<option value="${accountType }" selected="selected">${accountType }</option>
-										</select>
+									<form:select path="id" cssClass="form-control">
+									<c:forEach items="${accountType}" var="type">
+									<option value="${type}" selected="selected">${type}</option>
+									</c:forEach>
+										<%-- 	<option value="${accountType }" selected="selected">${accountType }</option> --%>
+										</form:select>
 									</div>
                                 </div>
                                 <div class="col-md-4 mb-3">
 									<label for="validationCustom24">PAN Number.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="panNo" id="panNo" value="${panNo}"/>
+										<form:input path="panNo"  cssClass="form-control" />
 										<div class="invalid-feedback">panNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">TAN Number.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="tanNo" id="tanNo" value="${tanNo}"/>
+										<form:input path="tanNo"  cssClass="form-control" />
 										<div class="invalid-feedback">tanNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Address 1.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="address" id="address" value="${address.line1 }"/>
+										<form:input path="addressDto.line1"  cssClass="form-control" />
 										<div class="invalid-feedback">Address</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">City.</label>
 									<div class="input-group">
-										<select class="form-control" name="city" id="city">
-											<option value="0">Select City</option>
-											<c:forEach items="${city}" var="city">
+										<form:select path="addressDto.cityDto.id" cssClass="form-control">
+										<c:forEach items="${address.city}" var="city">
+												<c:if test="${address.id eq address.cityDto.id}">
+													<option value="${address.city.id}" selected="selected">${address.city.name}</option>
+												</c:if>
+												<c:if test="${city.id ne address.cityDto.id}">
+													<form:option value="${address.city.id}">${address.city.name}</form:option>
+												</c:if>
+											</c:forEach>
+										
+										
+										<c:forEach items="${city}" var="city">
 												<option value="${city.id}">${city.name}-
 													${city.code}</option>
 											</c:forEach>
-										</select>
+										</form:select>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Pin Code.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="pincode" id="pincode" value="${address.pincode}" />
+										<form:input path="addressDto.pincode"  cssClass="form-control" />
 										<div class="invalid-feedback">PinCode</div>
 									</div>
 								</div>
@@ -186,7 +204,7 @@
 
 
 							</div>
-						</form>
+						</form:form>
 
 					</div>
 				</div>
