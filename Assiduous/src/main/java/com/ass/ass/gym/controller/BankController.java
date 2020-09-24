@@ -213,4 +213,13 @@ public class BankController {
 		}
 		return new ModelAndView("redirect:/bank.htm");
 	}
+	
+	@RequestMapping(value = "/resBank.htm", method = RequestMethod.GET)
+	public String resBank(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		//model.addAttribute("banks", bank_client.get(user.getToken()));
+		//model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
+		//System.out.println("==>"+user.getToken());
+		return "resBank";
+	}
 }

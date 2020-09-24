@@ -10,7 +10,7 @@
     }
 %>
 <!-- Header start -->
-		<div class="headerR" style="border-bottom: 2px solid #ffff;">
+		<div class="headerR" style="border-bottom: 2px solid #ffff; ">
             <div class="header-left">
                 <a href="index.html" class="logo" style="color: #ffff;font-weight: bold;font-family: auto;font-size: 16px;">
                     <img src="${pageContext.request.contextPath}/static/hospital/assets/img/CompanyLogo.jpg" width="35" height="35" alt="" style="width: 40px;border-radius: 50%;height: 40px;border: 5px solid #f79753;"> &nbsp;Assiduous Gym Management System

@@ -43,4 +43,14 @@ public class InvoiceController {
 		model.addAttribute("user",user);
 		return "invoice";
 	}
+	@RequestMapping(value = "/invoiceList.htm", method = RequestMethod.GET)
+	public String invoiceList(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		return "invoiceList";
+	}
+	@RequestMapping(value = "/resInvoice.htm", method = RequestMethod.GET)
+	public String ResInvoice(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		return "invoiceList";
+	}
 }

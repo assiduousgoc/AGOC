@@ -91,7 +91,13 @@ public class CrAccountController {
 			return "redirect:/addCrAccount.htm";
 			
 		}
-		
-		
+	}
+	
+	@RequestMapping(value = "/crAcc.htm", method = RequestMethod.GET)
+	public String crAccList(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		//model.addAttribute("credits", cr_client.get(user.getToken()));
+		//model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
+		return "crAccRestaurent";
 	}
 }

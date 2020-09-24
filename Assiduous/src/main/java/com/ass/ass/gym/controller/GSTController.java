@@ -91,7 +91,11 @@ public class GSTController {
 			model.addAttribute("Error", "Error");
 			return "redirect:/addGST.htm";
 		}
-		
-		
+	}
+	@RequestMapping(value = "/resGst.htm", method = RequestMethod.GET)
+	public String getResGst(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		//model.addAttribute("gsts",gst_client.get(user.getToken()));
+		return "resGstList";
 	}
 }

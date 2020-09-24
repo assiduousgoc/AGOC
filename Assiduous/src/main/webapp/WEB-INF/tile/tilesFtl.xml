@@ -26,14 +26,22 @@
        <put-attribute name="body" value="" />  
        <put-attribute name="footer" value="/WEB-INF/view/jsp/hospital/hospitalFooter.jsp" />  
    </definition>
-   <definition name="restaurent-definition" 
+   <!-- <definition name="restaurent-definition" 
        template="/WEB-INF/view/jsp/restaurentLayout.jsp">  
        <put-attribute name="title" value="Restaurent Dashboard" />  
        <put-attribute name="header" value="/WEB-INF/view/jsp/restaurent/restaurentHeader.jsp" />  
        <put-attribute name="menu" value="/WEB-INF/view/jsp/restaurent/restaurentMenu.jsp" />  
        <put-attribute name="body" value="" />  
        <put-attribute name="footer" value="/WEB-INF/view/jsp/restaurent/restaurentFooter.jsp" />  
-   </definition>  
+   </definition> --> 
+   <definition name="restaurent-definition" 
+       template="/WEB-INF/view/jsp/restaurentLayout_view.jsp">  
+       <put-attribute name="title" value="Restaurent Dashboard" />  
+       <put-attribute name="header" value="/WEB-INF/view/jsp/restaurent/restaurentHeader.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/view/jsp/restaurent/restaurentMenu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/view/jsp/restaurent/restaurentFooter.jsp" />  
+   </definition> 
    <definition name="gym-definition" 
        template="/WEB-INF/view/jsp/gymLayout.jsp">  
        <put-attribute name="title" value="Gym Dashboard" />  
@@ -366,7 +374,7 @@
    <!--  Restaurent  -->
 	<definition name="restaurentdashboard" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
-       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/home.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/homePage.jsp" />  
    </definition>
    
    <definition name="menuList" extends="restaurent-definition">  
@@ -379,8 +387,26 @@
    </definition>  
    <definition name="invoiceList" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
-       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/invoiceList.jsp" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resInvoiceList.jsp" />  
    </definition>
+   <definition name="resBank" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resBankList.jsp" />  
+   </definition>
+   <definition name="crAccRestaurent" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resCrAccList.jsp" />  
+   </definition>
+   <definition name="drAccRestaurent" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resDrAccList.jsp" />  
+   </definition>
+    <definition name="resGstList" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resGstList.jsp" />  
+   </definition>
+   
+   
    <definition name="sales" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/sales.jsp" />  

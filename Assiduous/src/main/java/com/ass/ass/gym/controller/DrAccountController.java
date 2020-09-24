@@ -91,4 +91,12 @@ public class DrAccountController {
 			
 		}
 	}
+	
+	@RequestMapping(value = "/drAcc.htm", method = RequestMethod.GET)
+	public String drAccList(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		//model.addAttribute("credits", cr_client.get(user.getToken()));
+		//model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
+		return "drAccRestaurent";
+	}
 }

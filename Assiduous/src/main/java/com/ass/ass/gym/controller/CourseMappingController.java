@@ -48,7 +48,7 @@ public class CourseMappingController {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("trainers", ser_client.get(user.getToken(), UserRole.TRAINER));
 		model.addAttribute("courseMappings", coursemapping_client.get(user.getToken()));
-		
+		System.out.println(""+user.getToken());
 		
 		return "courseMappingList";
 	}
