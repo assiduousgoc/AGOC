@@ -155,6 +155,7 @@
 	-moz-box-shadow: 0 0 3px #666;
 	-webkit-box-shadow: 0 0 3px#666;
 	box-shadow: 0 0 3px #666;
+	
 }
 .alert_notify_round {
 	background:url(../images/layout-sprite.png) repeat-x;
@@ -956,6 +957,7 @@ input.full {
 	top:-20px !important;
 	left:-20px;
 	margin-right:-20px;
+	    border-radius: 100%;
 }
 #widget_tab ul li a:hover {
 	height:39px;
@@ -3511,6 +3513,7 @@ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIH
 	background: -ms-linear-gradient(top, #f4f4f4 0%, #d6d6d6 100%); /* IE10+ */
 	background: linear-gradient(top, #f4f4f4 0%, #d6d6d6 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d6d6d6', GradientType=0 ); /* IE6-8 */
+    border-radius: 100%;
 }
 .btn_30_light a:hover {
 	box-shadow:

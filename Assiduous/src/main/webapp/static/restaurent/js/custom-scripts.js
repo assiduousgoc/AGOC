@@ -1301,6 +1301,7 @@ jQuery(function ($) {
 
 	// Load dialog on click
 	$('.basic-modal').click(function (e) {
+		alert('hi');
 		$('#basic-modal-content').modal();
 
 		return false;
@@ -1421,13 +1422,14 @@ $('.item .delete').click(function(){
 		});
 		
 	});
-
+$('.basic-modal').click(function (e) {
+	$('#basic-modal-content').modal();
+	$('<div></div>').load('page.html').modal(); 
+	return false;
+});
 
 
 $('.confirm_dialog').click(function(){
-		
-		
-		
 		$.confirm({
 			'title'		: 'Delete Confirmation',
 			'message'	: 'You are about to delete this item. <br />It cannot be restored at a later time! Continue?',

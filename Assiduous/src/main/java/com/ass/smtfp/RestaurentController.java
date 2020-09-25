@@ -12,7 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RestaurentController
 {
-	
+	@RequestMapping("/restaurentdashboard.htm")
+	public String restaurentdashboard(Model model)
+	{
+		System.out.println("menu Page : ");
+		model.addAttribute("menu", "");
+		return "restaurentdashboard";
+	}
 	@RequestMapping("/menuList.htm")
 	public String menuList(Model model)
 	{

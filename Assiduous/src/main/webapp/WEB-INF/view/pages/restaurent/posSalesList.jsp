@@ -11,7 +11,7 @@ width:100%;
 	
 	<div class="page_title">
 		<span class="stats_icon bank_sl"><span class="bank_3"></span></span>
-		<h3>Invoices </h3>
+		<h3>POS Sales </h3>
 		
 	</div>
 	
@@ -23,10 +23,10 @@ width:100%;
 				<div class="widget_wrap tabby">
 					<div class="widget_top">
 						<span class="h_icon list"></span>
-						<h6>Invoices</h6>
+						<h6>POS Sales</h6>
 						<div id="widget_tab">
 							<ul>
-								<li><a href="#tab1" class="active_tab"><span class="alert_notify pink">30</span>Invoices</a></li>
+								<li><a href="#tab1" class="active_tab"><span class="alert_notify pink">30</span>Store Items</a></li>
 								<!-- <li><a href="#tab2">Inventory<span class="alert_notify orange">30</span></a></li>
 								<li><a href="#tab3">Categories<span class="alert_notify pink">20</span></a></li>
 								<li><a href="#tab4">Suppliers<span class="alert_notify orange">50</span></a></li> -->
@@ -37,9 +37,7 @@ width:100%;
 					<div class="widget_content">
 						<div id="tab1">
 							<div class="widget_top" style="text-align: end;">
-								<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Add Invoice"><span class="icon add_co"></span></a>
-									</div>
+								
 								
 								<div class="btn_30_light">
 									<a href="#" class="tipTop" original-title="Print Sales"><span class="icon printer_co"></span></a>
@@ -69,16 +67,15 @@ width:100%;
 								 Ref
 							</th>
 							<th>
-								 Customer
-							</th>
-							<th>
 								 User
 							</th>
+							<th>
+								 Device/Location
+							</th>
 							<!-- <th>Type</th> -->
-							<th>Invoice Date</th>
-							<th>Due Date</th>
+							<th>#Items</th>
+							<th>Sale Time</th>
 							<th>Total</th>
-							<th>Balance</th>
 							
 							 <th>
 								 Status
@@ -100,27 +97,24 @@ width:100%;
 								<a href="#" class="">2635 </a>
 							</td>
 							<td>
-								<a href="#" class="">Jo Doe</a>
+								<a href="#" class="">	admin</a>
 							</td>
 							
 							<td>
-								<a href="#" class="">Admin</a>
+								<a href="#" class="">	Register 1 / Sydney</a>
+							</td>
+							<td >
+								2
+							</td>
+							<td class="sdate center">
+								<span >25/9/20 11:14:44</span>
+							</td>
+							<td class="center">
+								$50.00
 							</td>
 							
-							<td class="sdate center">
-								<span >25/9/20</span>
-							</td>
-							<td class="sdate center">
-								<span >30/9/20</span>
-							</td>
 							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								<span class="badge_style b_done">Open</span>
+								<span class="badge_style b_done">Complete</span>
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
@@ -133,33 +127,30 @@ width:100%;
 								<input name="checkbox" type="checkbox" value="">
 							</td>
 							<td>
-								<a href="#">1005</a>
+								<a href="#">1006</a>
 							</td>
 							<td>
-								<a href="#" class="">2635 </a>
+								<a href="#" class="">2644 </a>
 							</td>
 							<td>
-								<a href="#" class="">Jo Doe</a>
+								<a href="#" class="">Staff</a>
 							</td>
 							
 							<td>
-								<a href="#" class="">Admin</a>
+								<a href="#" class="">Register 1 / Sydney</a>
 							</td>
-							
-							<td class="sdate center">
-								<span >25/10/20</span>
+							<td >
+								2
 							</td>
 							<td class="sdate center">
-								<span >30/9/20</span>
+								<span >25/9/20 11:14:44</span>
 							</td>
 							<td class="center">
 								$50.00
 							</td>
+							
 							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								<span class="badge_style b_suspend">Overdue</span>
+								<span class="badge_style b_Pending">Refunded</span>
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
@@ -167,84 +158,7 @@ width:100%;
 								<!-- <span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span> -->
 							</td>
 						</tr>
-						<tr>
-							<td class="center tr_select ">
-								<input name="checkbox" type="checkbox" value="">
-							</td>
-							<td>
-								<a href="#">1005</a>
-							</td>
-							<td>
-								<a href="#" class="">2635 </a>
-							</td>
-							<td>
-								<a href="#" class="">Jo Doe</a>
-							</td>
-							
-							<td>
-								<a href="#" class="">Admin</a>
-							</td>
-							
-							<td class="sdate center">
-								<span >25/10/20</span>
-							</td>
-							<td class="sdate center">
-								<span >30/9/20</span>
-							</td>
-							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								<span class="badge_style b_overdue">Void</span>
-							</td>
-							<td class="center">
-								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span>
-								<!-- <span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span> -->
-							</td>
-						</tr>
-						<tr>
-							<td class="center tr_select ">
-								<input name="checkbox" type="checkbox" value="">
-							</td>
-							<td>
-								<a href="#">1005</a>
-							</td>
-							<td>
-								<a href="#" class="">2635 </a>
-							</td>
-							<td>
-								<a href="#" class="">Jo Doe</a>
-							</td>
-							
-							<td>
-								<a href="#" class="">Admin</a>
-							</td>
-							
-							<td class="sdate center">
-								<span >25/10/20</span>
-							</td>
-							<td class="sdate center">
-								<span >30/9/20</span>
-							</td>
-							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								$50.00
-							</td>
-							<td class="center">
-								<span class="badge_style b_high">Close</span>
-							</td>
-							<td class="center">
-								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span>
-								<!-- <span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span> -->
-							</td>
-						</tr>
+						
 						</tbody>
 						
 						</table>

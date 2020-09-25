@@ -145,6 +145,7 @@ System.out.println("-------------->"+session.getAttribute("user"));
 <script type="text/javascript" src="<c:url value='/static/restaurent/js/chart-plugins/jqplot.categoryAxisRenderer.min.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/static/restaurent/js/chart-plugins/jqplot.pointLabels.min.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/static/restaurent/js/chart-plugins/jqplot.meterGaugeRenderer.min.js'/>"></script>
+<script type="text/javascript"  src="<c:url value='/static/restaurent/js/jquery.simplemodal.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/static/restaurent/js/custom-scripts.js'/>"></script>
 <%-- <script type="text/javascript" src="<c:url value='/static/restaurent/js/custom-scripts2.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/static/restaurent/js/custom-scripts3.js'/>"></script> --%>

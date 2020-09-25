@@ -385,10 +385,23 @@
        <put-attribute name="title" value="Dashboard" />
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/customerList.jsp" />  
    </definition>  
-   <definition name="invoiceList" extends="restaurent-definition">  
+   <definition name="resInvoiceList" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resInvoiceList.jsp" />  
    </definition>
+   <definition name="resInvoice" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resInvoice.jsp" />  
+   </definition>
+    <definition name="resOfferList" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/offerList.jsp" />  
+   </definition>
+   <definition name="resOffer" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addOffer.jsp" />  
+   </definition>
+   
    <definition name="resBank" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resBankList.jsp" />  
@@ -405,8 +418,15 @@
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resGstList.jsp" />  
    </definition>
+    <definition name="resItemList" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/itemList.jsp" />  
+   </definition>
    
-   
+    <definition name="posSalesList" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/posSalesList.jsp" />  
+   </definition>
    <definition name="sales" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/sales.jsp" />  

@@ -101,11 +101,13 @@
 			<ul id="sidenav" class="accordion_mnu collapsible">
 				<li><a href="#"><span class="nav_icon computer_imac"></span> Master<span class="alert_notify blue">4</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
-					<li><a href="dashboard.html"><span class="list-icon">&nbsp;</span>Member</a></li>
-					<li><a href="dashboard-01.html"><span class="list-icon">&nbsp;</span>Category</a></li>
-					<li><a href="dashboard-02.html"><span class="list-icon">&nbsp;</span>Items</a></li>
-					<li><a href="dashboard-03.html"><span class="list-icon">&nbsp;</span>Offer</a></li>
+					<!-- <li><a href="dashboard.html"><span class="list-icon">&nbsp;</span>Member</a></li>
+					<li><a href="dashboard-01.html"><span class="list-icon">&nbsp;</span>Category</a></li> -->
+					<li><a href="resItemList.htm"><span class="list-icon">&nbsp;</span>Items</a></li>
+					<li><a href="resOfferList.htm"><span class="list-icon">&nbsp;</span>Offer</a></li>
 				</ul>
+				</li>
+				<li><a href="POSSales.htm"><span class="nav_icon folder"></span>POS Sales</a>
 				</li>
 				<!-- <li><a href="table.html"><span class="nav_icon list"></span> Sales</a>
 				</li> -->
@@ -118,16 +120,40 @@
 				<li><a href="#"><span class="nav_icon frames"></span> Account<span class="alert_notify blue">5</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
 					<li><a href="resBank.htm"><span class="list-icon">&nbsp;</span>Bank</a></li>
-					<li><a href="crAcc.htm"><span class="list-icon">&nbsp;</span>Cr Account</a></li>
+					<!-- <li><a href="crAcc.htm"><span class="list-icon">&nbsp;</span>Cr Account</a></li>
 					<li><a href="drAcc.htm"><span class="list-icon">&nbsp;</span>Dr Account</a></li>
 					<li><a href="resGst.htm"><span class="list-icon">&nbsp;</span>GST</a></li>
-					<li><a href="form-xtras.html"><span class="list-icon">&nbsp;</span>Payment</a></li>
+					<li><a href="form-xtras.html"><span class="list-icon">&nbsp;</span>Payment</a></li> -->
 
 				</ul>
 				</li>
 				<li><a href="table.html"><span class="nav_icon blocks_images"></span> Order</a>
 				</li>
-				<li><a href="resInvoice.htm"><span class="nav_icon money_2"></span>Invoice</a></li>
+				<li><a href="resInvoiceList.htm"><span class="nav_icon money_2"></span>Invoice</a></li>
+<!-- 				<li><a href="resInvoice.htm"><span class="nav_icon documents"></span>Report</a></li> -->
+				<li><a href="#"><span class="nav_icon documents"></span> Report<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
+				<ul class="acitem">
+					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Sales Report</a></li>
+					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Stock Report</a></li>
+				</ul>
+				</li>
+				
+				<li><a href="#"><span class="nav_icon coverflow"></span> Daybook<span class="alert_notify blue">6</span><span class="up_down_arrow">&nbsp;</span></a>
+				<ul class="acitem">
+					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Income Statement</a></li>
+					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Expense Statement</a></li>
+					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Account Ledger(S)</a></li>
+					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Trial Balance</a></li>
+					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Profit & Loss Report</a></li>
+					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Balance Sheet</a></li>
+				</ul>
+				</li>
+				<li><a href="#"><span class="nav_icon bulls_eye"></span> Voucher<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
+				<ul class="acitem">
+					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Payment Voucher</a></li>
+					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Receipt Voucher</a></li>
+				</ul>
+				</li>
 				<!-- <li><a href="typography.html"><span class="nav_icon list"></span>Typography</a></li>
 				<li><a href="#"><span class="nav_icon frames"></span>Grid<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
