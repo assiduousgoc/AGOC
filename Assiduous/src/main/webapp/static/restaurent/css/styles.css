@@ -2446,6 +2446,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0dede', end
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
+	/* text-align: center; */
 }
 #confirmBox h3 {
 	font-size:16px;

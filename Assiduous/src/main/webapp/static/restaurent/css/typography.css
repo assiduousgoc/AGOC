@@ -22,9 +22,10 @@ h2 {
 }
 h3 {
 	font-size: 1.6667em; /* 20px */
-	line-height: 1.8em; /* 36px */
+	line-height: 0.8em; /* 36px */
 	margin-top: 0.9em;
 	margin-bottom: 0em;
+	/* text-align: center; */
 }
 h4 {
 	font-size: 1.5em; /* 18px */

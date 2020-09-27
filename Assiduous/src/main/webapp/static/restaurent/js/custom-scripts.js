@@ -1301,8 +1301,7 @@ jQuery(function ($) {
 
 	// Load dialog on click
 	$('.basic-modal').click(function (e) {
-		alert('hi');
-		$('#basic-modal-content').modal();
+		$('#basic-modal-content').modal('<h1>Maheshwr</h1>');
 
 		return false;
 	});
@@ -1423,8 +1422,8 @@ $('.item .delete').click(function(){
 		
 	});
 $('.basic-modal').click(function (e) {
-	$('#basic-modal-content').modal();
-	$('<div></div>').load('page.html').modal(); 
+	$('#basic-modal-content12').modal();
+	//$.modal('Maheshwar Prasad');
 	return false;
 });
 
@@ -1436,6 +1435,9 @@ $('.confirm_dialog').click(function(){
 			'buttons'	: {
 				'Yes'	: {
 					'class'	: 'yes',
+					'action': function(){
+						window.location="resItemList.htm";
+					}
 				},
 				'No'	: {
 					'class'	: 'no',

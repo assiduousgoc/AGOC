@@ -299,6 +299,30 @@ $(function(){
     });
 });
 </script>
+<div id="basic-modal-content1">
 
+								<%-- <h3>Basic Modal Dialog</h3>
+								<p>
+									 For this demo, SimpleModal is using this "hidden" data for its content. You can also populate the modal dialog with an AJAX response, standard HTML or DOM element(s).
+								</p>
+								<p>
+									 Examples:
+								</p>
+								<p>
+									<code>$('#basicModalContent').modal(); // jQuery object - this demo</code>
+								</p>
+								<p>
+									<code>$.modal(document.getElementById('basicModalContent')); // DOM</code>
+								</p>
+								<p>
+									<code>$.modal('&lt;p&gt;&lt;b&gt;HTML&lt;/b&gt; elements&lt;/p&gt;'); // HTML</code>
+								</p>
+								<p>
+									<code>$('&lt;div&gt;&lt;/div&gt;').load('page.html').modal(); // AJAX</code>
+								</p>
+								<div class="btn_24_blue">
+									<a href="#" class="simplemodal-close"><span>More details...</span></a>
+								</div> --%>
+							</div>
 </body>
 </html>
