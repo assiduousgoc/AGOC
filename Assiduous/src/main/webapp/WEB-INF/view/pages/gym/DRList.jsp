@@ -11,8 +11,8 @@
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<a href="addDrAccount.htm"><button type="button"
 							class="btn btn-primary"
-							style="border-radius: 0px !important; background-color: #4a274f;">Add Dr Account
-							</button></a>
+							style="border-radius: 0px !important; background-color: #4a274f;">Add
+							Dr Account</button></a>
 				</div>
 			</div>
 
@@ -31,39 +31,32 @@
 									<th>A/C Name</th>
 									<th>Email</th>
 									<th>Mobile No.</th>
-									<th>Status</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${debits}" var="debits">
+								<c:forEach items="${debits}" var="debit">
 									<tr>
-										<td style="text-align: center;">${debits.acName}</td>
-										<td style="text-align: center;">${debits.email}</td>
-										<td style="text-align: center;">${debits.mob}</td>
-										<td style="text-align: center;"><c:if test="${debits.active}">Active</c:if><c:if test="${!debits.active}">Inactive</c:if></td>
+										<td style="text-align: center;">${debit.ac_name}</td>
+										<td style="text-align: center;">${debit.email}</td>
+										<td style="text-align: center;">${debit.mob}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="gym-details.htm?id=${debits.id}"
+												<a href="dr-details.htm?id=${debit.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
-												</a>
-												<a href="delete-gym.htm?id=${debits.id}"
+												</a> <a href="delete-dr.htm?id=${debit.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
 												</a>
-												<a href="active-gym.htm?id=${debits.id}"
-													class="ms-btn-icon-outline btn-pill btn-primary"
-													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
-													<i class="fa fa-eye"></i>
-												</a>
-												
+
+
 											</div>
 										</td>
 									</tr>
-								</c:forEach> 
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

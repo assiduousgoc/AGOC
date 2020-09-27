@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import com.ass.client.GMSBankClient;
 import com.ass.client.config.RestClient;
 import com.ass.smtfp.model.BankDto;
-import com.ass.smtfp.model.CourseDto;
 
 @Component
 public class GMSBankClientImpl 	implements GMSBankClient {

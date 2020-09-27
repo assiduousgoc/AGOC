@@ -23,7 +23,7 @@ public class CourseMappingDto implements Serializable {
 	private Integer id;
 
 	@JsonProperty("course")
-	private CommonDto courseDtp;
+	private CommonDto courseDto;
 
 	@JsonProperty("branch")
 	private CommonDto branchDto;
@@ -42,12 +42,12 @@ public class CourseMappingDto implements Serializable {
 		this.id = id;
 	}
 
-	public CommonDto getCourseDtp() {
-		return courseDtp;
+	public CommonDto getCourseDto() {
+		return courseDto;
 	}
 
-	public void setCourseDtp(CommonDto courseDtp) {
-		this.courseDtp = courseDtp;
+	public void setCourseDto(CommonDto courseDto) {
+		this.courseDto = courseDto;
 	}
 
 	public CommonDto getBranchDto() {

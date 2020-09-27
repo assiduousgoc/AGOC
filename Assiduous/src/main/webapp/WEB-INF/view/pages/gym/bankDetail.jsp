@@ -14,8 +14,8 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #090696;">Bank Form
-						</button>
+						style="border-radius: 0px !important; background-color: #090696;">Bank
+						Form</button>
 
 				</div>
 			</div>
@@ -35,92 +35,103 @@
 						<form:form action="update-bank.htm" method="post"
 							commandName="bank" modelAttribute="bank"
 							cssClass="needs-validation clearfix">
-						<div class="form-row">
+							<div class="form-row">
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom22">Bank Name</label>
 									<div class="input-group">
-									<form:hidden path="id" />
-									<form:input path="bankName" cssClass="form-control" />
-									<div class="invalid-feedback">Please bank name.
-										</div>
+										<form:hidden path="id" id="id" />
+										<form:hidden path="gymDto.id" id="gym-id" />
+										<form:hidden path="addressDto.id" id="addid" />
+										<form:input path="bankName" id="bankName"
+											cssClass="form-control" />
+										<div class="invalid-feedback">Please bank name.</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom12">Branch Name *</label>
 									<div class="input-group">
-									<form:input path="branchName"  cssClass="form-control" />
-										<%-- <select class="form-control" name="branchName" id="branchName">
-											<option value="0">Select Branch</option>
-											<c:forEach items="${branches}" var="branch">
-												<option value="${branch.id}">${branch.name}-
-													${branch.code}</option>
-											</c:forEach>
-										</select> --%>
+										<form:input path="branchName" id="branchName"
+											cssClass="form-control" />
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Account No.*</label>
 									<div class="input-group">
-									<form:input path="accountNo"  cssClass="form-control" />
+										<form:input path="accountNo" id="accountNo"
+											cssClass="form-control" />
 										<div class="invalid-feedback">AccNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">IFSC Code.*</label>
 									<div class="input-group">
-									<form:input path="ifscCode"  cssClass="form-control" />
-										<div class="invalid-feedback">IFSC Code</div>
+										<form:input path="ifscCode" id="ifscCode"
+											cssClass="form-control"
+											onblur="matchfun('ifsc','[A-Z]{3,4}[0-9]{5,7}');"
+											onchange="changecolor('ifsc');" />
+										<div class="invalid-feedback">AccNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
-								<label for="validationCustom12">A/C Type *</label>
+									<label for="validationCustom12">A/C Type *</label>
 									<div class="input-group">
-									<form:select path="id" cssClass="form-control">
-									<c:forEach items="${accountType}" var="type">
-									<option value="${type}" selected="selected">${type}</option>
-									</c:forEach>
-										<%-- 	<option value="${accountType }" selected="selected">${accountType }</option> --%>
+										<form:select path="accountType" id="accountType"
+											class="select select2-hidden-accessible" tabindex="-1">
+											<option value="CR">CR</option>
+											<option value="DR">DR</option>
 										</form:select>
 									</div>
-                                </div>
-                                <div class="col-md-4 mb-3">
+								</div>
+								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">PAN Number.</label>
 									<div class="input-group">
-										<form:input path="panNo"  cssClass="form-control" />
+										<form:input path="panNo" id="panNo" cssClass="form-control"
+											onblur="matchfun('panNo','[A-Z]{5}[0-9]{4}[A-Z]{1}');"
+											onchange="changecolor('panNo');" />
+
 										<div class="invalid-feedback">panNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">TAN Number.</label>
 									<div class="input-group">
-										<form:input path="tanNo"  cssClass="form-control" />
+										<form:input path="tanNo" id="tanNo" cssClass="form-control"
+											onblur="matchfun('tanNo','[A-Z]{4}[0-9]{5}[A-Z]{1}');"
+											onchange="changecolor('tanNo');" />
 										<div class="invalid-feedback">tanNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Address 1.</label>
 									<div class="input-group">
-										<form:input path="addressDto.line1"  cssClass="form-control" />
+										<form:input path="addressDto.line1" id="line1"
+											cssClass="form-control" />
+										<div class="invalid-feedback">Address</div>
+									</div>
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="validationCustom24">Address 2.</label>
+									<div class="input-group">
+										<form:input path="addressDto.line2" id="line2"
+											cssClass="form-control" />
 										<div class="invalid-feedback">Address</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">City.</label>
 									<div class="input-group">
-										<form:select path="addressDto.cityDto.id" cssClass="form-control">
-										<c:forEach items="${address.city}" var="city">
-												<c:if test="${address.id eq address.cityDto.id}">
-													<option value="${address.city.id}" selected="selected">${address.city.name}</option>
+										<form:select class="form-control" path="addressDto.cityDto.id"
+											id="city">
+											<option value="0">Select City</option>
+											<c:forEach items="${city}" var="city">
+												<c:if test="${city.id eq bank.addressDto.cityDto.id }">
+													<option value="${city.id}" selected="selected">${city.name}-
+														${city.code}</option>
 												</c:if>
-												<c:if test="${city.id ne address.cityDto.id}">
-													<form:option value="${address.city.id}">${address.city.name}</form:option>
+												<c:if test="${city.id ne bank.addressDto.cityDto.id }">
+													<option value="${city.id}">${city.name}-
+														${city.code}</option>
 												</c:if>
-											</c:forEach>
-										
-										
-										<c:forEach items="${city}" var="city">
-												<option value="${city.id}">${city.name}-
-													${city.code}</option>
 											</c:forEach>
 										</form:select>
 									</div>
@@ -128,54 +139,13 @@
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Pin Code.</label>
 									<div class="input-group">
-										<form:input path="addressDto.pincode"  cssClass="form-control" />
+										<form:input path="addressDto.pincode" id="pincode"
+											cssClass="form-control" />
 										<div class="invalid-feedback">PinCode</div>
 									</div>
 								</div>
-								<div class="col-md-4 mb-3">
-									<label for="validationCustom12">Gym *</label>
-									<div class="input-group">
-										<select class="form-control" name="Gym" id="Gym">
-											<option value="0">Select Gym</option>
-											<c:forEach items="${gym}" var="gym">
-												<option value="${gym.id}">${gym.name}-
-													${gym.code}</option>
-											</c:forEach>
-										</select>
-									</div>
-								</div>
-								
-								<%-- <div class="col-md-4 mb-3">
-									<label for="validationCustom12">Address *</label>
-									<div class="input-group">
-										<select class="form-control" name="address" id="address">
-											<option value="0">Select Address</option>
-											<c:forEach items="${gym}" var="gym">
-												<option value="${gym.address.id}">${gym.address.address_line1}-
-													${gym.address.city.name}-${gym.address.pincode}</option>
-											</c:forEach>
-										</select>
-									</div>
-								</div> --%>
-								<div class="col-md-4 mb-3">
-								<label for="validationCustom12">Status *</label>
-									<div class="input-group">
-										<select class="select select2-hidden-accessible" tabindex="-1" name="status" aria-hidden="true">
-											<option>Select</option>
-											<option value="1">Active</option>
-											<option value="0">In Active</option>
-										</select>
-									</div>
-                                </div>
-								<div class="col-md-8 mb-3">
-									<label for="validationCustom12">Description </label>
-									<div class="input-group">
-										<div class="input-group">
-											<textarea class="summernote edi-css form-control"
-												name="description" id="description" style="max-height: 39px;"></textarea>
-										</div>
-									</div>
-								</div>
+
+
 
 							</div>
 							<div class="new" style="display: inline-flex;">
@@ -194,13 +164,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-md-1 mb-3">
-									<div class="input-group">
-										<a href="menuList.htm"><button
-												class="btn btn-primary d-block" type="reset"
-												style="min-width: 118px;">Reset</button></a>
-									</div>
-								</div>
+
 
 
 							</div>
@@ -223,4 +187,19 @@
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});
+	function matchfun(id, regex) {
+		var str = document.getElementById(id).value;
+		if (!str.match(regex)) {
+			$("#" + id).css("background-color", "red");
+			document.getElementById(id).focus();
+			return;
+		}
+	}
+	function changecolor(id) {
+		var str = document.getElementById(id).value;
+		if (str == 0) {
+			$("#" + id).css("background-color", "white");
+			return;
+		}
+	}
 </script>

@@ -54,11 +54,9 @@ public class BankDto implements Serializable {
 	private String accountType;
 
 	@JsonProperty("pan_no")
-	//@Validate(regex = CommonConstant.RegexPatternConstant.PAN_REGEX)
 	private String panNo;
 
 	@JsonProperty("tn_no")
-	//@Validate(regex = CommonConstant.RegexPatternConstant.TAN_REGEX)
 	private String tanNo;
 
 	@JsonProperty("address")

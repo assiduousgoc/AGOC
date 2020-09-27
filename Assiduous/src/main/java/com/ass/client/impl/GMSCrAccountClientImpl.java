@@ -3,7 +3,6 @@ package com.ass.client.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.core.tools.picocli.CommandLine.Command;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -11,11 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.ass.client.GMSCourseMappingClient;
 import com.ass.client.GMSCrAccountClient;
 import com.ass.client.config.RestClient;
-import com.ass.smtfp.model.CourseDto;
-import com.ass.smtfp.model.CourseMappingDto;
 import com.ass.smtfp.model.CrAccountDto;
 
 @Component
@@ -28,7 +24,7 @@ public class GMSCrAccountClientImpl implements GMSCrAccountClient {
 	public static final String SAVE = RESOURCE + "save";
 
 	public static final String UPDATE = RESOURCE + "update";
-	
+
 	public static final String NAME = "name";
 
 	public static final String DELETE = RESOURCE + "delete";
@@ -102,6 +98,7 @@ public class GMSCrAccountClientImpl implements GMSCrAccountClient {
 		}
 		return null;
 	}
+
 	@Override
 	public CrAccountDto getByName(String token, String name) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
@@ -118,7 +115,7 @@ public class GMSCrAccountClientImpl implements GMSCrAccountClient {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public String delete(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
@@ -134,6 +131,12 @@ public class GMSCrAccountClientImpl implements GMSCrAccountClient {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
+	}
+
+	@Override
+	public String active(String token, Integer id, boolean status) throws RuntimeException {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

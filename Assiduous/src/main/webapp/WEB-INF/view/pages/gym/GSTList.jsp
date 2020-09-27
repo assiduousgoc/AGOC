@@ -11,8 +11,8 @@
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<a href="addGST.htm"><button type="button"
 							class="btn btn-primary"
-							style="border-radius: 0px !important; background-color: #4a274f;">Add GST
-							</button></a>
+							style="border-radius: 0px !important; background-color: #4a274f;">Add
+							GST</button></a>
 				</div>
 			</div>
 
@@ -29,50 +29,42 @@
 								style="background-color: #4a274f; color: cornsilk; font-family: auto; text-align: center;">
 								<tr>
 									<th>GST No</th>
-									<th>Gym Name</th>
-									<th>Gym Code </th>
+									<th>Remark</th>
 									<th>Status</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<%-- <c:forEach items="${gyms}" var="gym">
+								<c:forEach items="${gsts}" var="gst">
 									<tr>
-										<td style="text-align: center;">${gym.code}</td>
-										<td style="text-align: center;">${gym.name}</td>
-										<td style="text-align: center;">${gym.licence}</td>
-										<td style="text-align: center;">${gym.email}</td>
-										<td style="text-align: center;">${gym.phone}</td>
-										<td style="text-align: center;">${gym.address.city.name}</td>
-										<td style="text-align: center;">${gym.loc.name}</td>
-										<td style="text-align: center;">${gym.address.pincode}</td>
-										<td style="text-align: center;"><c:if test="${gym.active}">Active</c:if><c:if test="${!gym.active}">Inactive</c:if></td>
+										<td style="text-align: center;">${gst.gst_no}</td>
+										<td style="text-align: center;">${gst.remark}</td>
+										<td style="text-align: center;"><c:if
+												test="${gym.active}">Active</c:if>
+											<c:if test="${!gym.active}">Inactive</c:if></td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="gym-details.htm?id=${gym.id}"
+												<a href="gst-detail.htm?id=${gst.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
-												</a>
-												<a href="delete-gym.htm?id=${gym.id}"
+												</a> <a href="delete-gst.htm?id=${gst.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
-												</a>
-												<a href="active-gym.htm?id=${gym.id}"
+												</a> <%-- <a href="active-gst.htm?id=${gst.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-eye"></i>
-												</a>
-												<a href="deactive-gym.htm?id=${gym.id}"
+												</a> <a href="deactive-gst.htm?id=${gst.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-eye"></i>
-												</a>
+												</a> --%>
 											</div>
 										</td>
 									</tr>
-								</c:forEach> --%>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

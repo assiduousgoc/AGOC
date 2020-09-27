@@ -243,8 +243,12 @@
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/trainee-detail.jsp" />
    </definition>
    <definition name="ledgers" extends="gym-definition">  
-       <put-attribute name="title" value="Dues Form" />  
+       <put-attribute name="title" value="Ledgers" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/ledgers.jsp" />  
+   </definition>
+    <definition name="ledger" extends="gym-definition">  
+       <put-attribute name="title" value="Ledger" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/ledger.jsp" />  
    </definition>
      <definition name="dues" extends="gym-definition">  
        <put-attribute name="title" value="Dues Form" />  
@@ -336,8 +340,12 @@
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/courseMappingList.jsp" />  
    </definition>
     <definition name="addCourseMapping" extends="gym-definition">  
-       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="title" value="Course Mapping" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/addCourseMapping.jsp" />  
+   </definition>
+   <definition name="cm-detail" extends="gym-definition">  
+       <put-attribute name="title" value="Course Mapping" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/cm-detail.jsp" />  
    </definition>
    <!-- CR Account -->
     <definition name="crAccount" extends="gym-definition">  
@@ -348,6 +356,10 @@
        <put-attribute name="title" value="CR Account" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/addCrAccount.jsp" />  
    </definition>
+   <definition name="cr-detail" extends="gym-definition">  
+       <put-attribute name="title" value="CR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/cr-detail.jsp" />  
+   </definition>
     <!-- DR Account -->
     <definition name="drAccount" extends="gym-definition">  
        <put-attribute name="title" value="DR Account" />  
@@ -356,6 +368,10 @@
     <definition name="addDrAccount" extends="gym-definition">  
        <put-attribute name="title" value="DR Account" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/addDrAccount.jsp" />  
+   </definition>
+   <definition name="dr-detail" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/dr-detail.jsp" />  
    </definition>
    <definition name="bankDetail" extends="gym-definition">  
        <put-attribute name="title" value="DR Account" />  
@@ -366,6 +382,10 @@
     <definition name="gstList" extends="gym-definition">  
        <put-attribute name="title" value="DR Account" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/gym/GSTList.jsp" />  
+   </definition>
+    <definition name="gst-detail" extends="gym-definition">  
+       <put-attribute name="title" value="DR Account" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/gym/gst-detail.jsp" />  
    </definition>
     <definition name="addGST" extends="gym-definition">  
        <put-attribute name="title" value="DR Account" />  

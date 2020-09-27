@@ -11,8 +11,8 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #090696;">Dr Account Form
-						</button>
+						style="border-radius: 0px !important; background-color: #090696;">Dr
+						Account Form</button>
 
 				</div>
 			</div>
@@ -29,66 +29,54 @@
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form class="needs-validation clearfix" novalidate method="post" action="saveDrAccount.htm">
+						<form:form action="save-dr.htm" method="post" commandName="dr"
+							modelAttribute="dr" cssClass="needs-validation clearfix">
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
-									<label for="validationCustom22">A/C Name</label>
+									<label for="validationCustom22">A/C Name *</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="accName" id="accName" />
-										<div class="invalid-feedback">Please Account name.
-										</div>
+										<form:input path="acName" class="form-control" id="acName" />
+										<div class="invalid-feedback">Please Account name.</div>
 									</div>
 								</div>
-							
+
 								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Email*</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="drEmail" id="drEmail" />
+										<form:input path="email" class="form-control" id="email" />
 										<div class="invalid-feedback">email</div>
 									</div>
 								</div>
 								<div class="col-md-3 mb-3">
 									<label for="validationCustom24">Mobile No*</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="drMNo" id="drMNo" />
+										<form:input path="mob" class="form-control" id="mob" />
 										<div class="invalid-feedback">Mobile No</div>
 									</div>
 								</div>
-								
-								
+
 								<div class="col-md-3 mb-3">
-								<label for="validationCustom12">Status *</label>
+									<label for="validationCustom12">Desc. *</label>
 									<div class="input-group">
-										<select class="select select2-hidden-accessible" tabindex="-1" name="status" aria-hidden="true">
-											<option>Select</option>
-											<option value="1">Active</option>
-											<option value="0">In Active</option>
-										</select>
-									</div>
-                                </div>
-								<div class="col-md-12 mb-3">
-									<label for="validationCustom12">Description </label>
-									<div class="input-group">
-										<div class="input-group">
-											<textarea class="summernote edi-css form-control"
-												name="description" id="description" style="height: 39px;"></textarea>
-										</div>
+										<form:input path="description" class="form-control"
+											id="description" />
 									</div>
 								</div>
+
 
 							</div>
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="courseMapping.htm"><button
+										<a href="drAccount.htm"><button
 												class="btn btn-secondary d-block" type="button"
 												style="min-width: 118px; background-color: #960613;">Back</button></a>
 									</div>
 								</div>
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="menuList.htm"><button
-												class="btn btn-secondary d-block" type="submit"
+										<a href="#"><button class="btn btn-secondary d-block"
+												type="submit"
 												style="min-width: 118px; background-color: #090696;">Save</button>
 										</a>
 									</div>
@@ -103,7 +91,7 @@
 
 
 							</div>
-						</form>
+						</form:form>
 
 					</div>
 				</div>

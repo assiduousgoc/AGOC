@@ -28,18 +28,25 @@
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form:form action="save-cm.htm" method="post" commandName="cm"
+						<form:form action="update-cm.htm" method="post" commandName="cm"
 							modelAttribute="cm" cssClass="needs-validation clearfix">
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">Course Name</label>
 									<div class="input-group">
+										<form:hidden path="id" />
 										<form:select path="courseDto.id" class="form-control"
 											id="courseId">
 											<option>Select Course</option>
 											<c:forEach items="${courses}" var="course">
-												<option value="${course.id}">${course.name}-
-													${course.code}</option>
+												<c:if test="${course.id eq cm.courseDto.id }">
+													<option value="${course.id}" selected="selected">${course.name}-
+														${course.code}</option>
+												</c:if>
+												<c:if test="${course.id ne cm.courseDto.id }">
+													<option value="${course.id}">${course.name}-
+														${course.code}</option>
+												</c:if>
 											</c:forEach>
 										</form:select>
 										<div class="invalid-feedback">Please bank name.</div>
@@ -52,8 +59,14 @@
 											id="branchId">
 											<option>Select Branch</option>
 											<c:forEach items="${branches}" var="branch">
-												<option value="${branch.id}">${branch.name}-
-													${branch.code}</option>
+												<c:if test="${branch.id eq cm.branchDto.id }">
+													<option value="${branch.id}" selected="selected">${branch.name}-
+														${branch.code}</option>
+												</c:if>
+												<c:if test="${branch.id ne cm.branchDto.id }">
+													<option value="${branch.id}">${branch.name}-
+														${branch.code}</option>
+												</c:if>
 											</c:forEach>
 										</form:select>
 									</div>
@@ -72,9 +85,6 @@
 										<div class="invalid-feedback">duration</div>
 									</div>
 								</div>
-
-
-
 							</div>
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
@@ -92,15 +102,6 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-md-1 mb-3">
-									<div class="input-group">
-										<a href="menuList.htm"><button
-												class="btn btn-primary d-block" type="reset"
-												style="min-width: 118px;">Reset</button></a>
-									</div>
-								</div>
-
-
 							</div>
 						</form:form>
 

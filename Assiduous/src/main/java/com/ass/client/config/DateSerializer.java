@@ -14,7 +14,12 @@ public class DateSerializer extends JsonSerializer<Date> {
 	@Override
 	public void serialize(Date value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
 		DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
-		String formated_date = fmt.format(value);
+		String formated_date = "";
+		try {
+			formated_date = fmt.format(value);
+		} catch (Exception e) {
+			formated_date = new SimpleDateFormat("MM/dd/yyyy").format(value);
+		}
 		gen.writeString(formated_date);
 
 	}

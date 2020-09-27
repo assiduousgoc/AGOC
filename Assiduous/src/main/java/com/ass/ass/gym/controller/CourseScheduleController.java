@@ -71,7 +71,7 @@ public class CourseScheduleController {
 		dto.setActive(true);
 		dto.setTrainerDto(new CommonDto(trainer, null, null));
 		try {
-			CourseScheduleDto res = gym_course_sc_client.save(user.getToken(), dto);
+			gym_course_sc_client.save(user.getToken(), dto);
 			return "redirect:/courseSchedule.htm";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -115,7 +115,7 @@ public class CourseScheduleController {
 		dto.setTo(to);
 		dto.setTrainerDto(new CommonDto(trainer, null, null));
 		try {
-			CourseScheduleDto res = gym_course_sc_client.update(user.getToken(), dto);
+			gym_course_sc_client.update(user.getToken(), dto);
 			return "redirect:/courseSchedule.htm";
 		} catch (Exception e) {
 			e.printStackTrace();

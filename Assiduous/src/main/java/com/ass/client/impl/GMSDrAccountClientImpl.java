@@ -10,13 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.ass.client.GMSCourseMappingClient;
-import com.ass.client.GMSCrAccountClient;
 import com.ass.client.GMSDrAccountClient;
 import com.ass.client.config.RestClient;
-import com.ass.smtfp.model.CourseDto;
-import com.ass.smtfp.model.CourseMappingDto;
-import com.ass.smtfp.model.CrAccountDto;
 import com.ass.smtfp.model.DrAccountDto;
 
 @Component

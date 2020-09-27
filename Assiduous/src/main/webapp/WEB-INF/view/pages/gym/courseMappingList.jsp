@@ -29,41 +29,35 @@
 								style="background-color: #4a274f; color: cornsilk; font-family: auto; text-align: center;">
 								<tr>
 									<th>Course Name</th>
-									<th>Course Code </th>
+									<th>Course Code</th>
 									<th>Branch Name</th>
-									<th>Branch Code </th>
+									<th>Branch Code</th>
 									<th>Duration</th>
 									<th>Price</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-							 <c:forEach items="${courseMappings}" var="courseMappings">
+								<c:forEach items="${cms}" var="cm">
 									<tr>
-										<td style="text-align: center;">${courseMappings.course.name}</td>
-										<td style="text-align: center;">${courseMappings.course.code}</td>
-										<td style="text-align: center;">${courseMappings.branch.name}</td>
-										<td style="text-align: center;">${courseMappings.branch.code}</td>
-										<td style="text-align: center;">${courseMappings.duration}</td>
-										<td style="text-align: center;">${courseMappings.price}</td>
+										<td style="text-align: center;">${cm.course.name}</td>
+										<td style="text-align: center;">${cm.course.code}</td>
+										<td style="text-align: center;">${cm.branch.name}</td>
+										<td style="text-align: center;">${cm.branch.code}</td>
+										<td style="text-align: center;">${cm.duration}</td>
+										<td style="text-align: center;">${cm.price}</td>
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="gym-details.htm?id=${courseMappings.id}"
+												<a href="cm-detail.htm?id=${cm.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
-												</a>
-												<a href="delete-gym.htm?id=${courseMappings.id}"
+												</a> <a href="delete-cm.htm?id=${cm.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
 												</a>
-												<a href="active-gym.htm?id=${courseMappings.id}"
-													class="ms-btn-icon-outline btn-pill btn-primary"
-													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
-													<i class="fa fa-eye"></i>
-												</a>
-												
+
 											</div>
 										</td>
 									</tr>

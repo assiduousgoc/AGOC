@@ -10,13 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.ass.client.GMSCourseMappingClient;
-import com.ass.client.GMSCrAccountClient;
 import com.ass.client.GMSGSTClient;
 import com.ass.client.config.RestClient;
-import com.ass.smtfp.model.CourseDto;
-import com.ass.smtfp.model.CourseMappingDto;
-import com.ass.smtfp.model.CrAccountDto;
+import com.ass.smtfp.model.BranchDto;
 import com.ass.smtfp.model.GstDto;
 
 @Component
@@ -26,10 +22,14 @@ public class GMSGSTClientImpl implements GMSGSTClient {
 
 	public static final String GET = RESOURCE + "get";
 
+	public static final String ACTIVE = RESOURCE + "active";
+
+	public static final String DEACTIVE = RESOURCE + "deactive";
+
 	public static final String SAVE = RESOURCE + "save";
 
 	public static final String UPDATE = RESOURCE + "update";
-	
+
 	public static final String GST_NO = "gst-no";
 
 	public static final String DELETE = RESOURCE + "delete";
@@ -77,8 +77,8 @@ public class GMSGSTClientImpl implements GMSGSTClient {
 		try {
 			String body = RestClient.OBJECT_MAPPER.writeValueAsString(dto);
 			HttpEntity<String> http_entity = new HttpEntity<String>(body, headers);
-			ResponseEntity<GstDto> response = RestClient.REST_CLIENT.exchange(
-					RestClient.BASE_PATH + RestClient.GMS + SAVE, HttpMethod.POST, http_entity, GstDto.class);
+			ResponseEntity<GstDto> response = RestClient.REST_CLIENT
+					.exchange(RestClient.BASE_PATH + RestClient.GMS + SAVE, HttpMethod.POST, http_entity, GstDto.class);
 			return response.getBody();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -103,6 +103,7 @@ public class GMSGSTClientImpl implements GMSGSTClient {
 		}
 		return null;
 	}
+
 	@Override
 	public GstDto getByName(String token, String name) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
@@ -119,7 +120,7 @@ public class GMSGSTClientImpl implements GMSGSTClient {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public String delete(String token, Integer id) throws RuntimeException {
 		HttpHeaders headers = new HttpHeaders();
@@ -131,6 +132,42 @@ public class GMSGSTClientImpl implements GMSGSTClient {
 			ResponseEntity<String> response = RestClient.REST_CLIENT.exchange(
 					RestClient.BASE_PATH + RestClient.GMS + DELETE + RestClient.SLASH + id, HttpMethod.DELETE,
 					http_entity, String.class);
+			return response.getBody();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public BranchDto active(String token, Integer id) throws RuntimeException {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+		headers.add(RestClient.AUTH_TOKEN, token);
+		try {
+			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
+			ResponseEntity<BranchDto> response = RestClient.REST_CLIENT.exchange(
+					RestClient.BASE_PATH + RestClient.GMS + ACTIVE + RestClient.SLASH + id, HttpMethod.PUT, http_entity,
+					BranchDto.class);
+			return response.getBody();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public BranchDto deactive(String token, Integer id) throws RuntimeException {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+		headers.add(RestClient.AUTH_TOKEN, token);
+		try {
+			HttpEntity<String> http_entity = new HttpEntity<String>(headers);
+			ResponseEntity<BranchDto> response = RestClient.REST_CLIENT.exchange(
+					RestClient.BASE_PATH + RestClient.GMS + DEACTIVE + RestClient.SLASH + id, HttpMethod.PUT,
+					http_entity, BranchDto.class);
 			return response.getBody();
 		} catch (Exception e) {
 			e.printStackTrace();

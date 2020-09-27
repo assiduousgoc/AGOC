@@ -11,8 +11,8 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #090696;">Bank Form
-						</button>
+						style="border-radius: 0px !important; background-color: #090696;">Bank
+						Form</button>
 
 				</div>
 			</div>
@@ -29,71 +29,77 @@
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form class="needs-validation clearfix" novalidate method="post" action="saveBank.htm">
+						<form class="needs-validation clearfix" novalidate method="post"
+							action="saveBank.htm">
 							<div class="form-row">
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom22">Bank Name</label>
 									<div class="input-group">
 										<input type='text' class="form-control" name="name" id="name" />
-										<div class="invalid-feedback">Please bank name.
-										</div>
+										<div class="invalid-feedback">Please bank name.</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom12">Branch Name *</label>
 									<div class="input-group">
-									<input type='text' class="form-control" name="branchName" id="branchName" />
-										<%-- <select class="form-control" name="branchName" id="branchName">
-											<option value="0">Select Branch</option>
-											<c:forEach items="${branches}" var="branch">
-												<option value="${branch.id}">${branch.name}-
-													${branch.code}</option>
-											</c:forEach>
-										</select> --%>
+										<input type='text' class="form-control" name="branchName"
+											id="branchName" />
+
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Account No.*</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="AccNo" id="AccNo" />
+										<input type='text' class="form-control" name="AccNo"
+											id="AccNo" />
 										<div class="invalid-feedback">AccNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">IFSC Code.*</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="ifsc" id="ifsc" />
+										<input type='text' class="form-control" name="ifsc" id="ifsc"
+											onblur="matchfun('ifsc','[A-Z]{3,4}[0-9]{5,7}');"
+											onchange="changecolor('ifsc');" />
 										<div class="invalid-feedback">AccNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
-								<label for="validationCustom12">A/C Type *</label>
+									<label for="validationCustom12">A/C Type *</label>
 									<div class="input-group">
-										<select class="select select2-hidden-accessible" tabindex="-1" name="accType" aria-hidden="true" id="accType">
+										<select class="select select2-hidden-accessible" tabindex="-1"
+											name="accType" aria-hidden="true" id="accType">
 											<option>Select</option>
 											<option value="CR">CR</option>
 											<option value="DR">DR</option>
 										</select>
 									</div>
-                                </div>
-                                <div class="col-md-4 mb-3">
+								</div>
+								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">PAN Number.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="panNo" id="panNo" />
+										<input type='text' class="form-control" name="panNo"
+											id="panNo"
+											onblur="matchfun('panNo','[A-Z]{5}[0-9]{4}[A-Z]{1}');"
+											onchange="changecolor('panNo');" />
 										<div class="invalid-feedback">panNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">TAN Number.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="tanNo" id="tanNo" />
+										<input type='text' class="form-control" name="tanNo"
+											id="tanNo"
+											onblur="matchfun('tanNo','[A-Z]{4}[0-9]{5}[A-Z]{1}');"
+											onchange="changecolor('tanNo');" />
 										<div class="invalid-feedback">tanNo</div>
 									</div>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Address 1.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="address" id="address" />
+										<input type='text' class="form-control" name="address"
+											id="address" />
 										<div class="invalid-feedback">Address</div>
 									</div>
 								</div>
@@ -112,51 +118,19 @@
 								<div class="col-md-4 mb-3">
 									<label for="validationCustom24">Pin Code.</label>
 									<div class="input-group">
-										<input type='text' class="form-control" name="pincode" id="pincode" />
+										<input type='text' class="form-control" name="pincode"
+											id="pincode" />
 										<div class="invalid-feedback">PinCode</div>
 									</div>
 								</div>
-								<div class="col-md-4 mb-3">
-									<label for="validationCustom12">Gym *</label>
-									<div class="input-group">
-										<select class="form-control" name="Gym" id="Gym">
-											<option value="0">Select Gym</option>
-											<c:forEach items="${gym}" var="gym">
-												<option value="${gym.id}">${gym.name}-
-													${gym.code}</option>
-											</c:forEach>
-										</select>
-									</div>
-								</div>
-								
-								<%-- <div class="col-md-4 mb-3">
-									<label for="validationCustom12">Address *</label>
-									<div class="input-group">
-										<select class="form-control" name="address" id="address">
-											<option value="0">Select Address</option>
-											<c:forEach items="${gym}" var="gym">
-												<option value="${gym.address.id}">${gym.address.address_line1}-
-													${gym.address.city.name}-${gym.address.pincode}</option>
-											</c:forEach>
-										</select>
-									</div>
-								</div> --%>
-								<div class="col-md-4 mb-3">
-								<label for="validationCustom12">Status *</label>
-									<div class="input-group">
-										<select class="select select2-hidden-accessible" tabindex="-1" name="status" aria-hidden="true">
-											<option>Select</option>
-											<option value="1">Active</option>
-											<option value="0">In Active</option>
-										</select>
-									</div>
-                                </div>
+
 								<div class="col-md-8 mb-3">
 									<label for="validationCustom12">Description </label>
 									<div class="input-group">
 										<div class="input-group">
 											<textarea class="summernote edi-css form-control"
-												name="description" id="description" style="max-height: 39px;"></textarea>
+												name="description" id="description"
+												style="max-height: 39px;"></textarea>
 										</div>
 									</div>
 								</div>
@@ -207,4 +181,20 @@
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});
+
+	function matchfun(id, regex) {
+		var str = document.getElementById(id).value;
+		if (!str.match(regex)) {
+			$("#" + id).css("background-color", "red");
+			document.getElementById(id).focus();
+			return;
+		}
+	}
+	function changecolor(id) {
+		var str = document.getElementById(id).value;
+		if (str == 0) {
+			$("#" + id).css("background-color", "white");
+			return;
+		}
+	}
 </script>

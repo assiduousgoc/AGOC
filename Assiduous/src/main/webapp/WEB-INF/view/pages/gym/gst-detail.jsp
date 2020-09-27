@@ -28,12 +28,13 @@
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form:form action="save-gst.htm" method="post" commandName="gst"
+						<form:form action="update-gst.htm" method="post" commandName="gst"
 							modelAttribute="gst" cssClass="needs-validation clearfix">
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
 									<label for="validationCustom22">GST No.</label>
 									<div class="input-group">
+										<form:hidden path="id" />
 										<form:input class="form-control" path="gstNo" id="gstNo"
 											onblur="matchfun('gstNo', '[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}');"
 											onchange="changecolor('gstNo');" />
@@ -96,19 +97,4 @@
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});
-	function matchfun(id, regex) {
-		var str = document.getElementById(id).value;
-		if (!str.match(regex)) {
-			$("#" + id).css("background-color", "red");
-			document.getElementById(id).focus();
-			return;
-		}
-	}
-	function changecolor(id) {
-		var str = document.getElementById(id).value;
-		if (str == 0) {
-			$("#" + id).css("background-color", "white");
-			return;
-		}
-	}
 </script>

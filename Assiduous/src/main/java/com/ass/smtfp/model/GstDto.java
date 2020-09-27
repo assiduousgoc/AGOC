@@ -25,7 +25,6 @@ public class GstDto implements Serializable {
 	private Integer id;
 
 	@JsonProperty("gst_no")
-	//@Validate(regex = CommonConstant.RegexPatternConstant.GST_REGEX)
 	private String gstNo;
 
 	@JsonProperty("remark")

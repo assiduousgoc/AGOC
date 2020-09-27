@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,14 +13,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ass.client.GMSBankClient;
 import com.ass.client.GMSCityClient;
-import com.ass.client.GMSGymClient;
 import com.ass.client.GMSUserClient;
 import com.ass.smtfp.enums.UserRole;
 import com.ass.smtfp.model.AddressDto;
 import com.ass.smtfp.model.BankDto;
-import com.ass.smtfp.model.CityDto;
 import com.ass.smtfp.model.CommonDto;
-import com.ass.smtfp.model.GymDto;
 import com.ass.smtfp.model.UserData;
 
 @Controller
@@ -30,9 +28,6 @@ public class BankController {
 
 	@Autowired
 	private GMSUserClient ser_client;
-
-	@Autowired
-	private GMSGymClient gym_client;
 
 	@Autowired
 	private GMSBankClient bank_client;
@@ -49,7 +44,6 @@ public class BankController {
 	public String addBank(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		model.addAttribute("city", city_client.get(user.getToken()));
-		model.addAttribute("gym", gym_client.get(user.getToken()));
 		return "addBank";
 	}
 
@@ -58,23 +52,13 @@ public class BankController {
 			@RequestParam("branchName") String branchName, @RequestParam("AccNo") String AccNo,
 			@RequestParam("ifsc") String ifsc, @RequestParam("accType") String accType,
 			@RequestParam("panNo") String panNo, @RequestParam("tanNo") String tanNo,
-			@RequestParam("address") String address, @RequestParam("Gym") Integer gymId,
-			@RequestParam("city") Integer cityId, @RequestParam("pincode") String pincode,
-			@RequestParam("status") boolean status) {
+			@RequestParam("address") String address, @RequestParam("city") Integer cityId,
+			@RequestParam("pincode") String pincode) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		BankDto bank = new BankDto();
-
 		try {
 			AddressDto addressDto = new AddressDto();
-			CommonDto gymDto = new CommonDto();
-			CommonDto cityDto = new CommonDto();
-			GymDto gym = gym_client.get(user.getToken(), 2);
-			CityDto city = city_client.get(user.getToken(), cityId);
-			gymDto.setName(gym.getName());
-			gymDto.setCode(gym.getCode());
-			cityDto.setName(city.getName());
-			cityDto.setCode(city.getCode());
-			addressDto.setCityDto(cityDto);
+			addressDto.setCityDto(new CommonDto(cityId));
 			addressDto.setLine1(address);
 			addressDto.setPincode(pincode);
 			bank.setBankName(name);
@@ -85,8 +69,7 @@ public class BankController {
 			bank.setAccountType(accType);
 			bank.setAddressDto(addressDto);
 			bank.setIfscCode(ifsc);
-			bank.setGymDto(gymDto);
-			bank.setActive(status);
+			bank.setGymDto(user.getGym());
 			try {
 				BankDto bdto = bank_client.save(user.getToken(), bank);
 				model.addAttribute("createBank", bdto);
@@ -105,6 +88,7 @@ public class BankController {
 	public ModelAndView detail(Model model, HttpServletRequest req, @RequestParam("id") Integer id) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		try {
+			model.addAttribute("city", city_client.get(user.getToken()));
 			BankDto res = bank_client.get(user.getToken(), id);
 			if (res != null)
 				return new ModelAndView("bankDetail", "bank", res);
@@ -115,48 +99,12 @@ public class BankController {
 	}
 
 	@RequestMapping(value = "/update-bank.htm", method = RequestMethod.POST)
-	public String update(Model model, HttpServletRequest req, @RequestParam("id") Integer id,
-			@RequestParam("name") String name, @RequestParam("branchName") String branchName,
-			@RequestParam("AccNo") String AccNo, @RequestParam("ifsc") String ifsc,
-			@RequestParam("accType") String accType, @RequestParam("panNo") String panNo,
-			@RequestParam("tanNo") String tanNo, @RequestParam("address") String address,
-			@RequestParam("Gym") Integer gymId, @RequestParam("city") Integer cityId,
-			@RequestParam("pincode") String pincode, @RequestParam("status") boolean status,
-			@RequestParam(value = "description", required = false, defaultValue = "null") String description) {
+	public String update(Model model, HttpServletRequest req, @ModelAttribute BankDto bank) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
-		BankDto bank = new BankDto();
 		try {
-			AddressDto addressDto = new AddressDto();
-			CommonDto gymDto = new CommonDto();
-			CommonDto cityDto = new CommonDto();
-			GymDto gym = gym_client.get(user.getToken(), 2);
-			CityDto city = city_client.get(user.getToken(), cityId);
-			gymDto.setName(gym.getName());
-			gymDto.setCode(gym.getCode());
-			cityDto.setName(city.getName());
-			cityDto.setCode(city.getCode());
-			addressDto.setCityDto(cityDto);
-			addressDto.setLine1(address);
-			addressDto.setPincode(pincode);
-			bank.setId(id);
-			bank.setBankName(name);
-			bank.setBranchName(branchName);
-			bank.setAccountNo(AccNo);
-			bank.setPanNo(panNo);
-			bank.setTanNo(tanNo);
-			bank.setAccountType(accType);
-			bank.setAddressDto(addressDto);
-			bank.setIfscCode(ifsc);
-			bank.setGymDto(gymDto);
-			bank.setActive(status);
-			try {
-				BankDto bdto = bank_client.update(user.getToken(), bank);
-				model.addAttribute("updateBank", bdto);
-				return "redirect:/bank.htm";
-			} catch (Exception e) {
-				e.printStackTrace();
-				return "redirect:/detail-bank.htm";
-			}
+			BankDto bdto = bank_client.update(user.getToken(), bank);
+			model.addAttribute("updateBank", bdto);
+			return "redirect:/bank.htm";
 		} catch (Exception e) {
 			model.addAttribute("Error", "Error");
 			return "redirect:/detail-bank.htm";
@@ -196,13 +144,4 @@ public class BankController {
 		return new ModelAndView("redirect:/bank.htm");
 	}
 
-	@RequestMapping(value = "/resBank.htm", method = RequestMethod.GET)
-	public String resBank(Model model, HttpServletRequest req) {
-		UserData user = (UserData) req.getSession().getAttribute("user");
-		// model.addAttribute("banks", bank_client.get(user.getToken()));
-		// model.addAttribute("trainers", ser_client.get(user.getToken(),
-		// UserRole.TRAINER));
-		// System.out.println("==>"+user.getToken());
-		return "resBank";
-	}
 }

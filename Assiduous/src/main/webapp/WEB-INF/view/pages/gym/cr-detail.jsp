@@ -10,8 +10,8 @@
 			<div class="col-lg-12">
 				<div class="card-box" style="border-bottom: 3px solid darkorange;">
 					<button type="button" class="btn btn-primary"
-						style="border-radius: 0px !important; background-color: #090696;">GST
-						Form</button>
+						style="border-radius: 0px !important; background-color: #090696;">Cr
+						Account Form</button>
 
 				</div>
 			</div>
@@ -24,58 +24,63 @@
 					style="border-bottom: 3px solid #f99d09; border-top: 3px solid #f99d09;">
 					<div class="ms-panel-header"
 						style="position: relative; padding: 0.7rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #090696;">
-						<h6 style="font-weight: bold;">GST Form</h6>
+						<h6 style="font-weight: bold;">Course Mapping Form</h6>
 					</div>
 					<div class="ms-panel-body"
 						style="position: relative; padding: 1.5rem;">
-						<form:form action="save-gst.htm" method="post" commandName="gst"
-							modelAttribute="gst" cssClass="needs-validation clearfix">
+						<form:form action="update-cr.htm" method="post" commandName="cr"
+							modelAttribute="cr" cssClass="needs-validation clearfix">
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
-									<label for="validationCustom22">GST No.</label>
+									<label for="validationCustom22">A/C Name *</label>
 									<div class="input-group">
-										<form:input class="form-control" path="gstNo" id="gstNo"
-											onblur="matchfun('gstNo', '[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}');"
-											onchange="changecolor('gstNo');" />
-										<div class="invalid-feedback">Please GST No.</div>
+										<form:hidden path="id" />
+										<form:input path="acName" class="form-control" id="acName" />
+										<div class="invalid-feedback">Please Account name.</div>
 									</div>
 								</div>
-								<div class="col-md-12 mb-3">
-									<label for="validationCustom12">Remark </label>
+
+								<div class="col-md-3 mb-3">
+									<label for="validationCustom24">Email*</label>
 									<div class="input-group">
-										<div class="input-group">
-											<form:textarea class="summernote edi-css form-control"
-												path="remark" id="remark" style="height: 39px;"></form:textarea>
-										</div>
+										<form:input path="email" class="form-control" id="email" />
+										<div class="invalid-feedback">email</div>
 									</div>
 								</div>
+								<div class="col-md-3 mb-3">
+									<label for="validationCustom24">Mobile No*</label>
+									<div class="input-group">
+										<form:input path="mob" class="form-control" id="mob" />
+										<div class="invalid-feedback">Mobile No</div>
+									</div>
+								</div>
+
+								<div class="col-md-3 mb-3">
+									<label for="validationCustom12">Desc. *</label>
+									<div class="input-group">
+										<form:input path="description" class="form-control"
+											id="description" />
+									</div>
+								</div>
+
 
 							</div>
 							<div class="new" style="display: inline-flex;">
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="gstList.htm"><button
+										<a href="crAccount.htm"><button
 												class="btn btn-secondary d-block" type="button"
 												style="min-width: 118px; background-color: #960613;">Back</button></a>
 									</div>
 								</div>
 								<div class="col-md-1 mb-3">
 									<div class="input-group">
-										<a href="menuList.htm"><button
-												class="btn btn-secondary d-block" type="submit"
+										<a href="#"><button class="btn btn-secondary d-block"
+												type="submit"
 												style="min-width: 118px; background-color: #090696;">Save</button>
 										</a>
 									</div>
 								</div>
-								<div class="col-md-1 mb-3">
-									<div class="input-group">
-										<a href="menuList.htm"><button
-												class="btn btn-primary d-block" type="reset"
-												style="min-width: 118px;">Reset</button></a>
-									</div>
-								</div>
-
-
 							</div>
 						</form:form>
 
@@ -96,19 +101,4 @@
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});
-	function matchfun(id, regex) {
-		var str = document.getElementById(id).value;
-		if (!str.match(regex)) {
-			$("#" + id).css("background-color", "red");
-			document.getElementById(id).focus();
-			return;
-		}
-	}
-	function changecolor(id) {
-		var str = document.getElementById(id).value;
-		if (str == 0) {
-			$("#" + id).css("background-color", "white");
-			return;
-		}
-	}
 </script>

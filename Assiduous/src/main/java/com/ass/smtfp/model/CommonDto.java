@@ -29,6 +29,11 @@ public class CommonDto implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public CommonDto(Integer id) {
+		super();
+		this.id = id;
+	}
+
 	public CommonDto(Integer id, String code, String name) {
 		super();
 		this.id = id;

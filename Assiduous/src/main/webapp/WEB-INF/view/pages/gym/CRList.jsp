@@ -31,39 +31,31 @@
 									<th>A/C Name</th>
 									<th>Email</th>
 									<th>Mobile No.</th>
-									<th>Status</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${credits}" var="credits">
+								<c:forEach items="${credits}" var="credit">
 									<tr>
-										<td style="text-align: center;">${credits.acName}</td>
-										<td style="text-align: center;">${credits.email}</td>
-										<td style="text-align: center;">${credits.mob}</td>
-										<td style="text-align: center;"><c:if test="${credits.active}">Active</c:if><c:if test="${!credits.active}">Inactive</c:if></td>
+										<td style="text-align: center;">${credit.ac_name}</td>
+										<td style="text-align: center;">${credit.email}</td>
+										<td style="text-align: center;">${credit.mob}</td>
+
 										<td class="text-center">
 											<div class="dropdown dropdown-action">
-												<a href="gym-details.htm?id=${credits.id}"
+												<a href="cr-details.htm?id=${credit.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-edit"></i>
-												</a>
-												<a href="delete-gym.htm?id=${credits.id}"
+												</a> <a href="delete-cr.htm?id=${credit.id}"
 													class="ms-btn-icon-outline btn-pill btn-primary"
 													style="color: #090696; border-color: #090696; border-radius: 25px; background-color: transparent; border: 1px solid;">
 													<i class="fa fa-trash"></i>
 												</a>
-												<a href="active-gym.htm?id=${credits.id}"
-													class="ms-btn-icon-outline btn-pill btn-primary"
-													style="color: #4a274f; border-color: #4a274f; border-radius: 25px; background-color: transparent; border: 1px solid;">
-													<i class="fa fa-eye"></i>
-												</a>
-												
 											</div>
 										</td>
 									</tr>
-								</c:forEach> 
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
