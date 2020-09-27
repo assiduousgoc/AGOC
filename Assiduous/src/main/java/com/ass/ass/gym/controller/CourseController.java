@@ -41,21 +41,17 @@ public class CourseController {
 
 	@RequestMapping(value = "/saveCourse.htm", method = RequestMethod.POST)
 	public String save(Model model, HttpServletRequest req, @RequestParam("coursename") String coursename,
-			@RequestParam("code") String code, @RequestParam(value ="status",defaultValue ="1") boolean status,
+			@RequestParam("code") String code, @RequestParam(value = "status", defaultValue = "1") boolean status,
 			@RequestParam(value = "description", required = false, defaultValue = "null") String description,
 			@RequestPart(value = "courseImage", required = false) MultipartFile image) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		CourseDto dto = new CourseDto();
-		//dto.setBranchDto(user.getBranch());
-		//dto.setDescription(description);
-		//dto.setDuration(courseDuration);
 		dto.setName(coursename);
 		dto.setCode(code);
 		dto.setActive(true);
 		dto.setDescription(description);
-		//dto.setPrice(coursePrice);
 		try {
-			CourseDto res = gym_course_client.save(user.getToken(), dto);
+			gym_course_client.save(user.getToken(), dto);
 			model.addAttribute("createCourses", "");
 			return "redirect:/courseList.htm";
 		} catch (Exception e) {
@@ -87,13 +83,10 @@ public class CourseController {
 		CourseDto dto = new CourseDto();
 		dto.setId(id);
 		dto.setCode(code);
-		//dto.setBranchDto(user.getBranch());
 		dto.setDescription(description);
-		//dto.setDuration(courseDuration);
 		dto.setName(coursename);
-		//dto.setPrice(coursePrice);
 		try {
-			CourseDto res = gym_course_client.update(user.getToken(), dto);
+			gym_course_client.update(user.getToken(), dto);
 			return "redirect:/courseList.htm";
 		} catch (Exception e) {
 			e.printStackTrace();
