@@ -2441,12 +2441,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0dede', end
 	width:460px;
 	position:fixed;
 	left:50%;
-	top:50%;
+	top:30%;
 	margin:-130px 0 0 -230px;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	/* text-align: center; */
+	text-align: center;
 }
 #confirmBox h3 {
 	font-size:16px;
@@ -2467,11 +2467,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0dede', end
 }
 #confirmBox p {
 	font-size:13px;
-	padding:15px;
+	/* padding:15px; */
 	margin:0px;
 }
 #confirmButtons {
-	padding:15px;
+	/* padding:15px; */
 	text-align:center;
 }
 #confirmButtons .button {

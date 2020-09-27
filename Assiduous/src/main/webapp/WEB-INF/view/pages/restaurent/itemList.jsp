@@ -39,10 +39,10 @@ width:100%;
 							<div class="widget_top" style="text-align: end;">
 								
 								<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Import Item"><span class="icon doc_excel_csv_co"></span></a>
+									<a href="#" class="tipTop confirm_dialog_import" original-title="Import Item"><span class="icon doc_excel_csv_co"></span></a>
 									</div>
 								<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Add Item"><span class="icon add_co"></span></a>
+									<a href="#" class="tipTop confirm_dialog_AddItem" original-title="Add Item"><span class="icon add_co"></span></a>
 									</div>
 									<!-- 
 									<div class="btn_30_light">

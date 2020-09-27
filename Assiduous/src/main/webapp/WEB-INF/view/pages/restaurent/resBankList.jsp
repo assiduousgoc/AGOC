@@ -47,7 +47,7 @@ width:100%;
 									</div> -->
 									
 									<div class="btn_30_light">
-									<a href="#"><span class="icon add_co basic-modal"></span></a>
+									<a href="#"><span class="icon add_co confirm_dialog_AddBank"></span></a>
 									</div>
 									<div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>

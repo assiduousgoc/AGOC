@@ -18,16 +18,29 @@
 				obj.action = function(){};
 			}
 		});
-		
-		var markup = [
-			'<div id="confirmOverlay">',
-			'<div id="confirmBox">',
-			'<h3 class="blue_d">',params.title,'</h3>',
-			'<p>',params.message,'</p>',
-			'<div id="confirmButtons">',
-			buttonHTML,
-			'</div></div></div>'
-		].join('');
+		if(params.title === undefined){
+			var markup = [
+				'<div id="confirmOverlay">',
+				'<div id="confirmBox">',
+				//'<h3 class="blue_d">',params.title,'</h3>',
+				params.message,
+				'<div id="confirmButtons">',
+				buttonHTML,
+				'</div></div></div>'
+			].join('');
+				
+		}else{
+
+			var markup = [
+				'<div id="confirmOverlay">',
+				'<div id="confirmBox">',
+				'<h3 class="blue_d">',params.title,'</h3>',
+				'<p>',params.message,'</p>',
+				'<div id="confirmButtons">',
+				buttonHTML,
+				'</div></div></div>'
+			].join('');
+		}
 		
 		$(markup).hide().appendTo('body').fadeIn();
 		

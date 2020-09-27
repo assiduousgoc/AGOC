@@ -1426,8 +1426,193 @@ $('.basic-modal').click(function (e) {
 	//$.modal('Maheshwar Prasad');
 	return false;
 });
+$('.confirm_dialog_import').click(function(){
+	$.confirm({
+		'title'		: 'Import Items',
+		//'text': 'Something else',
+		//'file'	: 'You are about to delete this item. <br />It cannot be restored at a later time! Continue?',
+		'message'	: '<form action="#" class="form_container left_label" method="post" style="border-bottom: #efefef solid 3px;">' +
+	    '<ul><li><div class="form_grid_12">' +
+	    '<label class="field_title">File Input</label>' +
+	    '<div class="form_input">' +
+	    '<div class="uploader" id="uniform-undefined"><input name="file01" type="file" size="19" style="opacity: 0;"><span class="filename">No file selected</span><span class="action">Choose File</span></div>' +
+	    '</div></li></ul>' +
+	    '</form>',
+	    'buttons'	: {
+			'Yes'	: {
+				'class'	: 'yes',
+				'action': function(){
+					window.location="resItemList.htm";
+				}
+			},
+			'No'	: {
+				'class'	: 'no',
+				'action': function(){}	// Nothing to do in this case. You can as well omit the action property.
+			}
+		}
+	});
+	
+});
 
-
+$('.confirm_dialog_AddItem').click(function(){
+	$.confirm({
+		//'title'		: 'Import Items',
+		//'text': 'Something else',
+		//'file'	: 'You are about to delete this item. <br />It cannot be restored at a later time! Continue?',
+		'message'	: '<div id="content">' +
+		'<div class="grid_container">' +
+		'<div class="grid_12 full_block">' +
+		'<div class="widget_wrap">' +
+		'<div class="widget_top">' +
+		'<span class="h_icon list"></span>' +
+		'<h6>ADD ITEM</h6>' +
+		'</div>' +
+					
+		'</div>' +
+		'</div>' +
+		'</div>' +
+		'</div>',
+		/*'message'	: '<form action="#" class="form_container left_label" method="post" style="border-bottom: #efefef solid 3px;">' +
+	    '<ul><li><div class="form_grid_12">' +
+	    '<label class="field_title">File Input</label>' +
+	    '<div class="form_input">' +
+	    '<div class="uploader" id="uniform-undefined"><input name="file01" type="file" size="19" style="opacity: 0;"><span class="filename">No file selected</span><span class="action">Choose File</span></div>' +
+	    '</div></li></ul>' +
+	    '</form>',*/
+	    'buttons'	: {
+			'Yes'	: {
+				'class'	: 'yes',
+				'action': function(){
+					window.location="resItemList.htm";
+				}
+			},
+			'No'	: {
+				'class'	: 'no',
+				'action': function(){}	// Nothing to do in this case. You can as well omit the action property.
+			}
+		}
+	});
+	
+});
+$('.confirm_dialog_AddBank').click(function(){
+	$.confirm({
+		//'title'		: 'Import Items',
+		//'text': 'Something else',
+		//'file'	: 'You are about to delete this item. <br />It cannot be restored at a later time! Continue?',
+		'message'	: '<div id="content">' +
+		'<div class="grid_container">' +
+		'<div class="grid_12 full_block">' +
+		'<div class="widget_wrap">' +
+		'<div class="widget_top">' +
+		'<span class="h_icon list"></span>' +
+		'<h6>BANK FORM</h6>' +
+		'</div>' +
+		'<div class="widget_content">' +
+		'<form action="#" method="post" class="form_container left_label" id="addBank">' +
+		
+		
+		'<ul>' +
+		'<li>' +
+		'<div class="form_grid_12" style="text-align: center;">' +
+		'	<label class="field_title">Bank Logo</label>' +
+		'	<div class="form_input">' +
+		'		<input name="file01" type="file">' +
+		'	</div>' +
+		'</div>' +
+		'</li>' +
+		'<li>' +
+		'<div class="form_grid_12 multiline">' +
+			'<div class="form_input" style="margin-left: inherit !important;width: auto;">' +
+				'<div class="form_grid_6">' +
+					'<input name="filed1" type="text"/>' +
+					'<span class=" label_intro">Bank Name</span>' +
+				'</div>' +
+				'<div class="form_grid_6">' +
+					'<input name="field2" type="text"/>' +
+					'<span class=" label_intro">Branch Name</span>' +
+				'</div>' +
+			'<div class="form_grid_6">' +
+				'<input name="field2" type="text"/>' +
+				'<span class=" label_intro">Account No.*</span>' +
+			'</div>' +
+			'<div class="form_grid_6">' +
+			'<input name="field2" type="text"/>' +
+			'<span class=" label_intro">IFSC Code.*</span>' +
+			'</div>' +
+			'<div class="form_grid_6 ">' +
+			'<select data-placeholder="Choose a A/C Type" class="chzn-select full" name="Field109" tabindex="20" style="width: -webkit-fill-available;">' +
+			'	<option>Select</option>' +
+			'	<option value="CR">CR</option>' +
+			'	<option value="DR">DR</option>' +
+			'</select>' +
+			'<span class=" label_intro">A/C Type</span>' +
+			'</div>' +
+			'<div class="form_grid_6">' +
+			'<input name="field2" type="text"/>' +
+			'<span class=" label_intro">PAN No.*</span>' +
+			'</div>' +
+			'<div class="form_grid_6">' +
+			'<input name="field2" type="text"/>' +
+			'<span class=" label_intro">TAN No.*</span>' +
+			'</div>' +
+			'<div class="form_grid_6">' +
+			'<input name="field2" type="text"/>' +
+			'<span class=" label_intro">Address 1 *</span>' +
+			'</div>' +
+			
+			'<div class="form_grid_6">' +
+			'<select data-placeholder="Select City" class="chzn-select full" name="Field109" tabindex="20" style="width: -webkit-fill-available;">' +
+			'	<option>Select</option>' +
+			'	<option value="ASM">Assam</option>' +
+			'	<option value="DL">Dehi</option>' +
+			'</select>' +
+			'<span class=" label_intro">City</span>' +
+			'</div>' +
+		
+			'<div class="form_grid_6">' +
+			'<input name="field2" type="text"/>' +
+			'<span class=" label_intro">Pin code *</span>' +
+			'</div>' +
+			'<div class="form_grid_12">' +
+			'<input name="field2" type="textArea" style="width:100%"/>' +
+			'<span class=" label_intro">Description *</span>' +
+			'</div>' +
+			'<span class="clear"></span>' +
+			'</div>' +
+			' </ul>' +
+			'</li>' +
+			/*'<input type="submit" class="finish" value="Finish!"/>' +*/
+		'</form>' +
+		'</div>' +
+			
+		'</div>' +
+		'</div>' +
+		'</div>' +
+		'</div>',
+	    'buttons'	: {
+			'submit'	: {
+				'class'	: 'yes',
+				'action': function(){
+					window.location="resBank.htm";
+				}
+			},
+			/*'Reset'	: {
+				'class'	: 'reset',
+				'action': function(){
+					//$("#addBank"). trigger("reset");
+					// $('#confirmBox form')[0].reset();
+					 $("#confirmBox").dialog('open');
+			          return false;
+				}
+			},*/
+			'Cancel'	: {
+				'class'	: 'no',
+				'action': function(){}	// Nothing to do in this case. You can as well omit the action property.
+			}
+		}
+	});
+	
+});
 $('.confirm_dialog').click(function(){
 		$.confirm({
 			'title'		: 'Delete Confirmation',
