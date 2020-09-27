@@ -9,7 +9,7 @@
 	width:270px;
 	float:left;
 	height:100%;
-	position:fixed;
+	/* position:fixed; */
 	overflow:hidden;
 }
 #container {
@@ -40,6 +40,7 @@
 #sidebar {
 	width:200px;
 	margin-left:70px;
+	position: fixed;
 }
 #secondary_nav {
 	margin:10px;

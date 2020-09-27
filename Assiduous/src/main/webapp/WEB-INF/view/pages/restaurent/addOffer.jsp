@@ -110,7 +110,7 @@ width:100%;
 							</div>
 							<a href='#' id='osx-modal' class='osx'>Demo</a></li>
 							<li>
-							<div id="basic-modal-content">
+							<%-- <div id="basic-modal-content">
 								<h3>Basic Modal Dialog</h3>
 								<p>
 									 For this demo, SimpleModal is using this "hidden" data for its content. You can also populate the modal dialog with an AJAX response, standard HTML or DOM element(s).
@@ -132,8 +132,8 @@ width:100%;
 								</p>
 								<div class="btn_24_blue">
 									<a href="#" class="simplemodal-close"><span>More details...</span></a>
-								</div>
-							</div>
+								</div> 
+							</div>--%>
 							<a href="#" class="basic-modal">Modal Two</a></li>
 							<li><a href="#" class="confirm_dialog">Confirm Modal</a></li>
 							<li><a class='ajax' href="data/ajax-stepy.html" title="Homer Defined">Colorbox Modal</a></li>
@@ -147,4 +147,5 @@ width:100%;
 		</div>
 		<span class="clear"></span>
 	</div>
+	
 </div>

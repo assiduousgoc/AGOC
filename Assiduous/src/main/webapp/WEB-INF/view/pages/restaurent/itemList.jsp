@@ -39,10 +39,10 @@ width:100%;
 							<div class="widget_top" style="text-align: end;">
 								
 								<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Import Item"><span class="icon doc_excel_csv_co"></span></a>
+									<a href="#" class="tipTop confirm_dialog_import" original-title="Import Item"><span class="icon doc_excel_csv_co"></span></a>
 									</div>
 								<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Add Item"><span class="icon add_co"></span></a>
+									<a href="#" class="tipTop confirm_dialog_AddItem" original-title="Add Item"><span class="icon add_co"></span></a>
 									</div>
 									<!-- 
 									<div class="btn_30_light">
@@ -125,7 +125,7 @@ width:100%;
 								Yumbox Packaged Goods
 							</td>
 							<td class="center">
-								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span><span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span><span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span>
+								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span><span><a class="action-icons c-delete confirm_dialog" href="#" title="delete">Delete</a></span><span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span>
 							</td>
 						</tr>
 						
@@ -318,7 +318,7 @@ width:100%;
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-suspend" href="#" title="Transfer Stock">Delete</a></span>
+								<span><a class="action-icons c-suspend confirm_dialog" href="#" title="Transfer Stock">Delete</a></span>
 								<span><a class="action-icons c-approve" href="#" title="Stock History">Done</a></span>
 							</td>
 						</tr>
@@ -346,7 +346,7 @@ width:100%;
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-suspend" href="#" title="Transfer Stock">Delete</a></span>
+								<span><a class="action-icons c-suspend confirm_dialog" href="#" title="Transfer Stock">Delete</a></span>
 								<span><a class="action-icons c-approve" href="#" title="Stock History">Done</a></span>
 							</td>
 						</tr>
@@ -374,7 +374,7 @@ width:100%;
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-suspend" href="#" title="Transfer Stock">Delete</a></span>
+								<span><a class="action-icons c-suspend confirm_dialog" href="#" title="Transfer Stock">Delete</a></span>
 								<span><a class="action-icons c-approve" href="#" title="Stock History">Done</a></span>
 							</td>
 						</tr>
@@ -456,7 +456,7 @@ width:100%;
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span>
+								<span><a class="action-icons c-delete confirm_dialog" href="#" title="delete">Delete</a></span>
 							<!-- 	<span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span> -->
 							</td>
 						</tr>
@@ -541,7 +541,7 @@ width:100%;
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span>
-								<span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span>
+								<span><a class="action-icons c-delete confirm_dialog" href="#" title="delete">Delete</a></span>
 							<!-- 	<span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span> -->
 							</td>
 						</tr>
