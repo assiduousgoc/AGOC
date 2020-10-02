@@ -453,6 +453,7 @@ div.uploader input {
 	display: inline-block;
 	zoom: 1;
  *display: inline;
+ width: -webkit-fill-available !important;
 }
 .chzn-container .chzn-drop {
 	background: #fff;

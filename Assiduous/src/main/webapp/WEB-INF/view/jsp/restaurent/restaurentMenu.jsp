@@ -111,12 +111,11 @@
 				</li>
 				<!-- <li><a href="table.html"><span class="nav_icon list"></span> Sales</a>
 				</li> -->
-				<li><a href="#"><span class="nav_icon chart_8"></span> Inventory<span class="alert_notify blue">1</span><span class="up_down_arrow">&nbsp;</span></a>
+				<!-- <li><a href="#"><span class="nav_icon chart_8"></span> Inventory<span class="alert_notify blue">1</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
 					<li><a href="form-elements.html"><span class="list-icon">&nbsp;</span>Stock</a></li>
-					
 				</ul>
-				</li>
+				</li> -->
 				<li><a href="#"><span class="nav_icon frames"></span> Account<span class="alert_notify blue">5</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
 					<li><a href="resBank.htm"><span class="list-icon">&nbsp;</span>Bank</a></li>

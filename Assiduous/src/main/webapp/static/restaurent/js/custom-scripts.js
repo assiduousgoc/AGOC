@@ -1,5 +1,5 @@
 	$(function() {
-	
+		$('.addMoreFields').hide();
 	/*==JQUERY SELECTBOX==*/
 	$(".chzn-select").chosen(); 
 	$(".chzn-select-deselect").chosen({allow_single_deselect: true});
@@ -1494,6 +1494,57 @@ $('.confirm_dialog_AddItem').click(function(){
 	});
 	
 });
+$('.btn_close').click(function(){
+	alert('hi');
+	$.modal('', {
+		closeHTML:"",
+		overlayClose:true
+	});
+})
+$('.confirm_dialog_import1').click(function(){
+	
+	var src = $(this).attr('id');
+	showFrame(src);
+	
+});
+$('.confirm_dialog_inv_import').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_cat_import').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_sup_import').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+function showFrame(src){
+	$.modal('<iframe src="' + src + '" height="530" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
+		closeHTML:"",
+		containerCss:{
+			backgroundColor:"#fff", 
+			borderColor:"#fff", 
+			height:530, 
+			padding:0, 
+			width:830
+		},
+		overlayClose:true
+	});
+}
+function showSmallFrame(src){
+	$.modal('<iframe src="' + src + '" height="400" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
+		closeHTML:"",
+		containerCss:{
+			backgroundColor:"#fff", 
+			borderColor:"#fff", 
+			height:420, 
+			padding:0, 
+			width:530
+		},
+		overlayClose:true
+	});
+}
 $('.confirm_dialog_AddBank').click(function(){
 	$.confirm({
 		//'title'		: 'Import Items',

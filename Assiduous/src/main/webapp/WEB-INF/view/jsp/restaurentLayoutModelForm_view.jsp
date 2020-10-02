@@ -35,54 +35,14 @@
 </head>
  
 <body id="theme-default" class="full_block">
-<%-- <%
-    session=request.getSession(true);
-System.out.println("-------------->"+session.getAttribute("user"));
-    if(session.getAttribute("user")==null)
-    {
-        response.sendRedirect("redirect:/");
-    }
-%> --%>
-<!-- Loading starts -->
-		<!-- <div id="loading-wrapper">
-			<div class='spinner-wrapper'>
-				<div class='spinner'>
-					<div class='inner'></div>
-				</div>
-				<div class='spinner'>
-					<div class='inner'></div>
-				</div>
-				<div class='spinner'>
-					<div class='inner'></div>
-				</div>
-				<div class='spinner'>
-					<div class='inner'></div>
-				</div>
-				<div class='spinner'>
-					<div class='inner'></div>
-				</div>
-				<div class='spinner'>
-					<div class='inner'></div>
-				</div>
-			</div>
-		</div> -->
-	 <div>
-		<header id="header" class="blue_lin" style="width: 100%;">
-			<tiles:insertAttribute name="header"/>
-		</header>
-	
 		<section id="sidemenu">
 			<tiles:insertAttribute name="menu" />
 		</section>
 			
-		<section id="site-content" style="margin-top: 0px;">
+		<section id="site-content">
 			<tiles:insertAttribute name="body" />
 		</section>
-		
-		<footer id="footer">
-			<tiles:insertAttribute name="footer" />
-		</footer>
-</div>
+
 
 <script type="text/javascript"  src="<c:url value='/static/restaurent/js/jquery-1.7.1.min.js'/>"></script>
 <script type="text/javascript"  src="<c:url value='/static/restaurent/js/jquery-ui-1.8.18.custom.min.js'/>"></script>

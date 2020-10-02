@@ -1,4 +1,4 @@
-package com.ass.ass.gym.controller;
+package com.ass.ass.restaurent.controller;
 
 import java.util.List;
 
@@ -18,18 +18,28 @@ import com.ass.smtfp.model.RoomDto;
 import com.ass.smtfp.model.UserData;
 
 @Controller
-public class ItemController {
+public class CategoryController {
 
 	@Autowired
 	private GMSRoomClient gym_room_client;
 
-	@RequestMapping("/resItemList.htm")
+	@RequestMapping("/categoryList.htm")
 	public String roomList(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		//List<RoomDto> rooms = gym_room_client.get(user.getToken());
 		//model.addAttribute("roomList", rooms);
-		return "resItemList";
+		return "categoryList";
 	}
-
+	@RequestMapping(value = "/creatCategory.htm", method = RequestMethod.GET)
+	public String createBank(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		System.out.println("Create ");
+		/*try {
+			bank_client.deactive(user.getToken(), id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+		return "creatCategory";
+	}
 
 }

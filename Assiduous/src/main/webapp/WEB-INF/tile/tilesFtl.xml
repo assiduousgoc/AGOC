@@ -42,6 +42,14 @@
        <put-attribute name="body" value="" />  
        <put-attribute name="footer" value="/WEB-INF/view/jsp/restaurent/restaurentFooter.jsp" />  
    </definition> 
+   <definition name="restaurentmodel-definition" 
+       template="/WEB-INF/view/jsp/restaurentLayoutModelForm_view.jsp">  
+       <put-attribute name="title" value="Restaurent Dashboard" />  
+       <put-attribute name="header" value="" />  
+       <put-attribute name="menu" value="" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="" />  
+   </definition> 
    <definition name="gym-definition" 
        template="/WEB-INF/view/jsp/gymLayout.jsp">  
        <put-attribute name="title" value="Gym Dashboard" />  
@@ -463,4 +471,25 @@
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/order.jsp" />  
    </definition>
+   <definition name="createBank" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addBank.jsp" />  
+   </definition>
+   <definition name="creatResItem" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addItem.jsp" />  
+   </definition>
+   <definition name="creatResInventory" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addInventory.jsp" />  
+   </definition>
+   <definition name="creatCategory" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addCategory.jsp" />  
+   </definition>
+   <definition name="creatSupplier" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addSupplier.jsp" />  
+   </definition>
+   
 </tiles-definitions>

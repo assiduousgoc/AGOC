@@ -143,5 +143,25 @@ public class BankController {
 		}
 		return new ModelAndView("redirect:/bank.htm");
 	}
-
+	@RequestMapping(value = "/resBank.htm", method = RequestMethod.GET)
+	public String resBank(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		/*try {
+			bank_client.deactive(user.getToken(), id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+		return "resBank";
+	}
+	@RequestMapping(value = "/creatBank.htm", method = RequestMethod.GET)
+	public String createBank(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		System.out.println("Create ");
+		/*try {
+			bank_client.deactive(user.getToken(), id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+		return "createBank";
+	}
 }

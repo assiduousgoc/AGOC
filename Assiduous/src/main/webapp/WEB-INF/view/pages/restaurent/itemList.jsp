@@ -42,14 +42,14 @@ width:100%;
 									<a href="#" class="tipTop confirm_dialog_import" original-title="Import Item"><span class="icon doc_excel_csv_co"></span></a>
 									</div>
 								<div class="btn_30_light">
-									<a href="#" class="tipTop confirm_dialog_AddItem" original-title="Add Item"><span class="icon add_co"></span></a>
+									<a href="#" id="creatResItem.htm" class="tipTop confirm_dialog_import1 " original-title="Add Item"><span class="icon add_co"></span></a>
 									</div>
 									<!-- 
 									<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Add Item"><span class="icon magnifier_zoom_in_co"></span></a>
+									<a href="#" class="tipTop " original-title="Add Item"><span class="icon magnifier_zoom_in_co"></span></a>
 									</div> -->
 									<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Print Sales"><span class="icon printer_co"></span></a>
+									<a href="#"  class="tipTop confirm_dialog_AddItem" original-title="Print Sales"><span class="icon printer_co"></span></a>
 									</div>
 								<div class="btn_30_light">
 									<a href="#" class="tipTop" original-title="Export Csv"><span class="icon doc_excel_table_co"></span></a>
@@ -138,7 +138,7 @@ width:100%;
 						<div id="tab2">
 							<div class="widget_top" style="text-align: end;">
 									<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Add Inventory"><span class="icon add_co"></span></a>
+									<a href="#" id="creatInventory.htm" class="tipTop confirm_dialog_inv_import" original-title="Add Inventory"><span class="icon add_co"></span></a>
 									</div>
 									<div class="btn_30_light">
 									<a href="#" class="tipTop" original-title="Print Sales"><span class="icon printer_co"></span></a>
@@ -388,7 +388,7 @@ width:100%;
 							<div class="widget_top" style="text-align: end;">
 							
 								<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Add Category"><span class="icon add_co"></span></a>
+									<a href="#" id="creatCategory.htm" class="tipTop confirm_dialog_cat_import" original-title="Add Category"><span class="icon add_co"></span></a>
 									</div>
 									<div class="btn_30_light">
 									<a href="#" class="tipTop" original-title="Print Sales"><span class="icon printer_co"></span></a>
@@ -472,7 +472,7 @@ width:100%;
 										<button type="button" class="btn_small btn_blue"><span>Adv. Search</span></button>
 									</div> -->
 									<div class="btn_30_light">
-									<a href="#" class="tipTopL" original-title="Add Supplier"><span class="icon add_co"></span></a>
+									<a href="#" id="creatSupplier.htm" class="tipTopL confirm_dialog_sup_import" original-title="Add Supplier"><span class="icon add_co"></span></a>
 									</div>
 									<!-- <div class="btn_30_light">
 									<a href="#" class="tipTopL" original-title="Adv. Search"><span class="icon magnifier_zoom_in_co"></span></a>
