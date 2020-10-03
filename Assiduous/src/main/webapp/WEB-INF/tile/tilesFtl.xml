@@ -472,6 +472,12 @@
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/order.jsp" />  
    </definition>
+    <definition name="resReport" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/report.jsp" />  
+   </definition>
+   
+   
    <definition name="createBank" extends="restaurentmodel-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addBank.jsp" />  

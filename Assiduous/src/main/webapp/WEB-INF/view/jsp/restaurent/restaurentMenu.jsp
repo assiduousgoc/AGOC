@@ -131,12 +131,13 @@
 				
 				<li><a href="resInvoiceList.htm"><span class="nav_icon money_2"></span>Invoice</a></li>
 <!-- 				<li><a href="resInvoice.htm"><span class="nav_icon documents"></span>Report</a></li> -->
-				<li><a href="#"><span class="nav_icon documents"></span> Report<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
+				<li><a href="resReport.htm"><span class="nav_icon money_2"></span>Report</a></li>
+				<!-- <li><a href="#"><span class="nav_icon documents"></span> Report<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
 					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Sales Report</a></li>
 					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Stock Report</a></li>
 				</ul>
-				</li>
+				</li> -->
 				
 				<li><a href="#"><span class="nav_icon coverflow"></span> Daybook<span class="alert_notify blue">6</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
