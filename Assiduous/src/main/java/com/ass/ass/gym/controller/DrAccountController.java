@@ -73,4 +73,10 @@ public class DrAccountController {
 		dr_client.delete(user.getToken(), id);
 		return "redirect:/drAccount.htm";
 	}
+	@RequestMapping(value = "/addResDr.htm", method = RequestMethod.GET)
+	public String addResDr(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+	/*	dr_client.delete(user.getToken(), id);*/
+		return "addResDr";
+	}
 }

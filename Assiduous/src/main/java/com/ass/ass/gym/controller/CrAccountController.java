@@ -73,5 +73,11 @@ public class CrAccountController {
 		cr_client.delete(user.getToken(), id);
 		return "redirect:/crAccount.htm";
 	}
-
+	@RequestMapping(value = "/addResCr.htm", method = RequestMethod.GET)
+	public String addResCr(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		/*cr_client.delete(user.getToken(), id);*/
+		System.out.println("************ CR Account************");
+		return "addResCr";
+	}
 }

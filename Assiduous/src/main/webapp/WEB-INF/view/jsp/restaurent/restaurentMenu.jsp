@@ -107,6 +107,8 @@
 					<li><a href="resOfferList.htm"><span class="list-icon">&nbsp;</span>Offer</a></li>
 				</ul>
 				</li>
+				<li><a href="table.html"><span class="nav_icon blocks_images"></span> Order</a>
+				</li>
 				<li><a href="POSSales.htm"><span class="nav_icon folder"></span>POS Sales</a>
 				</li>
 				<!-- <li><a href="table.html"><span class="nav_icon list"></span> Sales</a>
@@ -126,8 +128,7 @@
 
 				</ul>
 				</li>
-				<li><a href="table.html"><span class="nav_icon blocks_images"></span> Order</a>
-				</li>
+				
 				<li><a href="resInvoiceList.htm"><span class="nav_icon money_2"></span>Invoice</a></li>
 <!-- 				<li><a href="resInvoice.htm"><span class="nav_icon documents"></span>Report</a></li> -->
 				<li><a href="#"><span class="nav_icon documents"></span> Report<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>

@@ -29,7 +29,7 @@ width:100%;
 								<li><a href="#tab1" class="active_tab"><span class="alert_notify pink">30</span>Bank</a></li>
 								<li><a href="#tab2">Cr. A/C<span class="alert_notify orange">10</span></a></li>
 								<li><a href="#tab3">Dr. A/C<span class="alert_notify pink">20</span></a></li>
-								<li><a href="#tab4">GST<span class="alert_notify orange">40</span></a></li>
+								<li><a href="#tab4">Tax Account<span class="alert_notify orange">40</span></a></li>
 								<li><a href="#tab5">Payment<span class="alert_notify pink">10</span></a></li>
 								<li><a href="#tab6">Dues<span class="alert_notify orange">50</span></a></li>
 								<li><a href="#tab7">Ledger<span class="alert_notify pink">30</span></a></li>
@@ -47,19 +47,19 @@ width:100%;
 									</div> -->
 									
 									<div class="btn_30_light">
-									<a href="#"><span class="icon add_co confirm_dialog_AddBank"></span></a>
+									<a href="#" id="addResBank.htm" class="tipTop confirm_dialog_AddBank" original-title="Create Bank"><span class="icon add_co"></span></a>
 									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 									<div class="btn_30_light">
-									<a href="#" class="tipTop" original-title="Print Sales"><span class="icon printer_co"></span></a>
+									<a href="#" class="tipTop" original-title="Print"><span class="icon printer_co"></span></a>
 									</div>
 								<div class="btn_30_light">
-									<a href="#"><span class="icon doc_excel_csv_co"></span></a>
+									<a href="#" class="tipTop" original-title="Export to excel"><span class="icon doc_excel_csv_co"></span></a>
 								</div>
 								<div class="btn_30_light">
-									<a href="#"><span class="icon doc_pdf_co"></span></a>
+									<a href="#" class="tipTop" original-title="Export to pdf"><span class="icon doc_pdf_co"></span></a>
 								</div>
 							</div>
 							<table class="display" id="action_tbl">
@@ -302,11 +302,11 @@ width:100%;
 						<div id="tab2">
 							<div class="widget_top" style="text-align: end;">
 							<div class="btn_30_light">
-									<a href="#"><span class="icon add_co"></span></a>
+									<a href="#" id="addResCr.htm" class="tipTop confirm_dialog_AddCr"  original-title="Create Cr.Account"><span class="icon add_co"></span></a>
 									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 								<div class="btn_30_light">
 									<a href="#"><span class="icon doc_excel_csv_co"></span></a>
 								</div>
@@ -519,11 +519,11 @@ width:100%;
 										<button type="button" class="btn_small btn_gray"><span>Adv. Search</span></button>
 									</div> -->
 									<div class="btn_30_light">
-									<a href="#"><span class="icon add_co"></span></a>
+									<a href="#" id="addResDr.htm" class="tipTop confirm_dialog_AddDr"  original-title="Create Dr.Account"><span class="icon add_co"></span></a>
 									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 								<div class="btn_30_light">
 									<a href="#"><span class="icon doc_excel_csv_co"></span></a>
 								</div>
@@ -780,11 +780,11 @@ width:100%;
 										<button type="button" class="btn_small btn_blue"><span>Adv. Search</span></button>
 									</div> -->
 									<div class="btn_30_light">
-									<a href="#" class="tipTopL" original-title="Add Gst"><span class="icon add_co"></span></a>
+									<a href="#" id="addResGst.htm" class="tipTopL confirm_dialog_AddGst" original-title="Add Gst"><span class="icon add_co"></span></a>
 									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
 									<a href="#" class="tipTopL" original-title="Adv. Search"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 								<div class="btn_30_light">
 									<a href="#" class="tipTopL" original-title="Export to Excel"><span class="icon doc_excel_csv_co"></span></a>
 								</div>
@@ -1015,11 +1015,11 @@ width:100%;
 										<button type="button" class="btn_small btn_orange"><span>Adv. Search</span></button>
 									</div> -->
 									<div class="btn_30_light">
-									<a href="#"><span class="icon add_co"></span></a>
+									<a href="#" id="addResPayment.htm" class="tipTop confirm_dialog_AddPayment" original-title="Create Payment" ><span class="icon add_co"></span></a>
 									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 								<div class="btn_30_light">
 									<a href="#"><span class="icon doc_excel_csv_co"></span></a>
 								</div>
@@ -1223,12 +1223,12 @@ width:100%;
 										<button type="button" class="btn_small btn_blue"><span>Add Dues</span></button>
 										<button type="button" class="btn_small btn_blue"><span>Adv. Search</span></button>
 									</div> -->
-									<div class="btn_30_light">
-									<a href="#"><span class="icon add_co"></span></a>
-									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
+									<a href="#" id="addResDues.htm" class="tipTop confirm_dialog_AddDues" original-title="Create Dues"><span class="icon add_co"></span></a>
+									</div> -->
+									<!-- <div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 								<div class="btn_30_light">
 									<a href="#"><span class="icon doc_excel_csv_co"></span></a>
 								</div>
@@ -1497,12 +1497,12 @@ width:100%;
 										<button type="button" class="btn_small btn_gray"><span>Search</span></button>
 										<button type="button" class="btn_small btn_gray"><span>Adv. Search</span></button>
 									</div> -->
-									<div class="btn_30_light">
-									<a href="#"><span class="icon add_co"></span></a>
-									</div>
-									<div class="btn_30_light">
+									<!-- <div class="btn_30_light">
+									<a href="#" id="addResLedger.htm" class="tipTop confirm_dialog_AddLedger" original-title="Create Ledger"><span class="icon add_co"></span></a>
+									</div> -->
+									<!-- <div class="btn_30_light">
 									<a href="#"><span class="icon magnifier_zoom_in_co"></span></a>
-									</div>
+									</div> -->
 								<div class="btn_30_light">
 									<a href="#"><span class="icon doc_excel_csv_co"></span></a>
 								</div>

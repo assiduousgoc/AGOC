@@ -153,7 +153,7 @@ public class BankController {
 		}*/
 		return "resBank";
 	}
-	@RequestMapping(value = "/creatBank.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "/addResBank.htm", method = RequestMethod.GET)
 	public String createBank(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		System.out.println("Create ");
@@ -162,6 +162,6 @@ public class BankController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}*/
-		return "createBank";
+		return "addResBank";
 	}
 }

@@ -1519,6 +1519,34 @@ $('.confirm_dialog_sup_import').click(function(){
 	var src = $(this).attr('id');
 	showSmallFrame(src);
 });
+$('.confirm_dialog_AddBank').click(function(){
+	var src = $(this).attr('id');
+	showFrame(src);
+});
+$('.confirm_dialog_AddCr').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_AddDr').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_AddGst').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_AddPayment').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_AddDues').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
+$('.confirm_dialog_AddLedger').click(function(){
+	var src = $(this).attr('id');
+	showSmallFrame(src);
+});
 function showFrame(src){
 	$.modal('<iframe src="' + src + '" height="530" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
 		closeHTML:"",
@@ -1538,14 +1566,14 @@ function showSmallFrame(src){
 		containerCss:{
 			backgroundColor:"#fff", 
 			borderColor:"#fff", 
-			height:420, 
+			height:400, 
 			padding:0, 
 			width:530
 		},
 		overlayClose:true
 	});
 }
-$('.confirm_dialog_AddBank').click(function(){
+$('.confirm_dialog_AddBank11').click(function(){
 	$.confirm({
 		//'title'		: 'Import Items',
 		//'text': 'Something else',

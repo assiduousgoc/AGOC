@@ -434,6 +434,7 @@
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resBankList.jsp" />  
    </definition>
+   
    <definition name="crAccRestaurent" extends="restaurent-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/resCrAccList.jsp" />  
@@ -491,5 +492,24 @@
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addSupplier.jsp" />  
    </definition>
-   
+   <definition name="addResBank" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addResBank.jsp" />  
+   </definition>
+   <definition name="addResCr" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addCrAccount.jsp" />  
+   </definition>
+    <definition name="addResDr" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addDrAccount.jsp" />  
+   </definition>
+   <definition name="addResGst" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addGst.jsp" />  
+   </definition>
+   <definition name="addResPayment" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addPayment.jsp" />  
+   </definition>
 </tiles-definitions>

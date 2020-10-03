@@ -95,5 +95,15 @@ public class GSTController {
 		}
 		return new ModelAndView("redirect:/gstList.htm");
 	}
+	@RequestMapping(value = "/addResGst.htm", method = RequestMethod.GET)
+	public String addResGst(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		try {
+			//gst_client.deactive(user.getToken(), id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "addResGst";
+	}
 
 }

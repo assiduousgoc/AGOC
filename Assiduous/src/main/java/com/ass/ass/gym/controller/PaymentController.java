@@ -81,5 +81,15 @@ public class PaymentController {
 		}
 		return "redirect:/payments.htm";
 	}
+	@RequestMapping(value = "/addResPayment.htm")
+	public String addResPayment(Model model, HttpServletRequest req) {
+		UserData user = (UserData) req.getSession().getAttribute("user");
+		try {
+			/*p_client.delete(user.getToken(), id);
+			return "redirect:/payments.htm";*/
+		} catch (Exception e) {
+		}
+		return "addResPayment";
+	}
 
 }
