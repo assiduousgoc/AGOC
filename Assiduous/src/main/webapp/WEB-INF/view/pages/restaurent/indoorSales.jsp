@@ -11,7 +11,7 @@ width:100%;
 	
 	<div class="page_title">
 		<span class="stats_icon bank_sl"><span class="bank_3"></span></span>
-		<h3>Account </h3>
+		<h3>Indoor Sales </h3>
 		
 	</div>
 	
@@ -24,7 +24,7 @@ width:100%;
 						<div id="tab1">
 							<form action="#" method="post" class="form_container field_set">
 								<fieldset>
-									<legend>Reports</legend>
+									<legend>Search</legend>
 									<ul>
 										<li>
 										<div class="form_grid_12">
@@ -93,74 +93,123 @@ width:100%;
 					
 					<div class="widget_content">
 						<div id="tab1">
-							
-							<table class="display" id="action_tbl">
+							<table  class="display" id="data_tbl_tools">
 						<thead>
 						<tr>
-							<th class="center">
-								<input name="checkbox" type="checkbox" value="" class="checkall">
+							<th>
+								 User Name
 							</th>
 							<th>
 								 Name
 							</th>
 							<th>
-								# Sold
+								 Address
 							</th>
 							<th>
-								Discounts
+								 Contact No.
 							</th>
 							<th>
-								Tax
+								 Email
 							</th>
-							<!-- <th>Type</th> -->
-							<th>Total</th>
-							<th># Refunded</th>
-							<th>Total</th>
 							<th>
-								 Balance
+								 Thumb
 							</th>
-							 
-							
+							<th>
+								 Status
+							</th>
+							<th>
+								 Action
+							</th>
 						</tr>
 						</thead>
 						<tbody>
 						<tr>
-							<td class="center tr_select ">
-								<input name="checkbox" type="checkbox" value="">
+							<td>
+								<a href="#">Jhon</a>
 							</td>
 							<td>
-								<a href="reportTransaction.htm">Miscellaneous</a>
+								<a href="#">Jhon Doe</a>
+							</td>
+							<td>
+								 Address Line
 							</td>
 							<td class="center">
-								18
+								+919825984756
 							</td>
 							<td class="center">
-								$0.00
-							</td>
-							
-							<td class="center">
-								$1.62
-							</td>
-							<td  class="center">
-								$17.82
+								 jhon@hostname.com
 							</td>
 							<td class="center">
-								1
+								<div class="user-thumb">
+									<a href="#"><img height="40" width="40" alt="User" src="images/user-thumb1.png"></a>
+								</div>
 							</td>
 							<td class="center">
-								$0.00
+								<span class="badge_style b_done">New</span><span class="badge_style b_pending">Pending</span>
 							</td>
 							<td class="center">
-							$0.00
+								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span><span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span><span><a class="action-icons c-approve" href="#" title="Approve">Approve</a></span><span><a class="action-icons c-suspend" href="#" title="Suspend">Suspend</a></span>
 							</td>
-							
 						</tr>
-						
-						
+						<tr>
+							<td>
+								<a href="#">Jaman</a>
+							</td>
+							<td>
+								<a href="#">Ui Jaman</a>
+							</td>
+							<td>
+								 Address Line
+							</td>
+							<td class="center">
+								+919825984756
+							</td>
+							<td class="center">
+								 jaman@hostname.com
+							</td>
+							<td class="center">
+								<div class="user-thumb">
+									<a href="#"><img height="40" width="40" alt="User" src="images/user-thumb1.png"></a>
+								</div>
+							</td>
+							<td class="center">
+								<span class="badge_style b_suspend">Suspended</span>
+							</td>
+							<td class="center">
+								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span><span><a class="action-icons c-delete" href="#" title="delete">Delete</a></span><span><a class="action-icons c-approve" href="#" title="Approve">Approve</a></span><span><a class="action-icons c-suspend" href="#" title="Suspend">Suspend</a></span>
+							</td>
+						</tr>
 						</tbody>
-						
+						<tfoot>
+						<tr>
+							<th>
+								 User Name
+							</th>
+							<th>
+								 Name
+							</th>
+							<th>
+								 Address
+							</th>
+							<th>
+								 Contact No.
+							</th>
+							<th>
+								 Email
+							</th>
+							<th>
+								 Thumb
+							</th>
+							<th>
+								 Status
+							</th>
+							<th>
+								 Action
+							</th>
+						</tr>
+						</tfoot>
 						</table>
-							
+														
 						</div>
 						</div>
 				</div>

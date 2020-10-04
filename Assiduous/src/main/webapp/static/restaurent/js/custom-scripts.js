@@ -1547,6 +1547,10 @@ $('.confirm_dialog_AddLedger').click(function(){
 	var src = $(this).attr('id');
 	showSmallFrame(src);
 });
+$('.confirm_dialog_transaction').click(function(){
+	var src = $(this).attr('id');
+	showBigFrame(src);
+});
 function showFrame(src){
 	$.modal('<iframe src="' + src + '" height="530" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
 		closeHTML:"",
@@ -1554,6 +1558,19 @@ function showFrame(src){
 			backgroundColor:"#fff", 
 			borderColor:"#fff", 
 			height:530, 
+			padding:0, 
+			width:830
+		},
+		overlayClose:true
+	});
+}
+function showBigFrame(src){
+	$.modal('<iframe src="' + src + '" height="600" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
+		closeHTML:"",
+		containerCss:{
+			backgroundColor:"#fff", 
+			borderColor:"#fff", 
+			height:600, 
 			padding:0, 
 			width:830
 		},

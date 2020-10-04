@@ -109,7 +109,9 @@
 				</li>
 				<li><a href="table.html"><span class="nav_icon blocks_images"></span> Order</a>
 				</li>
-				<li><a href="POSSales.htm"><span class="nav_icon folder"></span>POS Sales</a>
+				<!-- <li><a href="indoorSales.htm"><span class="h_icon bended_arrow_right"></span>Indoor Sales</a>
+				</li> -->
+				<li><a href="POSSales.htm"><span class="h_icon shopping_cart_3"></span>POS Sales</a>
 				</li>
 				<!-- <li><a href="table.html"><span class="nav_icon list"></span> Sales</a>
 				</li> -->
@@ -131,7 +133,7 @@
 				
 				<li><a href="resInvoiceList.htm"><span class="nav_icon money_2"></span>Invoice</a></li>
 <!-- 				<li><a href="resInvoice.htm"><span class="nav_icon documents"></span>Report</a></li> -->
-				<li><a href="resReport.htm"><span class="nav_icon money_2"></span>Report</a></li>
+				<li><a href="resReport.htm"><span class="h_icon graph"></span>Report</a></li>
 				<!-- <li><a href="#"><span class="nav_icon documents"></span> Report<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
 					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Sales Report</a></li>

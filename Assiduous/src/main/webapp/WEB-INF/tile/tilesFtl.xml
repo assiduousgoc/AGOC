@@ -476,6 +476,14 @@
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/report.jsp" />  
    </definition>
+    <definition name="reportTransaction" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/reportTransaction.jsp" />  
+   </definition>
+   <definition name="indoorSales" extends="restaurent-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/indoorSales.jsp" />  
+   </definition>
    
    
    <definition name="createBank" extends="restaurentmodel-definition">  
@@ -517,5 +525,9 @@
    <definition name="addResPayment" extends="restaurentmodel-definition">  
        <put-attribute name="title" value="Dashboard" />  
        <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/addPayment.jsp" />  
+   </definition>
+    <definition name="transactionDetails" extends="restaurentmodel-definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/view/pages/restaurent/transactionDetails.jsp" />  
    </definition>
 </tiles-definitions>

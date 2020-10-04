@@ -18,39 +18,18 @@ import com.ass.smtfp.model.RoomDto;
 import com.ass.smtfp.model.UserData;
 
 @Controller
-public class ReportController {
+public class IndoorSalesController {
 
 	@Autowired
 	private GMSRoomClient gym_room_client;
 
-	@RequestMapping("/resReport.htm")
+	@RequestMapping("/indoorSales.htm")
 	public String roomList(Model model, HttpServletRequest req) {
 		UserData user = (UserData) req.getSession().getAttribute("user");
 		//List<RoomDto> rooms = gym_room_client.get(user.getToken());
 		//model.addAttribute("roomList", rooms);
-		return "resReport";
+		return "indoorSales";
 	}
-	@RequestMapping(value = "/reportTransaction.htm", method = RequestMethod.GET)
-	public String reportTransaction(Model model, HttpServletRequest req) {
-		UserData user = (UserData) req.getSession().getAttribute("user");
-		System.out.println("Create ");
-		try {
-			//bank_client.deactive(user.getToken(), id);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "reportTransaction";
-	}
-	@RequestMapping(value = "/transactionDetails.htm", method = RequestMethod.GET)
-	public String transactionDetails(Model model, HttpServletRequest req) {
-		UserData user = (UserData) req.getSession().getAttribute("user");
-		System.out.println("Transaction Details ");
-		try {
-			//bank_client.deactive(user.getToken(), id);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "transactionDetails";
-	}
+	
 
 }
