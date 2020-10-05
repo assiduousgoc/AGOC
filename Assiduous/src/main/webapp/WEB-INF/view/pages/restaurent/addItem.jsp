@@ -187,7 +187,7 @@
 								<div class="form_grid_12">
 									<div class="form_input">
 									
-										<button type="button" class="btn_small btn_orange no" data-dismiss="modal"><span>Cancel</span></button>
+										<button type="button" class="btn_small btn_orange no" onclick="$('#simplemodal-container').hide();"><span>Cancel</span></button>
 										<button type="submit" class="btn_small btn_blue"><span>Submit</span></button>
 										<button type="reset" class="btn_small btn_blue"><span>Reset</span></button>
 										

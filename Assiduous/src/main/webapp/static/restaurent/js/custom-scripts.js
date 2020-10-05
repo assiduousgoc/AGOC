@@ -1551,9 +1551,14 @@ $('.confirm_dialog_transaction').click(function(){
 	var src = $(this).attr('id');
 	showBigFrame(src);
 });
+$('.confirm_dialog_addOrder').click(function(){
+	var src = $(this).attr('id');
+	showBigFrame(src);
+});
+
 function showFrame(src){
 	$.modal('<iframe src="' + src + '" height="530" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
-		closeHTML:"",
+		closeHTML:'<a class="modalCloseImg" title="Close"></a>',
 		containerCss:{
 			backgroundColor:"#fff", 
 			borderColor:"#fff", 
@@ -1561,12 +1566,12 @@ function showFrame(src){
 			padding:0, 
 			width:830
 		},
-		overlayClose:true
+		overlayClose:false
 	});
 }
 function showBigFrame(src){
 	$.modal('<iframe src="' + src + '" height="600" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
-		closeHTML:"",
+		closeHTML:'<a class="modalCloseImg" title="Close"></a>',
 		containerCss:{
 			backgroundColor:"#fff", 
 			borderColor:"#fff", 
@@ -1574,12 +1579,12 @@ function showBigFrame(src){
 			padding:0, 
 			width:830
 		},
-		overlayClose:true
+		overlayClose:false
 	});
 }
 function showSmallFrame(src){
 	$.modal('<iframe src="' + src + '" height="400" width="830" style="border:0;max-width: 100%;max-height: -webkit-fill-available; border:0">', {
-		closeHTML:"",
+		closeHTML:'<a class="modalCloseImg" title="Close"></a>',
 		containerCss:{
 			backgroundColor:"#fff", 
 			borderColor:"#fff", 
@@ -1587,7 +1592,7 @@ function showSmallFrame(src){
 			padding:0, 
 			width:530
 		},
-		overlayClose:true
+		overlayClose:false
 	});
 }
 $('.confirm_dialog_AddBank11').click(function(){

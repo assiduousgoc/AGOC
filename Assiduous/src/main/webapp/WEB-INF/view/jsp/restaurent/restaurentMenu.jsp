@@ -107,7 +107,7 @@
 					<li><a href="resOfferList.htm"><span class="list-icon">&nbsp;</span>Offer</a></li>
 				</ul>
 				</li>
-				<li><a href="table.html"><span class="nav_icon blocks_images"></span> Order</a>
+				<li><a href="resOrder.htm"><span class="nav_icon blocks_images"></span> Order</a>
 				</li>
 				<!-- <li><a href="indoorSales.htm"><span class="h_icon bended_arrow_right"></span>Indoor Sales</a>
 				</li> -->
