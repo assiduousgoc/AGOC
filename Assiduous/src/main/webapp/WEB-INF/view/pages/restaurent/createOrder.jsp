@@ -13,12 +13,30 @@
 								
 									<li>
 									<fieldset style="background-color: #FFFF">
-										<legend>Transaction Details</legend>
-										<ul>
-										<li> 
+										<legend>Create New Order</legend>
+										
 										<div class="form_grid_12 multiline">
 										<div class="form_input">
 										 <div class="list_left">
+											
+											<div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														Select Customer:
+													
+													</div>
+											<div class="form_grid_6">
+														<select data-placeholder="Choose a Customer" class="chzn-select full" name="Field109" tabindex="20">
+															<option value=""></option>
+															<option value="1">R & K Shops</option>
+															<option value="2">Mohan Lal</option>
+															
+														</select>
+													</div>
+											
+											</div><br>
+											</div>
+											<br>
 											<div class="form_grid_12">
 											<div  class="form_input">
 											<div class="form_grid_4 alpha">
@@ -128,8 +146,7 @@
 										 </div>
 										 </div>
 										 </div>
-										 </li>
-										</ul>
+										
 									</fieldset>
 								</li>
 								</ul>
@@ -163,29 +180,113 @@
 					<div class="widget_content">
 						<div id="tab1">
 							
-							<div class="user_list">
-								<div class="user_block">
-									<div class="info_block">
-										<!-- <div class="widget_thumb">
-											<img src="images/user-thumb1.png" width="40" height="40" alt="User">
-										</div> -->
-										<ul class="list_info" style="margin-top: -27px;">
-										<li><h1 style="margin-left: -21px;">Sale Totals:</h1></li>
-											<li><span>Subtotal: <i><a href="#">$8.59</a></i></span></li>
-											<li><span>GST (10%):<i>$0.86</i></span></li>
-											<li><span>Total:<i><b>$9.45 </b></i></span></li>
-										</ul>
-									</div>
-									<!-- <ul class="action_list">
-										<li><a class="p_edit" href="#">Edit</a></li>
-										<li><a class="p_del" href="#">Delete</a></li>
-										<li><a class="p_reject" href="#">Suspend</a></li>
-										<li class="right"><a class="p_approve" href="#">Approve</a></li>
-									</ul> -->
-								</div>
+							<form action="#" method="post" class="form_container">
+							<!-- <div class="elem_extend"> -->
+							<div class="">
+								<ul>
 								
-								
+									<li>
+									<fieldset style="background-color: #FFFF">
+										<legend style="font-size: 14px;font-family: -webkit-body;color: darkblue;font-weight: bold;">Sale Totals:</legend>
+										
+										<div class="form_grid_12 multiline">
+										<div class="form_input">
+										 <div class="list_left">
+											<div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														Subtotal:</div>
+											<div class="form_grid_6">
+														$545.45
+													</div>
+											
+											</div><br>
+											</div>
+											<br>
+											<div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														GST (10%):
+													
+													</div>
+											<div class="form_grid_6">
+														$54.00
+													</div>
+											
+											</div>
+											</div>
+											<br>
+											<div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+													Total:
+													</div>
+											<div class="form_grid_6">
+														$600.00
+													</div>
+											
+											</div><br>
+											</div>
+										 </div>
+										 <div class="list_right">
+										 <div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														Process DT:
+													
+													</div>
+											<div class="form_grid_6">
+														2020-10-04 06:27:59
+													</div>
+											
+											</div><br>
+											</div>
+											<div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														User:
+													
+													</div>
+											<div class="form_grid_6">
+														 staff
+													</div>
+											
+											</div><br>
+											</div>
+										 <div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														Device:
+													
+													</div>
+											<div class="form_grid_6">
+														 Admin Dash
+													</div>
+											
+											</div><br>
+											</div>
+											<div class="form_grid_12">
+											<div  class="form_input">
+											<div class="form_grid_4 alpha">
+														Location:
+													
+													</div>
+											<div class="form_grid_6">
+														 Admin Dash
+													</div>
+											
+											</div><br>
+											</div>
+											</div>
+										 </div>
+										 </div>
+										
+									</fieldset>
+								</li>
+								</ul>
 							</div>
+						
+						</form>
 							
 						</div>
 						<div id="tab2">
