@@ -7,9 +7,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.ass.smtfp.model.AddressDto;
-/*import com.dcs.common.constant.CommonConstant;
-import com.dcs.validation.annotation.Validate;*/
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;

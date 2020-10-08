@@ -3,6 +3,7 @@ package com.ass.smtfp.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
+
 /*
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;*/
@@ -11,15 +12,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import com.ass.client.config.DateSerializer;
+
+import com.ass.client.config.DateDSerializer;
 import com.ass.smtfp.enums.Gender;
 import com.ass.smtfp.enums.SubscriptionType;
-import com.ass.smtfp.model.AddressDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonPropertyOrder
 @JsonInclude(value = Include.NON_NULL)
@@ -36,7 +37,7 @@ public class TraineeDto implements Serializable {
 
 	@JsonProperty("first_name")
 	@NotNull
-	
+
 	private String firstName;
 
 	@JsonProperty("last_name")
@@ -69,7 +70,7 @@ public class TraineeDto implements Serializable {
 
 	@JsonProperty("doj")
 	@NotNull
-	@JsonSerialize(using = DateSerializer.class)
+	@JsonDeserialize(using = DateDSerializer.class)
 	private Date doj;
 
 	@JsonProperty("subscription_type")
@@ -77,7 +78,7 @@ public class TraineeDto implements Serializable {
 	private SubscriptionType subscriptionType;
 
 	@JsonProperty("due_date")
-	@JsonSerialize(using = DateSerializer.class)
+	@JsonDeserialize(using = DateDSerializer.class)
 	private Date dueDate;
 
 	@JsonProperty("gender")
