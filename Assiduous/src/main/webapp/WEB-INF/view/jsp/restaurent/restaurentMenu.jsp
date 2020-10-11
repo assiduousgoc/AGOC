@@ -141,10 +141,10 @@
 				</ul>
 				</li> -->
 				
-				<li><a href="#"><span class="nav_icon coverflow"></span> Daybook<span class="alert_notify blue">6</span><span class="up_down_arrow">&nbsp;</span></a>
+				<!-- <li><a href="#"><span class="nav_icon coverflow"></span> Daybook<span class="alert_notify blue">6</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">
 					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Statement</a></li>
-					<!-- <li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Expense Statement</a></li> -->
+					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Expense Statement</a></li>
 					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Account Ledger(S)</a></li>
 					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Trial Balance</a></li>
 					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Profit & Loss Report</a></li>
@@ -156,7 +156,7 @@
 					<li><a href="salesReport.htm"><span class="list-icon">&nbsp;</span>Payment Voucher</a></li>
 					<li><a href="stockReport.htm"><span class="list-icon">&nbsp;</span>Receipt Voucher</a></li>
 				</ul>
-				</li>
+				</li> -->
 				<!-- <li><a href="typography.html"><span class="nav_icon list"></span>Typography</a></li>
 				<li><a href="#"><span class="nav_icon frames"></span>Grid<span class="alert_notify blue">2</span><span class="up_down_arrow">&nbsp;</span></a>
 				<ul class="acitem">

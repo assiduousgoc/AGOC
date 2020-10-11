@@ -109,7 +109,7 @@ width:100%;
 							<td>
 								<a href="#" class="">GST</a>
 							</td>
-							<td >
+							<td>
 								2
 							</td>
 							<td class="center">
