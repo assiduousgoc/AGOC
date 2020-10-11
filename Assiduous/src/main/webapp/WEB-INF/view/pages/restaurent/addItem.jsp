@@ -12,7 +12,7 @@
 						<h6>Create Product</h6>
 					</div>
 					<div class="widget_content" style="margin-top: 0px !important;">
-						<form action="#" method="post" class="form_container">
+						<form action="saveResItem.htm" method="post" class="form_container" enctype="multipart/form-data">
 							<!-- <div class="elem_extend"> -->
 							<div class="elem_extend">
 								<ul>
@@ -138,9 +138,10 @@
 											<div class="form_grid_12 multiline">
 												<div class="form_input">
 													<div class="form_grid_4 alpha">
-														<input name="mrp" type="file"/>
+														<input name="itemImage" type="file"/>
 														<span class=" label_intro">Image Attachment</span>
 													</div>
+													<img src="${imageSuccess}"/>  
 													<div class="form_grid_3 ">
 														<select data-placeholder="Choose a Tax Slab..." class="chzn-select full" name="Field109" tabindex="20">
 															<option value=""></option>
