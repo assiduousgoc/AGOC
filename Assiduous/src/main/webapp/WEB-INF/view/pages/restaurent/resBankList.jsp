@@ -121,7 +121,7 @@ width:100%;
 								 Haider Pur Shalimar bagh
 							</td>
 							<td class="center">
-								<span class="badge_style b_done">Done</span>
+								<span class="badge_style b_done">Done  </span>
 							</td>
 							<td class="center">
 								<span><a class="action-icons c-edit" href="#" title="Edit">Edit</a></span><span><a class="action-icons c-delete confirm_dialog" href="#" title="delete">Delete</a></span><span><a class="action-icons c-approve" href="#" title="Approve">Done</a></span>
