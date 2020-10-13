@@ -13,37 +13,45 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ass.client.*;
+import com.ass.client.GMSUserClient;
+import com.ass.retaurant.client.CommonUserClient;
 import com.ass.smtfp.dao.ContactDAO;
-import com.ass.smtfp.model.*;
-
-
-
+import com.ass.smtfp.enums.ModuleType;
+import com.ass.smtfp.model.UserData;
+import com.ass.smtfp.model.UserLoginDto;
 
 @Controller
 public class HomeController {
 
 	@Autowired
 	private GMSUserClient gym_user_client;
-	
+
+	@Autowired
+	private CommonUserClient common_user_client;
+
 	@Autowired
 	ContactDAO contactDao;
 
-	
 	@RequestMapping("/dashboard.htm")
 	public String home(@RequestParam(value = "services") String services,
 			@RequestParam(value = "quat_fullname") String quat_fullname,
 			@RequestParam(value = "password") String password, Model model, HttpServletRequest req) {
 
-		if (services.equals("RMS") && password.equals("Jmd@7556")) {
-			return "restaurentdashboard";
+		if (services.equals("RMS")) {
+			UserData user = common_user_client.login(new UserLoginDto(quat_fullname, password, ModuleType.RESTAURANT));
+			if (user != null) {
+				req.getSession().setAttribute("user", user);
+				System.out.println(" User Role : " + user.getRole());
+				return "restaurentdashboard";
+			}
+			return "redirect:client-login.htm";
 		} else if (services.equals("HMS") && password.equals("Jmd@7556")) {
 			return "hospitaldashboard";
 		} else if (services.equals("GMS")) {
-			UserData user = gym_user_client.login(new UserLoginDto(quat_fullname, password));
+			UserData user = gym_user_client.login(new UserLoginDto(quat_fullname, password, ModuleType.GYM));
 			if (user != null) {
 				req.getSession().setAttribute("user", user);
-				System.out.println(" User Role : "+user.getRole());
+				System.out.println(" User Role : " + user.getRole());
 				return "gymdashboard";
 			}
 			return "redirect:client-login.htm";
@@ -65,7 +73,7 @@ public class HomeController {
 	@RequestMapping("/home.htm")
 	public String home() {
 		System.out.println("INSIDE HOME");
-		//contactDao.getUser("9910487886", "").getName()
+		// contactDao.getUser("9910487886", "").getName()
 		return "home";
 	}
 

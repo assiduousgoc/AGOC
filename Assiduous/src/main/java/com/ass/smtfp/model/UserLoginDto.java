@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.ass.smtfp.enums.ModuleType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,15 +26,19 @@ public class UserLoginDto implements Serializable {
 	@JsonProperty("password")
 	private String password;
 
+	@JsonProperty("module")
+	private ModuleType module;
+
 	public UserLoginDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserLoginDto(String userName, String password) {
+	public UserLoginDto(String userName, String password, ModuleType module) {
 		super();
 		this.userName = userName;
 		this.password = password;
+		this.module = module;
 	}
 
 	public String getUserName() {
@@ -50,6 +55,14 @@ public class UserLoginDto implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public ModuleType getModule() {
+		return module;
+	}
+
+	public void setModule(ModuleType module) {
+		this.module = module;
 	}
 
 }
