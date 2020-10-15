@@ -22,4 +22,7 @@ public interface OrderDetailRepository extends CrudRepository<OrderDetail, Integ
 
 	@Query("SELECT o from OrderDetail o WHERE o.order.orderNo = :order_no")
 	List<OrderDetail> findByOrder(@Param("order_no") String order_no);
+
+	@Query("SELECT o from OrderDetail o WHERE o.restaurant.id = :res_id")
+	List<OrderDetail> findByRestaurant(@Param("res_id") Integer res_id);
 }

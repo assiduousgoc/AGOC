@@ -41,6 +41,11 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 	}
 
 	@Override
+	public List<OrderDetailDto> findByRestaurant(Integer res_id) {
+		return etm_col.apply(repo.findByRestaurant(res_id));
+	}
+
+	@Override
 	public List<OrderDetailDto> findAll() {
 		return etm_col.apply(repo.findAll());
 	}

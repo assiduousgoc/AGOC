@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.restaurant.dao.PaymentRepository;
+import com.restaurant.enm.OrderStatusType;
 import com.restaurant.models.PaymentDto;
+import com.restaurant.service.OrderService;
 import com.restaurant.service.PaymentService;
 
 @Service
@@ -15,9 +17,12 @@ public class PaymentServiceImpl implements PaymentService {
 
 	private PaymentRepository repo;
 
-	public PaymentServiceImpl(PaymentRepository repo) {
+	private OrderService o_service;
+
+	public PaymentServiceImpl(PaymentRepository repo, OrderService o_service) {
 		super();
 		this.repo = repo;
+		this.o_service = o_service;
 	}
 
 	@Override
@@ -47,6 +52,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 	@Override
 	public PaymentDto save(PaymentDto dto) {
+		o_service.update_status(dto.getOrder().getId(), OrderStatusType.CONFIRM);
 		return etm.apply(repo.save(mte.apply(dto)));
 	}
 

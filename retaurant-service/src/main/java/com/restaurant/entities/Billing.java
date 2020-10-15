@@ -33,7 +33,7 @@ public class Billing implements Serializable {
 	private Float amount;
 
 	@Column(name = "discount")
-	private Float discount;
+	private Integer discount;
 
 	@Column(name = "bill_date", nullable = false)
 	private Date billDate;
@@ -52,6 +52,14 @@ public class Billing implements Serializable {
 		this.id = id;
 	}
 
+	public Billing(Float amount, Integer discount, Date billDate, Order order) {
+		super();
+		this.amount = amount;
+		this.discount = discount;
+		this.billDate = billDate;
+		this.order = order;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -68,11 +76,11 @@ public class Billing implements Serializable {
 		this.amount = amount;
 	}
 
-	public Float getDiscount() {
+	public Integer getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(Float discount) {
+	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
 

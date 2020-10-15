@@ -26,4 +26,7 @@ public interface RestaurantRepository extends CrudRepository<Restaurant, Integer
 	@Query("SELECT r from Restaurant r WHERE r.name = :name")
 	List<Restaurant> findByName(@Param("name") String name);
 
+	@Query("SELECT r from Restaurant r WHERE r.address like %:pincode%")
+	List<Restaurant> findByPincode(@Param("pincode") String pincode);
+
 }

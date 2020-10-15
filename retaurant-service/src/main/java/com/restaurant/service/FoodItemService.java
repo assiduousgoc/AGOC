@@ -13,8 +13,10 @@ import com.dcs.common.file.response.ResourceResult;
 import com.dcs.common.util.MapperInstance;
 import com.restaurant.entities.FoodItem;
 import com.restaurant.entities.FoodType;
+import com.restaurant.entities.Tax;
 import com.restaurant.models.FoodItemDto;
 import com.restaurant.models.FoodTypeDto;
+import com.restaurant.models.TaxDto;
 
 public interface FoodItemService {
 
@@ -39,6 +41,7 @@ public interface FoodItemService {
 	static FoodItem toEntity(FoodItemDto dto) {
 		FoodItem entity = new FoodItem();
 		entity.setFoodType(MapperInstance.getModelMapper().map(dto.getFoodType(), FoodType.class));
+		entity.setTax(MapperInstance.getModelMapper().map(dto.getTaxDto(), Tax.class));
 		MapperInstance.getModelMapper().map(dto, entity);
 		return entity;
 	}
@@ -46,6 +49,7 @@ public interface FoodItemService {
 	static FoodItemDto toDto(FoodItem entity) {
 		FoodItemDto dto = new FoodItemDto();
 		dto.setFoodType(MapperInstance.getModelMapper().map(entity.getFoodType(), FoodTypeDto.class));
+		dto.setTaxDto(MapperInstance.getModelMapper().map(entity.getTax(), TaxDto.class));
 		MapperInstance.getModelMapper().map(entity, dto);
 		return dto;
 	}

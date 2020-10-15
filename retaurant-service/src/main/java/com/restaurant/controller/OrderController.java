@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dcs.common.annotation.EnableSwagger;
+import com.restaurant.enm.OrderStatusType;
+import com.restaurant.models.CustomerOrder;
 import com.restaurant.models.OrderDto;
 import com.restaurant.service.OrderService;
 
@@ -47,24 +49,20 @@ public class OrderController {
 		return service.findByCustomer(cust_id);
 	}
 
-	@GetMapping(value = "/restaurant/{id}")
-	public List<OrderDto> findByRestaurant(@PathVariable("id") Integer res_id) {
-		return service.findByRestaurant(res_id);
-	}
-
 	@GetMapping
 	public List<OrderDto> findAll() {
 		return service.findAll();
 	}
 
-	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<OrderDto> save(@RequestBody OrderDto dto) {
-		return new ResponseEntity<OrderDto>(service.save(dto), HttpStatus.CREATED);
+	@PostMapping(value = "/{mob}", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public ResponseEntity<OrderDto> save(@PathVariable("mob") Long mob, @RequestBody CustomerOrder dto)
+			throws Exception {
+		return new ResponseEntity<OrderDto>(service.save(dto, mob), HttpStatus.CREATED);
 	}
 
-	@PutMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public OrderDto update(@RequestBody OrderDto dto) {
-		return service.update(dto);
+	@PutMapping(value = "/{id}/{status}")
+	public OrderDto update(@PathVariable("id") Integer id, @PathVariable("status") OrderStatusType status) {
+		return service.update_status(id, status);
 	}
 
 	@DeleteMapping(value = "/{id}")

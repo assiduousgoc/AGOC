@@ -47,6 +47,10 @@ public class FoodItem implements Serializable {
 	@JoinColumn(name = "type_id", nullable = false, referencedColumnName = "id")
 	private FoodType foodType;
 
+	@ManyToOne
+	@JoinColumn(name = "tax_id", nullable = false, referencedColumnName = "id")
+	private Tax tax;
+
 	public FoodItem() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -111,6 +115,14 @@ public class FoodItem implements Serializable {
 
 	public void setFoodType(FoodType foodType) {
 		this.foodType = foodType;
+	}
+
+	public Tax getTax() {
+		return tax;
+	}
+
+	public void setTax(Tax tax) {
+		this.tax = tax;
 	}
 
 }

@@ -23,6 +23,8 @@ public interface RestaurantService {
 
 	List<RestaurantDto> findByName(String name);
 
+	List<RestaurantDto> findByPincode(String pincode);
+
 	List<RestaurantDto> findAll();
 
 	RestaurantDto save(RestaurantDto dto);

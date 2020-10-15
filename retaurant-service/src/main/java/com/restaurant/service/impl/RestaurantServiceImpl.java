@@ -46,6 +46,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
+	public List<RestaurantDto> findByPincode(String pincode) {
+		return etm_col.apply(repo.findByPincode(pincode));
+	}
+
+	@Override
 	public List<RestaurantDto> findAll() {
 		return etm_col.apply(repo.findAll());
 	}

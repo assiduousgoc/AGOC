@@ -20,7 +20,4 @@ public interface OrderRepository extends CrudRepository<Order, Integer> {
 	@Query("SELECT o from Order o WHERE o.customer.id = :cust_id")
 	List<Order> findByCustomer(@Param("cust_id") Integer cust_id);
 
-	@Query("SELECT o from Order o WHERE o.restaurant.id = :res_id")
-	List<Order> findByRestaurant(@Param("res_id") Integer res_id);
-
 }

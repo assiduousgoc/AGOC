@@ -19,6 +19,8 @@ public class OrderDetailDto implements Serializable {
 
 	private FoodItemDto foodItem;
 
+	private RestaurantDto restaurantDto;
+
 	private Integer qty;
 
 	private Float amount;
@@ -49,6 +51,14 @@ public class OrderDetailDto implements Serializable {
 
 	public void setFoodItem(FoodItemDto foodItem) {
 		this.foodItem = foodItem;
+	}
+
+	public RestaurantDto getRestaurantDto() {
+		return restaurantDto;
+	}
+
+	public void setRestaurantDto(RestaurantDto restaurantDto) {
+		this.restaurantDto = restaurantDto;
 	}
 
 	public Integer getQty() {

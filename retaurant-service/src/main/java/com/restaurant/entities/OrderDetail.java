@@ -32,6 +32,10 @@ public class OrderDetail implements Serializable {
 	@JoinColumn(name = "food_id", nullable = false, referencedColumnName = "id")
 	private FoodItem foodItem;
 
+	@ManyToOne
+	@JoinColumn(name = "restaurant_id", nullable = false, referencedColumnName = "id")
+	private Restaurant restaurant;
+
 	@Column(name = "qty", nullable = false)
 	private Integer qty;
 
@@ -52,6 +56,14 @@ public class OrderDetail implements Serializable {
 		this.id = id;
 	}
 
+	public OrderDetail(FoodItem foodItem, Restaurant restaurant, Integer qty, Float amount) {
+		super();
+		this.foodItem = foodItem;
+		this.restaurant = restaurant;
+		this.qty = qty;
+		this.amount = amount;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -66,6 +78,14 @@ public class OrderDetail implements Serializable {
 
 	public void setFoodItem(FoodItem foodItem) {
 		this.foodItem = foodItem;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 	public Integer getQty() {
@@ -90,6 +110,11 @@ public class OrderDetail implements Serializable {
 
 	public void setOrder(Order order) {
 		this.order = order;
+	}
+
+	public OrderDetail withOrder(Order order) {
+		this.order = order;
+		return this;
 	}
 
 }

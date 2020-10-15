@@ -16,59 +16,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dcs.common.annotation.EnableSwagger;
-import com.restaurant.models.OrderDetailDto;
-import com.restaurant.service.OrderDetailService;
+import com.restaurant.models.TaxDto;
+import com.restaurant.service.TaxService;
 
 @RestController
 @CrossOrigin
 @EnableSwagger
-@RequestMapping(value = "/food-express/order-details")
-public class OrderDetailController {
+@RequestMapping(value = "/food-express/taxes")
+public class TaxController {
 
-	private OrderDetailService service;
+	private TaxService service;
 
-	public OrderDetailController(OrderDetailService service) {
+	public TaxController(TaxService service) {
 		super();
 		this.service = service;
 	}
 
 	@GetMapping(value = "/{id}")
-	public OrderDetailDto findById(@PathVariable("id") Integer id) {
+	public TaxDto findById(@PathVariable("id") Integer id) {
 		return service.findById(id);
 	}
 
-	@GetMapping(value = "/food/{id}")
-	public List<OrderDetailDto> findByFood(@PathVariable("id") Integer food_id) {
-		return service.findByFood(food_id);
-	}
-
-	@GetMapping(value = "/order/{id}")
-	public List<OrderDetailDto> findByOrder(@PathVariable("id") Integer order_id) {
-		return service.findByOrder(order_id);
-	}
-
-	@GetMapping(value = "/order-no/{value}")
-	public List<OrderDetailDto> findByOrder(@PathVariable("value") String order_no) {
-		return service.findByOrder(order_no);
-	}
-
-	@GetMapping(value = "/restaurant/{id}")
-	public List<OrderDetailDto> findByRestaurant(@PathVariable("id") Integer res_id) {
-		return service.findByRestaurant(res_id);
+	@GetMapping(value = "/name/{value}")
+	public List<TaxDto> findByName(@PathVariable("value") String name) {
+		return service.findByName(name);
 	}
 
 	@GetMapping
-	public List<OrderDetailDto> findAll() {
+	public List<TaxDto> findAll() {
 		return service.findAll();
 	}
 
 	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<OrderDetailDto> save(@RequestBody OrderDetailDto dto) {
-		return new ResponseEntity<OrderDetailDto>(service.save(dto), HttpStatus.CREATED);
+	public ResponseEntity<TaxDto> save(@RequestBody TaxDto dto) {
+		return new ResponseEntity<TaxDto>(service.save(dto), HttpStatus.CREATED);
 	}
 
 	@PutMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public OrderDetailDto update(@RequestBody OrderDetailDto dto) {
+	public TaxDto update(@RequestBody TaxDto dto) {
 		return service.update(dto);
 	}
 

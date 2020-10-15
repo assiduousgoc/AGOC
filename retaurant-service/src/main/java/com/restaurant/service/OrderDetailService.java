@@ -11,9 +11,11 @@ import com.dcs.common.util.MapperInstance;
 import com.restaurant.entities.FoodItem;
 import com.restaurant.entities.Order;
 import com.restaurant.entities.OrderDetail;
+import com.restaurant.entities.Restaurant;
 import com.restaurant.models.FoodItemDto;
 import com.restaurant.models.OrderDetailDto;
 import com.restaurant.models.OrderDto;
+import com.restaurant.models.RestaurantDto;
 
 public interface OrderDetailService {
 
@@ -24,6 +26,8 @@ public interface OrderDetailService {
 	List<OrderDetailDto> findByOrder(Integer order_id);
 
 	List<OrderDetailDto> findByOrder(String order_no);
+
+	List<OrderDetailDto> findByRestaurant(Integer res_id);
 
 	List<OrderDetailDto> findAll();
 
@@ -37,6 +41,7 @@ public interface OrderDetailService {
 		OrderDetail entity = new OrderDetail();
 		entity.setOrder(MapperInstance.getModelMapper().map(dto.getOrder(), Order.class));
 		entity.setFoodItem(MapperInstance.getModelMapper().map(dto.getFoodItem(), FoodItem.class));
+		entity.setRestaurant(MapperInstance.getModelMapper().map(dto.getRestaurantDto(), Restaurant.class));
 		MapperInstance.getModelMapper().map(dto, entity);
 		return entity;
 	}
@@ -45,6 +50,7 @@ public interface OrderDetailService {
 		OrderDetailDto dto = new OrderDetailDto();
 		dto.setOrder(MapperInstance.getModelMapper().map(entity.getOrder(), OrderDto.class));
 		dto.setFoodItem(MapperInstance.getModelMapper().map(entity.getFoodItem(), FoodItemDto.class));
+		dto.setRestaurantDto(MapperInstance.getModelMapper().map(entity.getRestaurant(), RestaurantDto.class));
 		MapperInstance.getModelMapper().map(entity, dto);
 		return dto;
 	}

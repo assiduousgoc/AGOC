@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
+
+import com.restaurant.enm.OrderStatusType;
 
 @Entity
 @Table(name = "orders")
@@ -35,13 +39,13 @@ public class Order implements Serializable {
 	@Column(name = "order_date", nullable = false)
 	private Date orderDate;
 
+	@Enumerated(EnumType.STRING)
+	@Column(name = "order_status", nullable = false)
+	private OrderStatusType status;
+
 	@ManyToOne
 	@JoinColumn(name = "customer_id", nullable = false, referencedColumnName = "id")
 	private Customer customer;
-
-	@ManyToOne
-	@JoinColumn(name = "restaurant_id", nullable = false, referencedColumnName = "id")
-	private Restaurant restaurant;
 
 	public Order() {
 		super();
@@ -77,20 +81,20 @@ public class Order implements Serializable {
 		this.orderDate = orderDate;
 	}
 
+	public OrderStatusType getStatus() {
+		return status;
+	}
+
+	public void setStatus(OrderStatusType status) {
+		this.status = status;
+	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
-	}
-
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
 	}
 
 }

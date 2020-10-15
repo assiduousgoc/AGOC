@@ -6,6 +6,7 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.restaurant.enm.OrderStatusType;
 
 @JsonPropertyOrder
 @JsonInclude(value = Include.NON_NULL)
@@ -22,9 +23,9 @@ public class OrderDto implements Serializable {
 
 	private Date orderDate;
 
-	private CustomerDto customer;
+	private OrderStatusType status;
 
-	private RestaurantDto restaurant;
+	private CustomerDto customer;
 
 	public OrderDto() {
 		super();
@@ -60,20 +61,20 @@ public class OrderDto implements Serializable {
 		this.orderDate = orderDate;
 	}
 
+	public OrderStatusType getStatus() {
+		return status;
+	}
+
+	public void setStatus(OrderStatusType status) {
+		this.status = status;
+	}
+
 	public CustomerDto getCustomer() {
 		return customer;
 	}
 
 	public void setCustomer(CustomerDto customer) {
 		this.customer = customer;
-	}
-
-	public RestaurantDto getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(RestaurantDto restaurant) {
-		this.restaurant = restaurant;
 	}
 
 }

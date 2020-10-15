@@ -29,6 +29,8 @@ public class FoodItemDto implements Serializable {
 
 	private FoodTypeDto foodType;
 
+	private TaxDto taxDto;
+
 	public FoodItemDto() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -93,6 +95,14 @@ public class FoodItemDto implements Serializable {
 
 	public void setFoodType(FoodTypeDto foodType) {
 		this.foodType = foodType;
+	}
+
+	public TaxDto getTaxDto() {
+		return taxDto;
+	}
+
+	public void setTaxDto(TaxDto taxDto) {
+		this.taxDto = taxDto;
 	}
 
 }

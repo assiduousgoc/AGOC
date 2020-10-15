@@ -2,6 +2,7 @@ package com.restaurant.dao;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -16,5 +17,8 @@ public interface DiscountRepository extends CrudRepository<Discount, Integer> {
 
 	@Query("SELECT d from Discount d WHERE d.foodItem.id = :food_id")
 	List<Discount> findByFood(@Param("food_id") Integer food_id);
+
+	@Query("SELECT sum(d.amount) from Discount d WHERE d.foodItem.id in :items")
+	Integer findByItems(@Param("items") Set<Integer> ids);
 
 }
